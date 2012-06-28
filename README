@@ -1,35 +1,13 @@
-Parallel Protein Docking Tool (PPTP) software is performing a shape based process of protein docking
+Parallel Protein Docking Tool (PPTP) software is performing a shape based process of protein docking using spherical harmonics. The software is made from the scratch in C++ as a Eclipse CDT project. Input data are two PDB (Protein Data Bank) files and desired docking parameters. The PDB files hold information about coordination of protein atoms in three dimensional space. Protein structures are transformed with spherical functions which allow fast rotation and translation of 3D shapes in space. By translation and rotation (with a given resolution of angles and distance) the surface complementarity is tested for each orientation of two proteins in 3D space. The orientations are then ranked according to the given scores. The output PDB file now holds orientations with best scores ready for visualization. 
 
-using spherical harmonics. The software is made from the scratch in C++ as a Eclipse CDT project. 
-
-Input data are two PDB (Protein Data Bank) files and desired docking parameters. The PDB files hold 
-
-information about coordination of protein atoms in three dimensional space. Protein structures are transformed
-
-with spherical functions which allow fast rotation and translation of 3D shapes in space. By translation
-
-and rotation (with a given resolution of angles and distance) the surface complementarity is tested for
-
-each orientation of two proteins in 3D space. The orientations are then ranked according to the given
-
-scores. The output PDB file now holds orientations with best scores ready for visualization. 
-
- 
 Developer team:
-
 Nino Antulov-Fantulin, <nino.naf@gmail.com>
-
 Igor Canadi, <igor.canadi@gmail.com>
-
 Matija Piskorec, <matija.piskorec@gmail.com>
-
 Ivan Sovic, <ivan.sovic@gmail.com>
 
 Project Leader: 
-
 Mile Sikic, <mile.sikic@gmail.com>
 
 Cite work as:
-Sovic, I., Antulov-Fantulin, N. Canadi, I., Piskorec, M. and Sikic, M., Parallel Protein Docking Tool, MIPRO 2010, 
-Proceedings of the 33rd International Convention on Information and Communication Technology, Electronics and 
-Microelectronics
+Sovic, I., Antulov-Fantulin, N. Canadi, I., Piskorec, M. and Sikic, M., Parallel Protein Docking Tool, MIPRO 2010, Proceedings of the 33rd International Convention on Information and Communication Technology, Electronics and Microelectronics
