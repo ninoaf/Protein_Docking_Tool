@@ -1,0 +1,130 @@
+/*
+ * basefunctions.cpp
+ *
+ *  Created on: Dec 8, 2009
+ *      Author: canadi
+ */
+
+#include "basefunctions.h"
+/*
+bool TripletIID::operator < (const TripletIID& a) const
+{
+	if (a.first != this->first) return this->first < a.first;
+	if (a.third - this->third > 1e-1 || this->third - a.third > 1e-1) return this->third < a.third;
+	return this->second < a.second;
+}
+
+bool DipletID::operator < (const DipletID& a) const
+{
+	if (a.second - this->second > 1e-1 || this->second - a.second > 1e-1) return this->second < a.second;
+	return this->first < a.first;
+}*/
+
+BaseFunctions* BaseFunctions::instance_ = 0;
+int BaseFunctions::gammaCacheSize_ = 120;
+
+BaseFunctions::BaseFunctions()
+{
+	gammaCache_.resize(gammaCacheSize_);
+	fill(gammaCache_.begin(), gammaCache_.end(), -1.0);
+}
+
+BaseFunctions* BaseFunctions::instance()
+{
+	if (instance_ == 0)
+	{
+		instance_ = new BaseFunctions;
+	}
+
+	return instance_;
+}
+
+double BaseFunctions::baseFunction(const CoeffCoordinates& coeffCoordinates, const SphericalCoordinates& sphericalCoordinates)
+{
+	return radialFunction(coeffCoordinates.n, coeffCoordinates.l, sphericalCoordinates.radius)
+			* legendrePolynomialSpherical(coeffCoordinates.l, coeffCoordinates.m * ((coeffCoordinates.m < 0) ? -1 : 1), sphericalCoordinates.elevation)
+				* phi(coeffCoordinates.m, sphericalCoordinates.azimuth);
+}
+
+double BaseFunctions::laguerrePolynomial(double alpha, double x, int k)
+{
+	if (k == 0) return 1.0;
+	if (k == 1) return alpha + 1.0 - x;
+
+	double last = alpha + 1.0 - x, beforeLast = 1.0;
+
+	for (int i = 2; i <= k; ++i)
+	{
+		double t = ((2*i + alpha - 1.0 - x)*last - (i - 1.0 + alpha)*beforeLast)/i;
+		beforeLast = last;
+		last = t;
+	}
+
+	return last;
+
+	// return ((2*k + alpha - 1.0 - x) * laguerrePolynomial(alpha, x, k-1) - (k - 1.0 + alpha)*laguerrePolynomial(alpha, x, k-2))/k;
+}
+
+double BaseFunctions::radialFunction(int n, int l, double radius)
+{
+	//map <TripletIID, double>::iterator itr = radialFunctionCache_.find(TripletIID(n, l, radius));
+
+	//if (itr != radialFunctionCache_.end()) return itr->second;
+
+	double retVal = 0.0;
+	double roKvadrat = radius * radius / LAMBDA;
+	double ro = sqrt(roKvadrat);
+
+	retVal = sqrt((2.0 / (pow(LAMBDA, 1.5) * pow(PI, 0.5))) * (gamma((n-l)*2) / gamma(2*n+1)));
+	retVal *= exp(-roKvadrat/2.0) * pow(ro, l) * laguerrePolynomial(l+0.5, roKvadrat, n-l-1);
+
+	return retVal;
+
+//	return radialFunctionCache_[TripletIID(n, l, radius)] = retVal;
+}
+
+double BaseFunctions::ETOradialFunction(int n, int l, double radius)
+{
+	double retVal = 0.0;
+	double alfa = 0.5;
+	double ro = 2 * alfa * radius;
+
+	retVal = sqrt( pow((2*alfa),3) * (gamma(n-l) / gamma(n+l+2))  );
+	retVal *= exp(-ro/2)* pow(ro,l) * laguerrePolynomial( 2*l+2, ro, n-l-1);
+	return retVal;
+}
+
+double BaseFunctions::legendrePolynomialSpherical(int l, int am, double elevation)
+{
+//	map <TripletIID, double>::iterator itr = legendreCache_.find(TripletIID(l, am, elevation));
+
+//	if (itr != legendreCache_.end()) return itr->second;
+
+//	return legendreCache_[TripletIID(l, am, elevation)] = gsl_sf_legendre_sphPlm (l, am, cos(elevation)) * NORM_FACTOR;
+	return gsl_sf_legendre_sphPlm (l, am, cos(elevation)) * NORM_FACTOR;
+}
+
+double BaseFunctions::phi(int m, double azimuth)
+{
+//	map <DipletID, double>::iterator itr = phiCache_.find(DipletID(m, azimuth)); // mozda je bolje bez cachiranja. provjeriti!
+
+//	if (itr != phiCache_.end()) return itr->second;
+
+	double retVal = 0.0;
+
+	if (m  > 0) retVal = cos(m*azimuth)/sqrt(PI);
+	if (m == 0) retVal = 1/sqrt(2*PI);
+	if (m  < 0) retVal = sin(-m*azimuth)/sqrt(PI);
+
+//	return phiCache_[DipletID(m, azimuth)] = retVal;
+	return retVal;
+}
+
+// not real gamma function! adapted!
+double BaseFunctions::gamma(int xDouble)
+{
+	if (xDouble == 1 || xDouble == 2) return 1.0;
+	if (gammaCache_[xDouble] > -1.0) return gammaCache_[xDouble];
+
+	return gammaCache_[xDouble] = ((double)xDouble/2.0 - 1) * gamma(xDouble-2);
+}

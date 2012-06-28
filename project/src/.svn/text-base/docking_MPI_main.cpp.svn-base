@@ -1,0 +1,327 @@
+/*
+ * docking_MPI_main.cpp
+ *
+ *  Created on: Dec 8, 2009
+ *      Author: nino
+ */
+
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include "docking/docking.h"
+#include "configuration/configuration.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "mpi.h"
+#include <sstream>
+
+
+using namespace std;
+
+#define MASTER_PROCESS_ID 0
+#define TAG_WORKER_MASTER 1
+#define TAG_MASTER_WORKER 2
+#define REQ_SIZE 1
+#define REQ_STOP -1
+#define REQ_GIVE_DATA 1
+#define RADIUS_SCORE_SIZE 2
+
+#define ANS_DATA_SIZE 1
+#define ANS_SIZE 2
+#define ANS_STOP_WORK -1
+#define ANS_CONTINUE_WORK 1
+struct RadiusScoreS{
+	double R;
+	double Score;
+};
+
+int worker_process( int size, int rank, vector<double> radius_set, Docking& docking, vector <pair<double, ScoreConfiguration> >& scores, vector<double>& MaxScoresRadius );
+int master_process( int size, int rank, vector<double> radius_set, vector<RadiusScoreS>& MaxScores );
+string AddWorkerSuffix(string stringOutputFileBasic, int rank);
+int readScore(string path, vector <pair<double, ScoreConfiguration> >& scores );
+int writeMaxRadiusScores(vector<RadiusScoreS>& MaxScores);
+
+
+bool compare ( const RadiusScoreS& prvi, const RadiusScoreS& drugi)
+{
+	if ( prvi.R < drugi.R ) return true;
+	else return false;
+}
+
+int main(int argc, char **argv){
+
+	int control;
+	int size,rank;
+
+	control = MPI_Init( &argc, &argv );
+
+	if ( control != MPI_SUCCESS )
+	{
+		printf("ERROR MPI COULD NOT START \n");
+		MPI_Abort(MPI_COMM_WORLD, control);
+	}
+
+	MPI_Comm_size( MPI_COMM_WORLD, &size );
+	MPI_Comm_rank( MPI_COMM_WORLD, &rank );
+
+	int* rank_set = (int*) malloc ( (size)*sizeof(int) );
+	MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Gather( &rank, 1, MPI_INT, rank_set, 1 , MPI_INT, MASTER_PROCESS_ID,MPI_COMM_WORLD);
+	MPI_Barrier(MPI_COMM_WORLD);
+
+	Configuration configuration;
+	configuration.init("config.txt");
+
+	Docking docking(configuration);
+	vector <pair<double, ScoreConfiguration> > scores_worker;
+
+	double t;
+	double radiusStart, radiusEnd;
+	configuration.getParameter("radius_search_start", t);
+	for (radiusStart = 0.0; radiusStart +0.5 < t+1e-9; radiusStart += 0.5); // calibration to known radius
+
+	configuration.getParameter("radius_search_end", radiusEnd);
+
+	vector<double> radius_set;
+	for (double R = radiusStart; R < radiusEnd; R += 0.5){
+		radius_set.push_back(R);
+	}
+
+	/*
+	printf("Radiusi: \n");
+	for(unsigned int i = 0; i< radius_set.size(); ++i){
+
+		printf(" %lf ",radius_set[i]);
+	}
+	printf("\n");
+	*/
+
+	vector<double> MaxScoresRadius;
+	vector<RadiusScoreS> MaxScores;
+	if (rank == MASTER_PROCESS_ID){
+		rank = master_process(size, rank, radius_set, MaxScores );
+		sort( MaxScores.begin(), MaxScores.end(), compare );
+		writeMaxRadiusScores(MaxScores);
+	}
+	else{
+		rank = worker_process(size, rank, radius_set, docking, scores_worker, MaxScoresRadius );
+	}
+
+	string scoresOutputFileBasic;
+	configuration.getParameter("scores_output_file", scoresOutputFileBasic);
+	string scoresOutputFile = AddWorkerSuffix(scoresOutputFileBasic, rank);
+
+	docking.outputScores( scoresOutputFile, "# MPI worker...\n", scores_worker );
+	vector <pair<double, ScoreConfiguration> > scores;
+
+	MPI_Barrier(MPI_COMM_WORLD);
+	if (rank == MASTER_PROCESS_ID){
+			// collect data
+			for(int i = 0; i< size; ++i){
+				int worker_id = rank_set[i];
+				if(worker_id != MASTER_PROCESS_ID){
+					scoresOutputFile = AddWorkerSuffix(scoresOutputFileBasic, worker_id);
+					readScore( scoresOutputFile, scores );
+				}
+			}
+	}
+
+	docking.outputScores( scoresOutputFileBasic, "# MPI worker...\n", scores );
+	return 0;
+}
+int writeMaxRadiusScores(vector<RadiusScoreS>& MaxScores){
+
+	FILE *fp = fopen("RadiusScores.txt", "wt");
+
+	if (fp == 0)
+	{
+		// can't open file
+		return -1;
+	}
+
+	for (unsigned int i = 0; i < MaxScores.size(); ++i)
+	{
+		RadiusScoreS RS = MaxScores[i];
+		fprintf(fp, "%lf %lf \n", RS.R, RS.Score);
+	}
+
+	fclose(fp);
+	return 0;
+}
+int readScore(string path, vector <pair<double, ScoreConfiguration> >& scores ){
+
+		FILE *fp = fopen(path.c_str(), "rt");
+
+		if (fp == 0)
+		{
+			printf("CANT OPEN FILE \n");
+			return -1;
+		}
+		// Parsing comments - all lines with # at first character
+		char first_char = '#';
+		while( first_char == '#' )
+		{
+				char tmp_char;
+				fscanf(fp,"%c",&tmp_char);
+				while( tmp_char != '\n' )
+				{
+						fscanf(fp,"%c",&tmp_char);
+				}
+				int numInput = fscanf(fp,"%c", &first_char);
+				if (numInput == EOF){
+					fclose(fp);
+					return 0;
+				}
+		}
+
+
+		ScoreConfiguration scoreConf;
+		double score;
+		int rank;
+		int numInput = fscanf(fp,"%lf %lf %lf %lf %lf %lf %lf\n",&score, &scoreConf.R,&scoreConf.beta1,&scoreConf.gamma1,&scoreConf.alpha,&scoreConf.beta2,&scoreConf.gamma2);
+		while(numInput != EOF)
+		{
+			scores.push_back(pair<double, ScoreConfiguration>(score,scoreConf));
+			numInput = fscanf(fp,"%d %lf %lf %lf %lf %lf %lf %lf\n",&rank,&score, &scoreConf.R,&scoreConf.beta1,&scoreConf.gamma1,&scoreConf.alpha,&scoreConf.beta2,&scoreConf.gamma2);
+		}
+
+		fclose(fp);
+		return 0;
+
+}
+string AddWorkerSuffix(string stringOutputFileBasic, int rank){
+
+	string scoresOutputFile(stringOutputFileBasic, 0 , stringOutputFileBasic.size()-4);
+	scoresOutputFile += "_worker_";
+	string rank_str;
+	stringstream out_str;
+	out_str << rank;
+	rank_str = out_str.str();
+	scoresOutputFile += rank_str;
+	scoresOutputFile += ".scr";
+
+	return scoresOutputFile;
+
+}
+int master_process( int size, int rank, vector<double> radius_set, vector<RadiusScoreS>& MaxScores )
+{
+	//printf("-----------Master %d-------- \n", rank);
+	bool do_work = true;
+	int num_proc_finished = 0;
+	int num_free_tasks = radius_set.size();
+	unsigned int next_task_index = 0;
+	int request[REQ_SIZE];
+	MPI_Status Status;
+
+	MPI_Barrier(MPI_COMM_WORLD);
+
+	while ( do_work ){
+
+
+		// primi zahtjev
+		MPI_Recv(&request, REQ_SIZE, MPI_INT, MPI_ANY_SOURCE, TAG_WORKER_MASTER, MPI_COMM_WORLD, &Status);
+
+		//printf("MASTER process: %d got request from worker %d, \n", rank, Status.MPI_SOURCE);
+		//fflush(stdout);
+
+		if ( request[0] == REQ_GIVE_DATA ){
+			int answer[ANS_SIZE];
+			if ( num_free_tasks == 0 ){
+				num_proc_finished++;
+				answer[0] = ANS_STOP_WORK;
+			}else{
+				answer[0] = ANS_CONTINUE_WORK;
+				int ans_data_index = 1;
+				for(unsigned int i = next_task_index; i < (next_task_index + ANS_DATA_SIZE); ++i){
+					if ( i < radius_set.size()){
+						answer[ans_data_index++] = i;
+						//printf("ZADATAK: %d \n",i);
+						num_free_tasks--;
+					}
+					else {
+						answer[ans_data_index++] = -1 ;
+					}
+				}
+				next_task_index += ANS_DATA_SIZE;
+			}
+			//printf("MASTER process: %d sends ANSWER to : %d \n", rank, Status.MPI_SOURCE);
+			fflush(stdout);
+			MPI_Send(&answer, ANS_SIZE , MPI_INT, Status.MPI_SOURCE, TAG_MASTER_WORKER, MPI_COMM_WORLD);
+		}
+
+		if( num_proc_finished >= (size-1)){
+			do_work = false;
+		}
+	}
+
+	MPI_Barrier(MPI_COMM_WORLD);
+
+	double radiusScore[RADIUS_SCORE_SIZE];
+	for(unsigned int i = 0; i < radius_set.size(); ++i){
+		MPI_Recv(&radiusScore, RADIUS_SCORE_SIZE, MPI_DOUBLE, MPI_ANY_SOURCE, TAG_WORKER_MASTER, MPI_COMM_WORLD, &Status);
+		RadiusScoreS RS;
+		RS.R = radiusScore[0];
+		RS.Score = radiusScore[1];
+		MaxScores.push_back(RS);
+	}
+
+	//printf("MASTER process: %d finished ... \n", rank);
+	fflush(stdout);
+	return rank;
+}
+int worker_process( int size, int rank, vector<double> radius_set, Docking& docking, vector <pair<double, ScoreConfiguration> >& scores, vector<double>& MaxScoresRadius )
+{
+	//printf("-----------Worker %d-------- \n", rank);
+	fflush(stdout);
+	MPI_Status Status;
+
+	int answer[ANS_SIZE];
+	bool do_work = true;
+
+	MPI_Barrier(MPI_COMM_WORLD);
+
+	vector<double> radius_subset;
+	while ( do_work ){
+		radius_subset.clear();
+		int request[REQ_SIZE];
+		request[0] = REQ_GIVE_DATA;
+		MPI_Send(&request, REQ_SIZE, MPI_INT, MASTER_PROCESS_ID, TAG_WORKER_MASTER, MPI_COMM_WORLD);
+		//printf("WORKER process: %d sends request \n", rank);
+		fflush(stdout);
+		// waiting for answer
+		MPI_Recv(&answer, ANS_SIZE, MPI_INT, MASTER_PROCESS_ID, TAG_MASTER_WORKER, MPI_COMM_WORLD,&Status);
+		//printf("WORKER process: %d gets answer \n", rank);
+		fflush(stdout);
+
+		if (answer[0] == ANS_CONTINUE_WORK){
+
+			for(int i = 1; i < ANS_SIZE; ++i ) {
+				if ( answer[i] != -1 ){
+					radius_subset.push_back( radius_set[ answer[i] ] );
+				}
+			}
+			docking.dockingSearch(scores, radius_subset, MaxScoresRadius);
+			//docking.freeMemory();
+		}else if( answer[0] == ANS_STOP_WORK ){
+			do_work = false;
+		}
+	}
+
+	MPI_Barrier(MPI_COMM_WORLD);
+
+	double radiusScore[RADIUS_SCORE_SIZE];
+	for(unsigned int i = 0; i < (MaxScoresRadius.size()/2); ++i){
+
+		double radius = MaxScoresRadius[i*2];
+		radiusScore[0] = radius;
+		double MaxScore = MaxScoresRadius[i*2 +1];
+		radiusScore[1] = MaxScore;
+		MPI_Send(&radiusScore, RADIUS_SCORE_SIZE, MPI_DOUBLE, MASTER_PROCESS_ID, TAG_WORKER_MASTER, MPI_COMM_WORLD);
+	}
+
+	//printf("Worker finished calculating docking... %d\n", rank);
+	fflush(stdout);
+	return rank ;
+}

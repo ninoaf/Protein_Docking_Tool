@@ -1,0 +1,446 @@
+/*
+ * docking.cpp
+ *
+ *  Created on: Sep 29, 2009
+ *      Author: canadi
+ */
+
+#include "docking.h"
+
+ScoreConfiguration::ScoreConfiguration()
+{
+
+}
+
+ScoreConfiguration::ScoreConfiguration(double _R, double _alpha, double _beta1, double _gamma1, double _beta2, double _gamma2)
+{
+	R = _R; alpha = _alpha; beta1 = _beta1; gamma1 = _gamma1; beta2 = _beta2; gamma2 = _gamma2;
+}
+
+bool ScoreConfiguration::operator < (const ScoreConfiguration& a) const
+{
+    if (this->R != a.R) return this->R < a.R;
+    if (this->alpha != a.alpha) return this->alpha < a.alpha;
+    if (this->beta1 != a.beta1) return this->beta1 < a.beta1;
+    if (this->gamma1 != a.gamma1) return this->gamma1 < a.gamma1;
+    if (this->beta2 != a.beta2) return this->beta2 < a.beta2;
+
+	return (this->gamma2) < (a.gamma2);
+}
+
+// first -- inner; second -- outer
+Docking::Docking(const pair<string, string>& receptorFile, const pair<string, string>& ligandFile)
+{
+    exit(1);	ligandPath_ = "";
+	receptorPath_ = "";
+	radiiPath_ = "";
+	receptor_.inner_.importFromFile(receptorFile.first);
+	receptor_.outer_.importFromFile(receptorFile.second);
+
+	ligand_.inner_.importFromFile(ligandFile.first);
+	ligand_.outer_.importFromFile(ligandFile.second);
+
+	setDefaultParameters();
+	checkOrders();
+	rotatationsCalculated_ = false;
+
+	ligandPath_ = "";
+	receptorPath_ = "";
+	radiiPath_ = "";
+}
+
+Docking::Docking(const Grid& receptorInner, const Grid& receptorOuter, const Grid& ligandInner, const Grid& ligandOuter, int order)
+{
+    exit(1);
+	receptor_.inner_.init(order);
+	receptor_.outer_.init(order);
+	ligand_.inner_.init(order);
+	ligand_.outer_.init(order);
+
+	receptor_.inner_.calculateFromGrid(receptorInner);
+	receptor_.outer_.calculateFromGrid(receptorOuter);
+
+	ligand_.inner_.calculateFromGrid(ligandInner);
+	ligand_.outer_.calculateFromGrid(ligandOuter);
+
+	setDefaultParameters();
+	checkOrders();
+	rotatationsCalculated_ = false;
+
+	ligandPath_ = "";
+	receptorPath_ = "";
+	radiiPath_ = "";
+}
+
+Docking::Docking(Configuration &config)
+{
+	string t;
+
+	config.getParameter("receptor_inner_skin_coeffs", t);
+	receptor_.inner_.importFromFile(t);
+	receptor_.SetInnerSkinName(t); //For protein recognition
+
+	config.getParameter("receptor_outer_skin_coeffs", t);
+	receptor_.outer_.importFromFile(t);
+	receptor_.SetOuterSkinName(t);
+
+	config.getParameter("ligand_inner_skin_coeffs", t);
+	ligand_.inner_.importFromFile(t);
+	ligand_.SetInnerSkinName(t);
+
+	config.getParameter("ligand_outer_skin_coeffs", t);
+	ligand_.outer_.importFromFile(t);
+	ligand_.SetOuterSkinName(t);
+
+	config.getParameter("ligand", t);
+	ligandPath_ = t;
+	config.getParameter("receptor", t);
+	receptorPath_ = t;
+	config.getParameter("radii_path", t);
+	radiiPath_ = t;
+
+	loadParametersFromConfiguration(config);
+	checkOrders();
+	rotatationsCalculated_ = false;
+}
+Docking::~Docking()
+{
+	//delete [] rotationAngles_;
+	//delete [] rotReceptor_;
+	//delete [] rotLigand_;
+}
+void Docking::setDefaultParameters()
+{
+	translationPath_ = "data/trans";
+	tessellationOrder_ = 2;
+	alphaSize_ = 5;
+	penalty_ = 15.0;
+	scoresSize_ = 100;
+	radiusStart_ = 8.0;
+	radiusEnd_ = 14.9;
+}
+
+void Docking::loadParametersFromConfiguration(Configuration &config)
+{
+	config.getParameter("translation_matrices_path", translationPath_);
+	config.getParameter("tessellation_order", tessellationOrder_);
+	config.getParameter("alpha_angles", alphaSize_);
+	config.getParameter("penetration_penalty", penalty_);
+	config.getParameter("scores_size", scoresSize_);
+
+	double t;
+	config.getParameter("radius_search_start", t);
+	for (radiusStart_ = 0.0; radiusStart_+0.5 < t+1e-9; radiusStart_ += 0.5); // calibration to known radius
+
+	config.getParameter("radius_search_end", radiusEnd_);
+}
+
+void Docking::dumpParameters(FILE *fp) const
+{
+	fprintf(fp, "# ligand inner skin name: %s\n", ligand_.GetInnerSkinName().c_str());
+	fprintf(fp, "# ligand outer skin name: %s\n", ligand_.GetOuterSkinName().c_str());
+	fprintf(fp, "# receptor inner skin name: %s\n", receptor_.GetInnerSkinName().c_str());
+	fprintf(fp, "# receptor outer skin name: %s\n", receptor_.GetOuterSkinName().c_str());
+	fprintf(fp, "# orderOfCoefficients: %d\n", receptor_.getOrder());
+	fprintf(fp, "# translationPath: %s\n", translationPath_.c_str());
+	fprintf(fp, "# tessellationOrder: %d\n", tessellationOrder_);
+	fprintf(fp, "# alphaSize: %d\n", alphaSize_ );
+	fprintf(fp, "# penalty: %lf\n", penalty_);
+	fprintf(fp, "# scoresSize: %d\n", scoresSize_);
+	fprintf(fp, "# radiusStart: %lf\n", radiusStart_);
+	fprintf(fp, "# radiusEnd: %lf\n", radiusEnd_ );
+}
+
+double Docking::scoreIt(Protein& receptor, Protein& ligand, double Q)
+{
+	double score = 0.0;
+
+    unsigned int coeffSize = receptor.inner_.coefficients_.size();
+	for (unsigned int i = 0; i < coeffSize; ++i)
+	{
+		score += receptor.inner_.coefficients_[i].value*ligand.outer_.coefficients_[i].value 
+            + receptor.outer_.coefficients_[i].value*ligand.inner_.coefficients_[i].value - Q*receptor.inner_.coefficients_[i].value*ligand.inner_.coefficients_[i].value;
+	}
+
+	return score;
+}
+void Docking::preDockingCalculateRotations(void)
+{
+	if (rotatationsCalculated_ == false)
+	{
+		int raSize = 20*(1<<(tessellationOrder_*2));
+		rotationAngles_ = new RotationAngle[raSize];
+
+		//printf("Generating Rotational Angles...\n");
+		Rotational_Angles(tessellationOrder_, rotationAngles_);
+		//printf("Generated Rotational Angles (%d of them)...\n", raSize);
+
+		rotReceptor_ = new Protein[raSize];
+		rotLigand_   = new Protein[raSize*alphaSize_];
+
+		RotationMatrix rotationMatrixGamma, rotationMatrixBeta;
+
+		//printf("Rotating receptor & ligand...\n");
+		for (int i = 0; i < raSize; ++i)
+		{
+			rotationMatrixGamma.calculateMatrix(receptor_.getOrder(), RotationAngle(0, rotationAngles_[i].gamma));
+			rotationMatrixBeta.calculateMatrix(receptor_.getOrder(), RotationAngle(rotationAngles_[i].beta, 0.0));
+
+			receptor_.rotateTo(rotReceptor_[i],            rotationMatrixGamma);
+			rotReceptor_[i].rotate(rotationMatrixBeta);
+
+			ligand_.rotateTo  (rotLigand_  [i*alphaSize_], rotationMatrixGamma);
+			rotLigand_[i*alphaSize_].rotate(rotationMatrixBeta);
+
+			// if (i%10 == 0) printf("...receptor %d...ligand %d...\n", i, i*alphaSize_);
+
+			for (int j = 1; j < alphaSize_; ++j)
+			{
+				rotLigand_[i*alphaSize_].rotateTo(rotLigand_[i*alphaSize_+j], ((2.0*PI)/alphaSize_) * j);
+			}
+		}
+		//printf("Rotated successfully (total %d receptor, %d ligand)...\n", raSize, raSize*alphaSize_);
+
+		rotatationsCalculated_ = true;
+	}
+}
+void Docking::dockingSearch(vector <pair<double, ScoreConfiguration> >& scores, vector<double> RadiusSet, vector<double>& MaxScoresRadius)
+{
+	int raSize = 20*(1<<(tessellationOrder_*2));
+
+	set <pair<double, ScoreConfiguration> > bestScores;
+
+	preDockingCalculateRotations();
+	//precalculation of all rotations
+
+	Protein *transTmp = new Protein;
+
+	//printf("Starting docking search...\n");
+
+	scores.clear();
+
+	for (unsigned int radiusIndex = 0; radiusIndex < RadiusSet.size(); ++radiusIndex)
+	{
+		double R = RadiusSet[radiusIndex];
+		double minScore = 10000000.0, maxScore = -10000000.0;
+
+
+		char buffer[100];
+		sprintf(buffer, "%s/%d/%.6lf.dat", translationPath_.c_str(), receptor_.getOrder(), R);
+		TranslationMatrix translationmatrix(buffer);
+		for (int i = 0; i < raSize; ++i)
+		{
+			rotReceptor_[i].translateTo(*transTmp, translationmatrix);
+			for (int j = 0; j < raSize*alphaSize_; ++j)
+			{
+				double tmpScore = scoreIt(*transTmp, rotLigand_[j], penalty_);
+				bestScores.insert(make_pair(tmpScore,
+						ScoreConfiguration(R, (j%alphaSize_) * (2.0*PI/alphaSize_), rotationAngles_[j/alphaSize_].beta,
+								rotationAngles_[j/alphaSize_].gamma, rotationAngles_[i].beta, rotationAngles_[i].gamma)));
+
+				minScore = min(minScore, tmpScore);
+				maxScore = max(maxScore, tmpScore);
+			}
+			while ((int)bestScores.size() > scoresSize_)
+			{
+				bestScores.erase(bestScores.begin());
+			}
+		}
+		printf("For R:%lf min score is %lf; max score is %lf\n",R, minScore, maxScore);
+		MaxScoresRadius.push_back(R);
+		MaxScoresRadius.push_back(maxScore);
+	}
+
+	for (set <pair<double, ScoreConfiguration> >::iterator itr = bestScores.begin(); itr != bestScores.end(); ++itr)
+	{
+		scores.push_back(*itr);
+	}
+
+	delete transTmp;
+}
+void Docking::freeMemory()
+{
+	delete [] rotationAngles_;
+	delete [] rotReceptor_;
+	delete [] rotLigand_;
+}
+
+void Docking::dockingSearch(vector <pair<double, ScoreConfiguration> >& scores)
+{
+	int raSize = 20*(1<<(tessellationOrder_*2));
+
+	set <pair<double, ScoreConfiguration> > bestScores;
+
+	preDockingCalculateRotations();
+
+	Protein *transTmp = new Protein;
+
+	scores.clear();
+
+	for (double R = radiusStart_; R < radiusEnd_; R += 0.5)
+	{
+		double minScore = 10000000.0, maxScore = -10000000.0;
+
+		printf("R: %lf\n", R);
+		char buffer[100];
+		sprintf(buffer, "%s/%d/%.6lf.dat", translationPath_.c_str(), receptor_.getOrder(), R);
+		TranslationMatrix translationmatrix(buffer);
+		for (int i = 0; i < raSize; ++i)
+		{
+			rotReceptor_[i].translateTo(*transTmp, translationmatrix);
+			for (int j = 0; j < raSize*alphaSize_; ++j)
+			{
+				double tmpScore = scoreIt(*transTmp, rotLigand_[j], penalty_);
+				bestScores.insert(make_pair(tmpScore,
+						ScoreConfiguration(R, (j%alphaSize_) * (2.0*PI/alphaSize_), rotationAngles_[j/alphaSize_].beta,
+								rotationAngles_[j/alphaSize_].gamma, rotationAngles_[i].beta, rotationAngles_[i].gamma)));
+
+				minScore = min(minScore, tmpScore);
+				maxScore = max(maxScore, tmpScore);
+			}
+			while ((int)bestScores.size() > scoresSize_)
+			{
+				bestScores.erase(bestScores.begin());
+			}
+		}
+		printf("For this R: min score is %lf; max score is %lf\n", minScore, maxScore);
+		printf("OK\n");
+	}
+
+	for (set <pair<double, ScoreConfiguration> >::iterator itr = bestScores.begin(); itr != bestScores.end(); ++itr)
+	{
+		scores.push_back(*itr);
+	}
+
+	freeMemory();
+	delete transTmp;
+}
+
+int Docking::outputScores(const string& outputFile, const string& header, vector <pair<double, ScoreConfiguration> > scores) const
+{
+	PdbFile ligandPDB;
+	PdbFile receptorPDB;
+	FILE *fp = fopen(outputFile.c_str(), "wt");
+	FILE *fpPDB = 0;
+
+	if (fp == 0)
+	{
+		// can't open file
+		return -1;
+	}
+
+	if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
+	{
+		fpPDB = fopen((outputFile + ".pdb").c_str(), "w");
+
+		if (fpPDB == NULL)
+			return -1;
+	}
+
+	if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
+	{
+		ligandPDB.Init((char *) ligandPath_.c_str());
+		if (!ligandPDB.LoadAtmtypenumbers((char *) radiiPath_.c_str()))
+			return -1;
+		ligandPDB.UseUnitedRadius();
+		ligandPDB.Import();
+
+		receptorPDB.Init((char *) receptorPath_.c_str());
+		if (!receptorPDB.LoadAtmtypenumbers((char *) radiiPath_.c_str()))
+			return -1;
+		receptorPDB.UseUnitedRadius();
+		receptorPDB.Import();
+	}
+
+	fprintf(fp, "%s", header.c_str());
+
+	dumpParameters(fp);
+	sort(scores.begin(), scores.end(), greater < pair<double, ScoreConfiguration> >());
+
+	fprintf(fp, "# rank score R beta1 gamma1 alpha2 beta2 gamma2\n");
+
+	for (unsigned int i = 0; i < scores.size(); ++i)
+	{
+		fprintf(fp, "%d %lf %lf %lf %lf %lf %lf %lf\n", i+1, scores[i].first, scores[i].second.R,
+				scores[i].second.beta1, scores[i].second.gamma1, scores[i].second.alpha, scores[i].second.beta2, scores[i].second.gamma2);
+
+		if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
+		{
+			fprintf (fpPDB, "MODEL %d\n", i);
+			receptorPDB.WriteTransformedAtoms(fpPDB, 'R', scores[i].second.R, 0.0f, scores[i].second.beta1, scores[i].second.gamma1);
+			fprintf (fpPDB, "TER\n");
+			ligandPDB.WriteTransformedAtoms(fpPDB, 'L', 0.0f, scores[i].second.alpha, scores[i].second.beta2, scores[i].second.gamma2);
+			fprintf (fpPDB, "TER\n");
+			fprintf (fpPDB, "ENDMDL\n");
+		}
+	}
+
+	fclose(fp);
+
+	if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
+		fclose(fpPDB);
+
+	return 0;
+}
+
+void Docking::checkOrders()
+{
+	if (ligand_.getOrder() != receptor_.getOrder())
+	{
+		fprintf(stderr, "Order of coefficients for receptor & ligand protein differ\n");
+		exit(1);
+	}
+}
+
+
+void Docking::setConfiguration(const ScoreConfiguration& scoreConfiguration, Protein &newReceptor, Protein &newLigand) const
+{
+	// rotate receptor
+    RotationMatrix rotationMatrix;
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, scoreConfiguration.gamma2));
+	receptor_.rotateTo(newReceptor, rotationMatrix);
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(scoreConfiguration.beta2, 0.0));
+	newReceptor.rotate(rotationMatrix);
+
+	// translate
+	char buffer[100];
+//	sprintf(buffer, "%s/%d/%.6lf.dat", "data/trans", receptor_.getOrder(), scoreConfiguration.R);
+	sprintf(buffer, "%s/%d/%.6lf.dat", translationPath_.c_str(), receptor_.getOrder(), scoreConfiguration.R);
+	TranslationMatrix translationmatrix(buffer);
+	newReceptor.translate(translationmatrix);
+
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, scoreConfiguration.gamma1));
+	ligand_.rotateTo(newLigand, rotationMatrix);
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(scoreConfiguration.beta1, 0.0));
+	newLigand.rotate(rotationMatrix);
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, scoreConfiguration.alpha));
+	newLigand.rotate(rotationMatrix);
+}
+
+double Docking::scoreIt(const ScoreConfiguration& scoreConfiguration)
+{
+	Protein newReceptor, newLigand;
+
+	this->setConfiguration(scoreConfiguration, newReceptor, newLigand);
+
+	return this->scoreIt(newReceptor, newLigand, penalty_);
+}
+
+void Docking::outputToGrid(const ScoreConfiguration& scoreConfiguration, const pair<string, string> receptorFile, const pair<string, string> ligandFile, double gridSize, double gridCellSize)
+{
+	Protein newReceptor, newLigand;
+
+	this->setConfiguration(scoreConfiguration, newReceptor, newLigand);
+
+	Grid gridNew(gridSize, gridCellSize);
+
+	gridNew.generateFromCoefficients(newReceptor.inner_);
+	gridNew.exportToFile(receptorFile.first);
+	gridNew.generateFromCoefficients(newReceptor.outer_);
+	gridNew.exportToFile(receptorFile.second);
+
+	gridNew.generateFromCoefficients(newLigand.inner_);
+	gridNew.exportToFile(ligandFile.first);
+	gridNew.generateFromCoefficients(newLigand.outer_);
+	gridNew.exportToFile(ligandFile.second);
+}

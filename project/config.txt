@@ -1,0 +1,57 @@
+red_sf_harmonika: 20
+stranica_grida: 150
+stranica_celije: 1
+
+ligand: data/pdb/3hfl_ly.pdb
+receptor: data/pdb/3hfl_fv.pdb
+ligand_inner_skin: data/skin/3hfl_ly_is.grid
+ligand_outer_skin: data/skin/3hfl_ly_os.grid
+receptor_inner_skin: data/skin/3hfl_fv_is.grid
+receptor_outer_skin: data/skin/3hfl_fv_os.grid
+ligand_inflated_inner_skin: data/skin/3hfl_ly_is.igrid
+ligand_inflated_outer_skin: data/skin/3hfl_ly_os.igrid
+receptor_inflated_inner_skin: data/skin/3hfl_fv_is.igrid
+receptor_inflated_outer_skin: data/skin/3hfl_fv_os.igrid
+
+k_alfa: 0
+k_beta: 0
+k_stranica_kocke: 0
+k_stranica_celije: 0
+k_debljina_skina: 0
+k_red_sf_harmonika: 0
+k_stranica_grida: 0
+steric_penalty_factor: 100.0
+coord_file: 1
+grid_const: 1
+mali_grid_const: 12
+radius_kugle_unutarnji_skin: 2
+radius_kugle_vanjski_skin: 2
+test: 4
+profile: 5
+
+# predocking parameters
+parsed_ligand: data/adb/3hfl_ly.adb
+parsed_receptor: data/adb/3hfl_fv.adb
+microdelta: 0.2
+delta: 1
+inner_radius: -1.6
+outer_radius: 1.4
+radii_path: data/atmtypenumbers
+
+# docking parameters
+ligand_inner_skin_coeffs: data/coef/aligned_1ay7/1ay7_receptor_inner.coef
+ligand_outer_skin_coeffs: data/coef/aligned_1ay7/1ay7_receptor_outer.coef
+receptor_inner_skin_coeffs: data/coef/aligned_1ay7/1ay7_ligand_inner.coef
+receptor_outer_skin_coeffs: data/coef/aligned_1ay7/1ay7_ligand_outer.coef
+translation_matrices_path: data/trans
+tessellation_order: 2
+alpha_angles: 36
+penetration_penalty: 5.0
+scores_size: 200
+radius_search_start: 0.0
+radius_search_end: 50.1
+scores_output_file: outputMPI.scr
+output_score_to_grid: 1
+output_grid_size: 150
+output_grid_cell_size: 1
+

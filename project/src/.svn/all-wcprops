@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/pdt2/!svn/ver/505/trunk/PDT_v3/src
+END
+coeff_movement_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/pdt2/!svn/ver/477/trunk/PDT_v3/src/coeff_movement_main.cpp
+END
+docking_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/pdt2/!svn/ver/476/trunk/PDT_v3/src/docking_main.cpp
+END
+docking_MPI_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/pdt2/!svn/ver/503/trunk/PDT_v3/src/docking_MPI_main.cpp
+END
+predocking_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/pdt2/!svn/ver/494/trunk/PDT_v3/src/predocking_main.cpp
+END
+scoreit_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/pdt2/!svn/ver/470/trunk/PDT_v3/src/scoreit_main.cpp
+END

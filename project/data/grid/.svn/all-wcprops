@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/pdt2/!svn/ver/424/trunk/PDT_v3/data/grid
+END
+pravi_ligand_outer.grid
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/pdt2/!svn/ver/389/trunk/PDT_v3/data/grid/pravi_ligand_outer.grid
+END
+pravi_receptor_inner.grid
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/pdt2/!svn/ver/389/trunk/PDT_v3/data/grid/pravi_receptor_inner.grid
+END
+umjetni_ligand2_inner_docked.grid
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/pdt2/!svn/ver/424/trunk/PDT_v3/data/grid/umjetni_ligand2_inner_docked.grid
+END
+testCube_12_2_G50_original.grid
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/pdt2/!svn/ver/283/trunk/PDT_v3/data/grid/testCube_12_2_G50_original.grid
+END
+pravi_receptor_outer.grid
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/pdt2/!svn/ver/389/trunk/PDT_v3/data/grid/pravi_receptor_outer.grid
+END
+umjetni_ligand2_outer_docked.grid
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/pdt2/!svn/ver/424/trunk/PDT_v3/data/grid/umjetni_ligand2_outer_docked.grid
+END
+umjetni_receptor2_inner_docked.grid
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/pdt2/!svn/ver/424/trunk/PDT_v3/data/grid/umjetni_receptor2_inner_docked.grid
+END
+testCube_8_2_G50_original.grid
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/pdt2/!svn/ver/283/trunk/PDT_v3/data/grid/testCube_8_2_G50_original.grid
+END
+umjetni_receptor2_outer_docked.grid
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/pdt2/!svn/ver/424/trunk/PDT_v3/data/grid/umjetni_receptor2_outer_docked.grid
+END
+receptor_inner_novi.grid
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/pdt2/!svn/ver/386/trunk/PDT_v3/data/grid/receptor_inner_novi.grid
+END
+pravi_ligand_inner.grid
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/pdt2/!svn/ver/389/trunk/PDT_v3/data/grid/pravi_ligand_inner.grid
+END

@@ -1,0 +1,33 @@
+/*
+ * pdbwriter.h
+ *
+ *  Created on: Mar 19, 2010
+ *      Author: ivan
+ */
+
+#ifndef PDBWRITER_H_
+#define PDBWRITER_H_
+
+//#include "../protein/protein.h"
+#include "../pdbparser/pdbparser.h"
+#include "../structures/structures.h"
+#include "scoreloader.h"
+
+#include <string>
+#include <vector>
+#include <queue>
+
+class PdbWriter
+{
+public:
+	PdbWriter();
+	~PdbWriter();
+
+	void init();
+//	void write(string scrPath, string outPdbPath);
+//	void Write(vector <pair<double< ScoreConfiguration> > scores, string outPdbPath);
+//	int write(vector <pair<double, ScoreConfiguration> > scores, string receptorPath, string ligandPath, string radiiPath, string outPdbPath);
+	int write(string scorePath, string receptorPath, string ligandPath, string radiiPath, string outPdbPath, int startingScore, int maxNumScores);
+};
+
+#endif /* PDBWRITER_H_ */

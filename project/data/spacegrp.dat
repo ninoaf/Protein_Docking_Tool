@@ -1,0 +1,1586 @@
+ Space group name:P 1           Space group number:   1
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+
+ Space group name:P 21          Space group number:   4
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,Y+1/2,-Z                   
+
+ Space group name:P 21 21 21    Space group number:  19
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X+1/2,-Y,Z+1/2               
+ X+1/2,-Y+1/2,-Z               
+ -X,Y+1/2,-Z+1/2               
+
+ Space group name:C 2           Space group number:   5
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  6  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,Y,-Z                       
+ X+1/2,Y+1/2,Z                 
+ -X+1/2,Y+1/2,-Z               
+
+ Space group name:P 2 2 2       Space group number:  16
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ X,-Y,-Z                       
+ -X,Y,-Z                       
+
+ Space group name:P 2 2 21      Space group number:  17
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ X,-Y,-Z                       
+ -X,-Y,Z+1/2                   
+ -X,Y,-Z+1/2                   
+
+ Space group name:P 21 21 2     Space group number:  18
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  6  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ X+1/2,-Y+1/2,-Z               
+ -X+1/2,Y+1/2,-Z               
+
+ Space group name:C 2 2 21      Space group number:  20
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  0  0  6
+  1  0  0  0  1  0  0  0  1  6  6  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+ -1  0  0  0  1  0  0  0 -1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ X,-Y,-Z                       
+ -X,-Y,Z+1/2                   
+ -X,Y,-Z+1/2                   
+ X+1/2,Y+1/2,Z                 
+ X+1/2,-Y+1/2,-Z               
+ -X+1/2,-Y+1/2,Z+1/2           
+ -X+1/2,Y+1/2,-Z+1/2           
+
+ Space group name:C 2 2 2       Space group number:  21
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  0
+ -1  0  0  0 -1  0  0  0  1  6  6  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  6  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ X,-Y,-Z                       
+ -X,Y,-Z                       
+ X+1/2,Y+1/2,Z                 
+ -X+1/2,-Y+1/2,Z               
+ X+1/2,-Y+1/2,-Z               
+ -X+1/2,Y+1/2,-Z               
+
+ Space group name:I 2 2 2       Space group number:  23
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+  1  0  0  0 -1  0  0  0 -1  6  6  6
+ -1  0  0  0  1  0  0  0 -1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ X,-Y,-Z                       
+ -X,Y,-Z                       
+ X+1/2,Y+1/2,Z+1/2             
+ -X+1/2,-Y+1/2,Z+1/2           
+ X+1/2,-Y+1/2,-Z+1/2           
+ -X+1/2,Y+1/2,-Z+1/2           
+
+ Space group name:I 21 21 21    Space group number:  24
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  0  6  0
+  1  0  0  0 -1  0  0  0 -1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  6  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X+1/2,-Y,Z+1/2               
+ X+1/2,-Y+1/2,-Z               
+ -X,Y+1/2,-Z+1/2               
+ X+1/2,Y+1/2,Z+1/2             
+ -X,-Y+1/2,Z                   
+ X,-Y,-Z+1/2                   
+ -X+1/2,Y,-Z                   
+
+ Space group name:P 4           Space group number:  75
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  0  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ Y,-X,Z                        
+ -Y,X,Z                        
+
+ Space group name:P 42          Space group number:  77
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  6
+  0  1  0 -1  0  0  0  0  1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -Y,X,Z+1/2                    
+ Y,-X,Z+1/2                    
+
+ Space group name:I 4           Space group number:  79
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  0
+  0  1  0 -1  0  0  0  0  1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+  0 -1  0  1  0  0  0  0  1  6  6  6
+  0  1  0 -1  0  0  0  0  1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -Y,X,Z                        
+ Y,-X,Z                        
+ X+1/2,Y+1/2,Z+1/2             
+ -X+1/2,-Y+1/2,Z+1/2           
+ -Y+1/2,X+1/2,Z+1/2            
+ Y+1/2,-X+1/2,Z+1/2            
+
+ Space group name:I 41          Space group number:  80
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  6  3
+  0  1  0 -1  0  0  0  0  1  0  6  3
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+  0 -1  0  1  0  0  0  0  1  6  0  9
+  0  1  0 -1  0  0  0  0  1  6  0  9
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -Y,X+1/2,Z+1/4                
+ Y,-X+1/2,Z+1/4                
+ X+1/2,Y+1/2,Z+1/2             
+ -X+1/2,-Y+1/2,Z+1/2           
+ -Y+1/2,X,Z+3/4                
+ Y+1/2,-X,Z+3/4                
+
+ Space group name:P 4 2 2       Space group number:  89
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0  1  0 -1  0  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -X,Y,-Z                       
+ X,-Y,-Z                       
+ -Y,-X,-Z                      
+ Y,X,-Z                        
+ Y,-X,Z                        
+ -Y,X,Z                        
+
+ Space group name:P 4 21 2      Space group number:  90
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  6  6  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  0  1  0 -1  0  0  0  0  1  6  6  0
+  0 -1  0  1  0  0  0  0  1  6  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -X+1/2,Y+1/2,-Z               
+ X+1/2,-Y+1/2,-Z               
+ Y,X,-Z                        
+ -Y,-X,-Z                      
+ Y+1/2,-X+1/2,Z                
+ -Y+1/2,X+1/2,Z                
+
+ Space group name:P 41 2 2      Space group number:  91
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  0  0  3
+  0  1  0 -1  0  0  0  0  1  0  0  9
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  6
+  0 -1  0 -1  0  0  0  0 -1  0  0  3
+  0  1  0  1  0  0  0  0 -1  0  0  9
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y,X,Z+1/4                    
+ Y,-X,Z+3/4                    
+ -X,Y,-Z                       
+ X,-Y,-Z+1/2                   
+ -Y,-X,-Z+1/4                  
+ Y,X,-Z+3/4                    
+
+ Space group name:P 41 21 2     Space group number:  92
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  6  6  3
+  0  1  0 -1  0  0  0  0  1  6  6  9
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  6  6  3
+  1  0  0  0 -1  0  0  0 -1  6  6  9
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y+1/2,X+1/2,Z+1/4            
+ Y+1/2,-X+1/2,Z+3/4            
+ Y,X,-Z                        
+ -Y,-X,-Z+1/2                  
+ -X+1/2,Y+1/2,-Z+1/4           
+ X+1/2,-Y+1/2,-Z+3/4           
+
+ Space group name:P 42 2 2      Space group number:  93
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  6
+  0  1  0 -1  0  0  0  0  1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  6
+  0 -1  0 -1  0  0  0  0 -1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -Y,X,Z+1/2                    
+ Y,-X,Z+1/2                    
+ -X,Y,-Z                       
+ X,-Y,-Z                       
+ Y,X,-Z+1/2                    
+ -Y,-X,-Z+1/2                  
+
+ Space group name:P 42 21 2     Space group number:  94
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  6  6  6
+  1  0  0  0 -1  0  0  0 -1  6  6  6
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  0 -1  0  1  0  0  0  0  1  6  6  6
+  0  1  0 -1  0  0  0  0  1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -X+1/2,Y+1/2,-Z+1/2           
+ X+1/2,-Y+1/2,-Z+1/2           
+ Y,X,-Z                        
+ -Y,-X,-Z                      
+ -Y+1/2,X+1/2,Z+1/2            
+ Y+1/2,-X+1/2,Z+1/2            
+
+ Space group name:P 43 2 2      Space group number:  95
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  0  0  9
+  0  1  0 -1  0  0  0  0  1  0  0  3
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  6
+  0 -1  0 -1  0  0  0  0 -1  0  0  9
+  0  1  0  1  0  0  0  0 -1  0  0  3
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y,X,Z+3/4                    
+ Y,-X,Z+1/4                    
+ -X,Y,-Z                       
+ X,-Y,-Z+1/2                   
+ -Y,-X,-Z+3/4                  
+ Y,X,-Z+1/4                    
+
+ Space group name:P 43 21 2     Space group number:  96
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  6  6  9
+  0  1  0 -1  0  0  0  0  1  6  6  3
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  6
+ -1  0  0  0  1  0  0  0 -1  6  6  9
+  1  0  0  0 -1  0  0  0 -1  6  6  3
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y+1/2,X+1/2,Z+3/4            
+ Y+1/2,-X+1/2,Z+1/4            
+ Y,X,-Z                        
+ -Y,-X,-Z+1/2                  
+ -X+1/2,Y+1/2,-Z+3/4           
+ X+1/2,-Y+1/2,-Z+1/4           
+
+ Space group name:I 4 2 2       Space group number:  97
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  0
+  0  1  0 -1  0  0  0  0  1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+ -1  0  0  0  1  0  0  0 -1  6  6  6
+  1  0  0  0 -1  0  0  0 -1  6  6  6
+  0  1  0  1  0  0  0  0 -1  6  6  6
+  0 -1  0 -1  0  0  0  0 -1  6  6  6
+  0 -1  0  1  0  0  0  0  1  6  6  6
+  0  1  0 -1  0  0  0  0  1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -X,Y,-Z                       
+ X,-Y,-Z                       
+ Y,X,-Z                        
+ -Y,-X,-Z                      
+ -Y,X,Z                        
+ Y,-X,Z                        
+ X+1/2,Y+1/2,Z+1/2             
+ -X+1/2,-Y+1/2,Z+1/2           
+ -X+1/2,Y+1/2,-Z+1/2           
+ X+1/2,-Y+1/2,-Z+1/2           
+ Y+1/2,X+1/2,-Z+1/2            
+ -Y+1/2,-X+1/2,-Z+1/2          
+ -Y+1/2,X+1/2,Z+1/2            
+ Y+1/2,-X+1/2,Z+1/2            
+
+ Space group name:I 41 2 2      Space group number:  98
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+  0 -1  0  1  0  0  0  0  1  0  6  3
+  0  1  0 -1  0  0  0  0  1  6  0  9
+ -1  0  0  0  1  0  0  0 -1  6  0  9
+  1  0  0  0 -1  0  0  0 -1  0  6  3
+  0  1  0  1  0  0  0  0 -1  6  6  6
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  6
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  6  0  9
+  0  1  0 -1  0  0  0  0  1  0  6  3
+ -1  0  0  0  1  0  0  0 -1  0  6  3
+  1  0  0  0 -1  0  0  0 -1  6  0  9
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X+1/2,-Y+1/2,Z+1/2           
+ -Y,X+1/2,Z+1/4                
+ Y+1/2,-X,Z+3/4                
+ -X+1/2,Y,-Z+3/4               
+ X,-Y+1/2,-Z+1/4               
+ Y+1/2,X+1/2,-Z+1/2            
+ -Y,-X,-Z                      
+ X+1/2,Y+1/2,Z+1/2             
+ -X,-Y,Z                       
+ -Y+1/2,X,Z+3/4                
+ Y,-X+1/2,Z+1/4                
+ -X,Y+1/2,-Z+1/4               
+ X+1/2,-Y,-Z+3/4               
+ Y,X,-Z                        
+ -Y+1/2,-X+1/2,-Z+1/2          
+
+ Space group name:P 3           Space group number: 143
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+
+ Space group name:P 31          Space group number: 144
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+
+ Space group name:P 32          Space group number: 145
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+
+ Space group name:R 3           Space group number: 146
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  1  0  0  0  1  0  0  0  1  4  8  8
+  0 -1  0  1 -1  0  0  0  1  4  8  8
+ -1  1  0 -1  0  0  0  0  1  4  8  8
+  1  0  0  0  1  0  0  0  1  8  4  4
+  0 -1  0  1 -1  0  0  0  1  8  4  4
+ -1  1  0 -1  0  0  0  0  1  8  4  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ X+1/3,Y+2/3,Z+2/3             
+ -Y+1/3,X-Y+2/3,Z+2/3          
+ -X+Y+1/3,-X+2/3,Z+2/3         
+ X+2/3,Y+1/3,Z+1/3             
+ -Y+2/3,X-Y+1/3,Z+1/3          
+ -X+Y+2/3,-X+1/3,Z+1/3         
+
+ Space group name:P 3 1 2       Space group number: 149
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  1  0  0  1 -1  0  0  0 -1  0  0  0
+ -1  1  0  0  1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ -Y,-X,-Z                      
+ X,X-Y,-Z                      
+ -X+Y,Y,-Z                     
+
+ Space group name:P 3 2 1       Space group number: 150
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  0
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ Y,X,-Z                        
+ -X,-X+Y,-Z                    
+ X-Y,-Y,-Z                     
+
+ Space group name:P 31 1 2      Space group number: 151
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+  1  0  0  1 -1  0  0  0 -1  0  0  0
+ -1  1  0  0  1  0  0  0 -1  0  0  4
+  0 -1  0 -1  0  0  0  0 -1  0  0  8
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ X,X-Y,-Z                      
+ -X+Y,Y,-Z+1/3                 
+ -Y,-X,-Z+2/3                  
+
+ Space group name:P 31 2 1      Space group number: 152
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  4
+  1 -1  0  0 -1  0  0  0 -1  0  0  8
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ Y,X,-Z                        
+ -X,-X+Y,-Z+1/3                
+ X-Y,-Y,-Z+2/3                 
+
+ Space group name:P 32 1 2      Space group number: 153
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+  1  0  0  1 -1  0  0  0 -1  0  0  0
+ -1  1  0  0  1  0  0  0 -1  0  0  8
+  0 -1  0 -1  0  0  0  0 -1  0  0  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ X,X-Y,-Z                      
+ -X+Y,Y,-Z+2/3                 
+ -Y,-X,-Z+1/3                  
+
+ Space group name:P 32 2 1      Space group number: 154
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  8
+  1 -1  0  0 -1  0  0  0 -1  0  0  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ Y,X,-Z                        
+ -X,-X+Y,-Z+2/3                
+ X-Y,-Y,-Z+1/3                 
+
+ Space group name:R 3 2         Space group number: 155
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  0
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  4  8  8
+  0 -1  0  1 -1  0  0  0  1  4  8  8
+ -1  1  0 -1  0  0  0  0  1  4  8  8
+  0  1  0  1  0  0  0  0 -1  4  8  8
+ -1  0  0 -1  1  0  0  0 -1  4  8  8
+  1 -1  0  0 -1  0  0  0 -1  4  8  8
+  1  0  0  0  1  0  0  0  1  8  4  4
+  0 -1  0  1 -1  0  0  0  1  8  4  4
+ -1  1  0 -1  0  0  0  0  1  8  4  4
+  0  1  0  1  0  0  0  0 -1  8  4  4
+ -1  0  0 -1  1  0  0  0 -1  8  4  4
+  1 -1  0  0 -1  0  0  0 -1  8  4  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ Y,X,-Z                        
+ -X,-X+Y,-Z                    
+ X-Y,-Y,-Z                     
+ X+1/3,Y+2/3,Z+2/3             
+ -Y+1/3,X-Y+2/3,Z+2/3          
+ -X+Y+1/3,-X+2/3,Z+2/3         
+ Y+1/3,X+2/3,-Z+2/3            
+ -X+1/3,-X+Y+2/3,-Z+2/3        
+ X-Y+1/3,-Y+2/3,-Z+2/3         
+ X+2/3,Y+1/3,Z+1/3             
+ -Y+2/3,X-Y+1/3,Z+1/3          
+ -X+Y+2/3,-X+1/3,Z+1/3         
+ Y+2/3,X+1/3,-Z+1/3            
+ -X+2/3,-X+Y+1/3,-Z+1/3        
+ X-Y+2/3,-Y+1/3,-Z+1/3         
+
+ Space group name:P 6           Space group number: 168
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  0
+  1 -1  0  1  0  0  0  0  1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ -X,-Y,Z                       
+ Y,-X+Y,Z                      
+ X-Y,X,Z                       
+
+ Space group name:P 61          Space group number: 169
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0  1  0 -1  1  0  0  0  1  0  0 10
+  1 -1  0  1  0  0  0  0  1  0  0  2
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ -X,-Y,Z+1/2                   
+ Y,-X+Y,Z+5/6                  
+ X-Y,X,Z+1/6                   
+
+ Space group name:P 65          Space group number: 170
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  2
+  1 -1  0  1  0  0  0  0  1  0  0 10
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ -X,-Y,Z                       
+ Y,-X+Y,Z+1/6                  
+ X-Y,X,Z+5/6                   
+
+ Space group name:P 62          Space group number: 171
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  8
+  1 -1  0  1  0  0  0  0  1  0  0  4
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ -X,-Y,Z                       
+ Y,-X+Y,Z+2/3                  
+ X-Y,X,Z+1/3                   
+
+ Space group name:P 64          Space group number: 172
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  4
+  1 -1  0  1  0  0  0  0  1  0  0  8
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ -X,-Y,Z                       
+ Y,-X+Y,Z+1/3                  
+ X-Y,X,Z+2/3                   
+
+ Space group name:P 63          Space group number: 173
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0  1  0 -1  1  0  0  0  1  0  0  6
+  1 -1  0  1  0  0  0  0  1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ -X,-Y,Z+1/2                   
+ Y,-X+Y,Z+1/2                  
+ X-Y,X,Z+1/2                   
+
+ Space group name:P 6 2 2       Space group number: 177
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  0
+  1 -1  0  1  0  0  0  0  1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  0
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  1  0  0  1 -1  0  0  0 -1  0  0  0
+ -1  1  0  0  1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ -X,-Y,Z                       
+ Y,-X+Y,Z                      
+ X-Y,X,Z                       
+ Y,X,-Z                        
+ -X,-X+Y,-Z                    
+ X-Y,-Y,-Z                     
+ -Y,-X,-Z                      
+ X,X-Y,-Z                      
+ -X+Y,Y,-Z                     
+
+ Space group name:P 61 2 2      Space group number: 178
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0  1  0 -1  1  0  0  0  1  0  0 10
+  1 -1  0  1  0  0  0  0  1  0  0  2
+  0  1  0  1  0  0  0  0 -1  0  0  4
+ -1  0  0 -1  1  0  0  0 -1  0  0  8
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0 10
+  1  0  0  1 -1  0  0  0 -1  0  0  2
+ -1  1  0  0  1  0  0  0 -1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ -X,-Y,Z+1/2                   
+ Y,-X+Y,Z+5/6                  
+ X-Y,X,Z+1/6                   
+ Y,X,-Z+1/3                    
+ -X,-X+Y,-Z+2/3                
+ X-Y,-Y,-Z                     
+ -Y,-X,-Z+5/6                  
+ X,X-Y,-Z+1/6                  
+ -X+Y,Y,-Z+1/2                 
+
+ Space group name:P 65 2 2      Space group number: 179
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0  1  0 -1  1  0  0  0  1  0  0  2
+  1 -1  0  1  0  0  0  0  1  0  0 10
+  0  1  0  1  0  0  0  0 -1  0  0  8
+ -1  0  0 -1  1  0  0  0 -1  0  0  4
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  2
+  1  0  0  1 -1  0  0  0 -1  0  0 10
+ -1  1  0  0  1  0  0  0 -1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ -X,-Y,Z+1/2                   
+ Y,-X+Y,Z+1/6                  
+ X-Y,X,Z+5/6                   
+ Y,X,-Z+2/3                    
+ -X,-X+Y,-Z+1/3                
+ X-Y,-Y,-Z                     
+ -Y,-X,-Z+1/6                  
+ X,X-Y,-Z+5/6                  
+ -X+Y,Y,-Z+1/2                 
+
+ Space group name:P 62 2 2      Space group number: 180
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  8
+ -1  1  0 -1  0  0  0  0  1  0  0  4
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  8
+  1 -1  0  1  0  0  0  0  1  0  0  4
+  0  1  0  1  0  0  0  0 -1  0  0  8
+ -1  0  0 -1  1  0  0  0 -1  0  0  4
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  8
+  1  0  0  1 -1  0  0  0 -1  0  0  4
+ -1  1  0  0  1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+2/3                  
+ -X+Y,-X,Z+1/3                 
+ -X,-Y,Z                       
+ Y,-X+Y,Z+2/3                  
+ X-Y,X,Z+1/3                   
+ Y,X,-Z+2/3                    
+ -X,-X+Y,-Z+1/3                
+ X-Y,-Y,-Z                     
+ -Y,-X,-Z+2/3                  
+ X,X-Y,-Z+1/3                  
+ -X+Y,Y,-Z                     
+
+ Space group name:P 64 2 2      Space group number: 181
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  4
+ -1  1  0 -1  0  0  0  0  1  0  0  8
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  1  0 -1  1  0  0  0  1  0  0  4
+  1 -1  0  1  0  0  0  0  1  0  0  8
+  0  1  0  1  0  0  0  0 -1  0  0  4
+ -1  0  0 -1  1  0  0  0 -1  0  0  8
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  4
+  1  0  0  1 -1  0  0  0 -1  0  0  8
+ -1  1  0  0  1  0  0  0 -1  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z+1/3                  
+ -X+Y,-X,Z+2/3                 
+ -X,-Y,Z                       
+ Y,-X+Y,Z+1/3                  
+ X-Y,X,Z+2/3                   
+ Y,X,-Z+1/3                    
+ -X,-X+Y,-Z+2/3                
+ X-Y,-Y,-Z                     
+ -Y,-X,-Z+1/3                  
+ X,X-Y,-Z+2/3                  
+ -X+Y,Y,-Z                     
+
+ Space group name:P 63 2 2      Space group number: 182
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  0
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0  1  0 -1  1  0  0  0  1  0  0  6
+  1 -1  0  1  0  0  0  0  1  0  0  6
+  0 -1  0 -1  0  0  0  0 -1  0  0  6
+  1  0  0  1 -1  0  0  0 -1  0  0  6
+ -1  1  0  0  1  0  0  0 -1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ Y,X,-Z                        
+ -X,-X+Y,-Z                    
+ X-Y,-Y,-Z                     
+ -X,-Y,Z+1/2                   
+ Y,-X+Y,Z+1/2                  
+ X-Y,X,Z+1/2                   
+ -Y,-X,-Z+1/2                  
+ X,X-Y,-Z+1/2                  
+ -X+Y,Y,-Z+1/2                 
+
+ Space group name:P 2 3         Space group number: 195
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  1  0  0  0  1  1  0  0  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0  0  1 -1  0  0  0 -1  0  0  0  0
+  0  1  0  0  0 -1 -1  0  0  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  0  0 -1  1  0  0  0 -1  0  0  0  0
+  0 -1  0  0  0  1 -1  0  0  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  0 -1 -1  0  0  0  1  0  0  0  0
+  0 -1  0  0  0 -1  1  0  0  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ Z,X,Y                         
+ Y,Z,X                         
+ X,-Y,-Z                       
+ Z,-X,-Y                       
+ Y,-Z,-X                       
+ -X,Y,-Z                       
+ -Z,X,-Y                       
+ -Y,Z,-X                       
+ -X,-Y,Z                       
+ -Z,-X,Y                       
+ -Y,-Z,X                       
+
+ Space group name:I 2 3         Space group number: 197
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  1  0  0  0  1  1  0  0  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0  0  1 -1  0  0  0 -1  0  0  0  0
+  0  1  0  0  0 -1 -1  0  0  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  0  0 -1  1  0  0  0 -1  0  0  0  0
+  0 -1  0  0  0  1 -1  0  0  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  0 -1 -1  0  0  0  1  0  0  0  0
+  0 -1  0  0  0 -1  1  0  0  0  0  0
+  1  0  0  0  1  0  0  0  1  6  6  6
+  0  0  1  1  0  0  0  1  0  6  6  6
+  0  1  0  0  0  1  1  0  0  6  6  6
+  1  0  0  0 -1  0  0  0 -1  6  6  6
+  0  0  1 -1  0  0  0 -1  0  6  6  6
+  0  1  0  0  0 -1 -1  0  0  6  6  6
+ -1  0  0  0  1  0  0  0 -1  6  6  6
+  0  0 -1  1  0  0  0 -1  0  6  6  6
+  0 -1  0  0  0  1 -1  0  0  6  6  6
+ -1  0  0  0 -1  0  0  0  1  6  6  6
+  0  0 -1 -1  0  0  0  1  0  6  6  6
+  0 -1  0  0  0 -1  1  0  0  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ Z,X,Y                         
+ Y,Z,X                         
+ X,-Y,-Z                       
+ Z,-X,-Y                       
+ Y,-Z,-X                       
+ -X,Y,-Z                       
+ -Z,X,-Y                       
+ -Y,Z,-X                       
+ -X,-Y,Z                       
+ -Z,-X,Y                       
+ -Y,-Z,X                       
+ X+1/2,Y+1/2,Z+1/2             
+ Z+1/2,X+1/2,Y+1/2             
+ Y+1/2,Z+1/2,X+1/2             
+ X+1/2,-Y+1/2,-Z+1/2           
+ Z+1/2,-X+1/2,-Y+1/2           
+ Y+1/2,-Z+1/2,-X+1/2           
+ -X+1/2,Y+1/2,-Z+1/2           
+ -Z+1/2,X+1/2,-Y+1/2           
+ -Y+1/2,Z+1/2,-X+1/2           
+ -X+1/2,-Y+1/2,Z+1/2           
+ -Z+1/2,-X+1/2,Y+1/2           
+ -Y+1/2,-Z+1/2,X+1/2           
+
+ Space group name:P 21 3        Space group number: 198
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  1  0  0  0  1  1  0  0  0  0  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+  0  0  1 -1  0  0  0 -1  0  6  6  0
+  0  1  0  0  0 -1 -1  0  0  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+  0  0 -1  1  0  0  0 -1  0  0  6  6
+  0 -1  0  0  0  1 -1  0  0  0  6  6
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  0  0 -1 -1  0  0  0  1  0  6  0  6
+  0 -1  0  0  0 -1  1  0  0  6  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ Z,X,Y                         
+ Y,Z,X                         
+ X+1/2,-Y+1/2,-Z               
+ Z+1/2,-X+1/2,-Y               
+ Y+1/2,-Z+1/2,-X               
+ -X,Y+1/2,-Z+1/2               
+ -Z,X+1/2,-Y+1/2               
+ -Y,Z+1/2,-X+1/2               
+ -X+1/2,-Y,Z+1/2               
+ -Z+1/2,-X,Y+1/2               
+ -Y+1/2,-Z,X+1/2               
+
+ Space group name:I 21 3        Space group number: 199
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  1  0  0  0  1  1  0  0  0  0  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+  0  0  1 -1  0  0  0 -1  0  6  6  0
+  0  1  0  0  0 -1 -1  0  0  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+  0  0 -1  1  0  0  0 -1  0  0  6  6
+  0 -1  0  0  0  1 -1  0  0  0  6  6
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  0  0 -1 -1  0  0  0  1  0  6  0  6
+  0 -1  0  0  0 -1  1  0  0  6  0  6
+  1  0  0  0  1  0  0  0  1  6  6  6
+  0  0  1  1  0  0  0  1  0  6  6  6
+  0  1  0  0  0  1  1  0  0  6  6  6
+  1  0  0  0 -1  0  0  0 -1  0  0  6
+  0  0  1 -1  0  0  0 -1  0  0  0  6
+  0  1  0  0  0 -1 -1  0  0  0  0  6
+ -1  0  0  0  1  0  0  0 -1  6  0  0
+  0  0 -1  1  0  0  0 -1  0  6  0  0
+  0 -1  0  0  0  1 -1  0  0  6  0  0
+ -1  0  0  0 -1  0  0  0  1  0  6  0
+  0  0 -1 -1  0  0  0  1  0  0  6  0
+  0 -1  0  0  0 -1  1  0  0  0  6  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ Z,X,Y                         
+ Y,Z,X                         
+ X+1/2,-Y+1/2,-Z               
+ Z+1/2,-X+1/2,-Y               
+ Y+1/2,-Z+1/2,-X               
+ -X,Y+1/2,-Z+1/2               
+ -Z,X+1/2,-Y+1/2               
+ -Y,Z+1/2,-X+1/2               
+ -X+1/2,-Y,Z+1/2               
+ -Z+1/2,-X,Y+1/2               
+ -Y+1/2,-Z,X+1/2               
+ X+1/2,Y+1/2,Z+1/2             
+ Z+1/2,X+1/2,Y+1/2             
+ Y+1/2,Z+1/2,X+1/2             
+ X,-Y,-Z+1/2                   
+ Z,-X,-Y+1/2                   
+ Y,-Z,-X+1/2                   
+ -X+1/2,Y,-Z                   
+ -Z+1/2,X,-Y                   
+ -Y+1/2,Z,-X                   
+ -X,-Y+1/2,Z                   
+ -Z,-X+1/2,Y                   
+ -Y,-Z+1/2,X                   
+
+ Space group name:P 4 3 2       Space group number: 207
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  1  0  0  0  1  1  0  0  0  0  0
+ -1  0  0  0  0 -1  0 -1  0  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  0  0  0
+  0  0 -1  0 -1  0 -1  0  0  0  0  0
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+  0  0  1 -1  0  0  0 -1  0  0  0  0
+  0  1  0  0  0 -1 -1  0  0  0  0  0
+ -1  0  0  0  0  1  0  1  0  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  0
+  0  0 -1  0  1  0  1  0  0  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+  0  0 -1  1  0  0  0 -1  0  0  0  0
+  0 -1  0  0  0  1 -1  0  0  0  0  0
+  1  0  0  0  0 -1  0  1  0  0  0  0
+  0  1  0 -1  0  0  0  0  1  0  0  0
+  0  0  1  0 -1  0  1  0  0  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0  0 -1 -1  0  0  0  1  0  0  0  0
+  0 -1  0  0  0 -1  1  0  0  0  0  0
+  1  0  0  0  0  1  0 -1  0  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  0  0  1  0  1  0 -1  0  0  0  0  0
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ Z,X,Y                         
+ Y,Z,X                         
+ -X,-Z,-Y                      
+ -Y,-X,-Z                      
+ -Z,-Y,-X                      
+ X,-Y,-Z                       
+ Z,-X,-Y                       
+ Y,-Z,-X                       
+ -X,Z,Y                        
+ -Y,X,Z                        
+ -Z,Y,X                        
+ -X,Y,-Z                       
+ -Z,X,-Y                       
+ -Y,Z,-X                       
+ X,-Z,Y                        
+ Y,-X,Z                        
+ Z,-Y,X                        
+ -X,-Y,Z                       
+ -Z,-X,Y                       
+ -Y,-Z,X                       
+ X,Z,-Y                        
+ Y,X,-Z                        
+ Z,Y,-X                        
+
+ Space group name:P 42 3 2      Space group number: 208
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0  1  0  0  0 -1  0  0  0
+ -1  0  0  0  0 -1  0 -1  0  6  6  6
+  1  0  0  0  0 -1  0  1  0  6  6  6
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  0 -1  1  0  0  0 -1  0  0  0  0
+  0 -1  0 -1  0  0  0  0 -1  6  6  6
+  0  1  0 -1  0  0  0  0  1  6  6  6
+  0  1  0  0  0  1  1  0  0  0  0  0
+  0 -1  0  0  0  1 -1  0  0  0  0  0
+  0  0 -1  0 -1  0 -1  0  0  6  6  6
+  0  0  1  0 -1  0  1  0  0  6  6  6
+  1  0  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+ -1  0  0  0  0  1  0  1  0  6  6  6
+  1  0  0  0  0  1  0 -1  0  6  6  6
+  0  0  1 -1  0  0  0 -1  0  0  0  0
+  0  0 -1 -1  0  0  0  1  0  0  0  0
+  0 -1  0  1  0  0  0  0  1  6  6  6
+  0  1  0  1  0  0  0  0 -1  6  6  6
+  0  1  0  0  0 -1 -1  0  0  0  0  0
+  0 -1  0  0  0 -1  1  0  0  0  0  0
+  0  0 -1  0  1  0  1  0  0  6  6  6
+  0  0  1  0  1  0 -1  0  0  6  6  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,Y,-Z                       
+ -X+1/2,-Z+1/2,-Y+1/2          
+ X+1/2,-Z+1/2,Y+1/2            
+ Z,X,Y                         
+ -Z,X,-Y                       
+ -Y+1/2,-X+1/2,-Z+1/2          
+ Y+1/2,-X+1/2,Z+1/2            
+ Y,Z,X                         
+ -Y,Z,-X                       
+ -Z+1/2,-Y+1/2,-X+1/2          
+ Z+1/2,-Y+1/2,X+1/2            
+ X,-Y,-Z                       
+ -X,-Y,Z                       
+ -X+1/2,Z+1/2,Y+1/2            
+ X+1/2,Z+1/2,-Y+1/2            
+ Z,-X,-Y                       
+ -Z,-X,Y                       
+ -Y+1/2,X+1/2,Z+1/2            
+ Y+1/2,X+1/2,-Z+1/2            
+ Y,-Z,-X                       
+ -Y,-Z,X                       
+ -Z+1/2,Y+1/2,X+1/2            
+ Z+1/2,Y+1/2,-X+1/2            
+
+ Space group name:P 41 3 2      Space group number: 210
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  0  1 -1  0  0  0 -1  0  6  6  0
+  0  0 -1  1  0  0  0 -1  0  0  6  6
+  0  0 -1 -1  0  0  0  1  0  6  0  6
+  0  1  0  0  0  1  1  0  0  0  0  0
+  0  1  0  0  0 -1 -1  0  0  6  6  0
+  0 -1  0  0  0  1 -1  0  0  0  6  6
+  0 -1  0  0  0 -1  1  0  0  6  0  6
+ -1  0  0  0  0 -1  0 -1  0  9  9  9
+  1  0  0  0  0 -1  0  1  0  3  3  9
+  0 -1  0 -1  0  0  0  0 -1  9  9  9
+  0  1  0 -1  0  0  0  0  1  3  3  9
+  0  0 -1  0 -1  0 -1  0  0  9  9  9
+  0  0  1  0 -1  0  1  0  0  3  3  9
+ -1  0  0  0  0  1  0  1  0  3  9  3
+  1  0  0  0  0  1  0 -1  0  9  3  3
+  0 -1  0  1  0  0  0  0  1  3  9  3
+  0  1  0  1  0  0  0  0 -1  9  3  3
+  0  0 -1  0  1  0  1  0  0  3  9  3
+  0  0  1  0  1  0 -1  0  0  9  3  3
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ X+1/2,-Y+1/2,-Z               
+ -X,Y+1/2,-Z+1/2               
+ -X+1/2,-Y,Z+1/2               
+ Z,X,Y                         
+ Z+1/2,-X+1/2,-Y               
+ -Z,X+1/2,-Y+1/2               
+ -Z+1/2,-X,Y+1/2               
+ Y,Z,X                         
+ Y+1/2,-Z+1/2,-X               
+ -Y,Z+1/2,-X+1/2               
+ -Y+1/2,-Z,X+1/2               
+ -X+3/4,-Z+3/4,-Y+3/4          
+ X+1/4,-Z+1/4,Y+3/4            
+ -Y+3/4,-X+3/4,-Z+3/4          
+ Y+1/4,-X+1/4,Z+3/4            
+ -Z+3/4,-Y+3/4,-X+3/4          
+ Z+1/4,-Y+1/4,X+3/4            
+ -X+1/4,Z+3/4,Y+1/4            
+ X+3/4,Z+1/4,-Y+1/4            
+ -Y+1/4,X+3/4,Z+1/4            
+ Y+3/4,X+1/4,-Z+1/4            
+ -Z+1/4,Y+3/4,X+1/4            
+ Z+3/4,Y+1/4,-X+1/4            
+
+ Space group name:P 43 3 2      Space group number: 212
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  1  0  0  0 -1  0  0  0 -1  6  6  0
+ -1  0  0  0  1  0  0  0 -1  0  6  6
+ -1  0  0  0 -1  0  0  0  1  6  0  6
+  0  0  1  1  0  0  0  1  0  0  0  0
+  0  0  1 -1  0  0  0 -1  0  6  6  0
+  0  0 -1  1  0  0  0 -1  0  0  6  6
+  0  0 -1 -1  0  0  0  1  0  6  0  6
+  0  1  0  0  0  1  1  0  0  0  0  0
+  0  1  0  0  0 -1 -1  0  0  6  6  0
+  0 -1  0  0  0  1 -1  0  0  0  6  6
+  0 -1  0  0  0 -1  1  0  0  6  0  6
+ -1  0  0  0  0 -1  0 -1  0  3  3  3
+  1  0  0  0  0 -1  0  1  0  9  9  3
+  0 -1  0 -1  0  0  0  0 -1  3  3  3
+  0  1  0 -1  0  0  0  0  1  9  9  3
+  0  0 -1  0 -1  0 -1  0  0  3  3  3
+  0  0  1  0 -1  0  1  0  0  9  9  3
+ -1  0  0  0  0  1  0  1  0  9  3  9
+  1  0  0  0  0  1  0 -1  0  3  9  9
+  0 -1  0  1  0  0  0  0  1  9  3  9
+  0  1  0  1  0  0  0  0 -1  3  9  9
+  0  0 -1  0  1  0  1  0  0  9  3  9
+  0  0  1  0  1  0 -1  0  0  3  9  9
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ X+1/2,-Y+1/2,-Z               
+ -X,Y+1/2,-Z+1/2               
+ -X+1/2,-Y,Z+1/2               
+ Z,X,Y                         
+ Z+1/2,-X+1/2,-Y               
+ -Z,X+1/2,-Y+1/2               
+ -Z+1/2,-X,Y+1/2               
+ Y,Z,X                         
+ Y+1/2,-Z+1/2,-X               
+ -Y,Z+1/2,-X+1/2               
+ -Y+1/2,-Z,X+1/2               
+ -X+1/4,-Z+1/4,-Y+1/4          
+ X+3/4,-Z+3/4,Y+1/4            
+ -Y+1/4,-X+1/4,-Z+1/4          
+ Y+3/4,-X+3/4,Z+1/4            
+ -Z+1/4,-Y+1/4,-X+1/4          
+ Z+3/4,-Y+3/4,X+1/4            
+ -X+3/4,Z+1/4,Y+3/4            
+ X+1/4,Z+3/4,-Y+3/4            
+ -Y+3/4,X+1/4,Z+3/4            
+ Y+1/4,X+3/4,-Z+3/4            
+ -Z+3/4,Y+1/4,X+3/4            
+ Z+1/4,Y+3/4,-X+3/4            
+
+ Space group name:R 32          Space group number: 155
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+  0 -1  0  1 -1  0  0  0  1  0  0  0
+ -1  1  0 -1  0  0  0  0  1  0  0  0
+  0  1  0  1  0  0  0  0 -1  0  0  0
+  1 -1  0  0 -1  0  0  0 -1  0  0  0
+ -1  0  0 -1  1  0  0  0 -1  0  0  0
+  1  0  0  0  1  0  0  0  1  8  4  4
+  0 -1  0  1 -1  0  0  0  1  8  4  4
+ -1  1  0 -1  0  0  0  0  1  8  4  4
+  0  1  0  1  0  0  0  0 -1  8  4  4
+  1 -1  0  0 -1  0  0  0 -1  8  4  4
+ -1  0  0 -1  1  0  0  0 -1  8  4  4
+  1  0  0  0  1  0  0  0  1  4  8  8
+  0 -1  0  1 -1  0  0  0  1  4  8  8
+ -1  1  0 -1  0  0  0  0  1  4  8  8
+  0  1  0  1  0  0  0  0 -1  4  8  8
+  1 -1  0  0 -1  0  0  0 -1  4  8  8
+ -1  0  0 -1  1  0  0  0 -1  4  8  8
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -Y,X-Y,Z                      
+ -X+Y,-X,Z                     
+ Y,X,-Z                        
+ X-Y,-Y,-Z                     
+ -X,-X+Y,-Z                    
+ X+2/3,Y+1/3,Z+1/3             
+ -Y+2/3,X-Y+1/3,Z+1/3          
+ -X+Y+2/3,-X+1/3,Z+1/3         
+ Y+2/3,X+1/3,-Z+1/3            
+ X-Y+2/3,-Y+1/3,-Z+1/3         
+ -X+2/3,-X+Y+1/3,-Z+1/3        
+ X+1/3,Y+2/3,Z+2/3             
+ -Y+1/3,X-Y+2/3,Z+2/3          
+ -X+Y+1/3,-X+2/3,Z+2/3         
+ Y+1/3,X+2/3,-Z+2/3            
+ X-Y+1/3,-Y+2/3,-Z+2/3         
+ -X+1/3,-X+Y+2/3,-Z+2/3        
+
+ Space group name:P 41          Space group number:  76
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  0  0  3
+  0  1  0 -1  0  0  0  0  1  0  0  9
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y,X,Z+1/4                    
+ Y,-X,Z+3/4                    
+
+ Space group name:P 42          Space group number:  77
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  0
+  0 -1  0  1  0  0  0  0  1  0  0  6
+  0  1  0 -1  0  0  0  0  1  0  0  6
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z                       
+ -Y,X,Z+1/2                    
+ Y,-X,Z+1/2                    
+
+ Space group name:P 43          Space group number:  78
+
+ Symmetry - Hendrickson format:
+
+  1  0  0  0  1  0  0  0  1  0  0  0
+ -1  0  0  0 -1  0  0  0  1  0  0  6
+  0 -1  0  1  0  0  0  0  1  0  0  9
+  0  1  0 -1  0  0  0  0  1  0  0  3
+
+ Symmetry - International tables format:
+
+ X,Y,Z                         
+ -X,-Y,Z+1/2                   
+ -Y,X,Z+3/4                    
+ Y,-X,Z+1/4                    
+

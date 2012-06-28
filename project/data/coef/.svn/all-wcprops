@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/pdt2/!svn/ver/442/trunk/PDT_v3/data/coef
+END
+1crn_outter.coef
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/pdt2/!svn/ver/342/trunk/PDT_v3/data/coef/1crn_outter.coef
+END
+receptor_outter.coef
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/pdt2/!svn/ver/368/trunk/PDT_v3/data/coef/receptor_outter.coef
+END
+testCube_8_2_G50_original.coef
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/pdt2/!svn/ver/350/trunk/PDT_v3/data/coef/testCube_8_2_G50_original.coef
+END
+popravljeni_ligand1_outer.coef
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/pdt2/!svn/ver/442/trunk/PDT_v3/data/coef/popravljeni_ligand1_outer.coef
+END
+2rlx_outter.coef
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/pdt2/!svn/ver/342/trunk/PDT_v3/data/coef/2rlx_outter.coef
+END
+ligand_inner.coef
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/pdt2/!svn/ver/368/trunk/PDT_v3/data/coef/ligand_inner.coef
+END
+lig_out.out
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/pdt2/!svn/ver/155/trunk/PDT_v3/data/coef/lig_out.out
+END
+1crn_inner.coef
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/pdt2/!svn/ver/342/trunk/PDT_v3/data/coef/1crn_inner.coef
+END
+receptor_inner.coef
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/pdt2/!svn/ver/368/trunk/PDT_v3/data/coef/receptor_inner.coef
+END
+ligand_outter.coef
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/368/trunk/PDT_v3/data/coef/ligand_outter.coef
+END
+testCube_12_2_G50_original.coef
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/pdt2/!svn/ver/350/trunk/PDT_v3/data/coef/testCube_12_2_G50_original.coef
+END
+2rlx_inner.coef
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/pdt2/!svn/ver/342/trunk/PDT_v3/data/coef/2rlx_inner.coef
+END

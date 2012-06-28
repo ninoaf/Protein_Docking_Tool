@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/pdt2/!svn/ver/380/trunk/PDT_v3/src/math
+END
+legendre.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/pdt2/!svn/ver/380/trunk/PDT_v3/src/math/legendre.cpp
+END
+math_pdt.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/pdt2/!svn/ver/157/trunk/PDT_v3/src/math/math_pdt.h
+END
+laguerre.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/pdt2/!svn/ver/380/trunk/PDT_v3/src/math/laguerre.cpp
+END
+angles.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/pdt2/!svn/ver/319/trunk/PDT_v3/src/math/angles.cpp
+END
+wigner.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/pdt2/!svn/ver/157/trunk/PDT_v3/src/math/wigner.cpp
+END

@@ -1,0 +1,495 @@
+HEADER    HORMONE (MUSCLE RELAXANT)               13-MAR-78   2RLX      2RLX   3
+COMPND    RELAXIN                                                       2RLX   4
+SOURCE    PIG (SUS SCROFA) OVARY                                        2RLX   5
+AUTHOR    N.W.ISAACS,G.DODSON,A.C.EVANS,A.JACK,A.C.T.NORTH,R.JAMES,     2RLX   6
+AUTHOR   2 H.NIALL,G.BRYANT-*GREENWOOD                                  2RLX   7
+REVDAT   3   30-SEP-83 2RLXB   1       REVDAT                           2RLXB  1
+REVDAT   2   07-APR-80 2RLXA   3       ATOM                             2RLXB  2
+REVDAT   1   23-MAY-78 2RLX    0                                        2RLXB  3
+JRNL        AUTH   N.ISAACS,R.JAMES,H.NIALL,G.BRYANT-*GREENWOOD,        2RLX   8
+JRNL        AUTH 2 G.DODSON,A.EVANS,A.C.T.NORTH                         2RLX   9
+JRNL        TITL   RELAXIN AND ITS STRUCTURAL RELATIONSHIP TO INSULIN   2RLX  10
+JRNL        REF    NATURE                        V. 271   278 1978      2RLX  11
+JRNL        REFN   ASTM NATUAS  UK ISSN 0028-0836                  006  2RLX  12
+REMARK   1                                                              2RLX  13
+REMARK   1 REFERENCE 1                                                  2RLX  14
+REMARK   1  AUTH   R.JAMES,H.NIALL,S.KWOK,G.BRYANT-*GREENWOOD           2RLX  15
+REMARK   1  TITL   PRIMARY STRUCTURE OF PORCINE RELAXIN, HOMOLOGY WITH  2RLX  16
+REMARK   1  TITL 2 INSULIN AND RELATED GROWTH FACTORS                   2RLX  17
+REMARK   1  REF    NATURE                        V. 267   544 1977      2RLX  18
+REMARK   1  REFN   ASTM NATUAS  UK ISSN 0028-0836                  006  2RLX  19
+REMARK   1 REFERENCE 2                                                  2RLX  20
+REMARK   1  AUTH   T.L.BLUNDELL,J.F.CUTFIELD,S.M.CUTFIELD,E.J.DODSON,   2RLX  21
+REMARK   1  AUTH 2 G.G.DODSON,D.C.HODGKIN,D.A.MERCOLA,M.VIJAYAN         2RLX  22
+REMARK   1  TITL   ATOMIC POSITIONS IN RHOMBOHEDRAL 2-ZINC INSULIN      2RLX  23
+REMARK   1  TITL 2 CRYSTALS                                             2RLX  24
+REMARK   1  REF    NATURE                        V. 231   506 1971      2RLX  25
+REMARK   1  REFN   ASTM NATUAS  UK ISSN 0028-0836                  006  2RLX  26
+REMARK   2                                                              2RLX  27
+REMARK   2 RESOLUTION. NOT APPLICABLE - SEE REMARK 4                    2RLX  28
+REMARK   3                                                              2RLX  29
+REMARK   3 REFINEMENT. NONE - SEE REMARK 5                              2RLX  30
+REMARK   4                                                              2RLX  31
+REMARK   4 THESE COORDINATES ARE *NON-EXPERIMENTAL*.  THEY HAVE BEEN    2RLX  32
+REMARK   4 DERIVED ON THE ASSUMPTION THAT THE RELAXIN MOLECULE WILL     2RLX  33
+REMARK   4 HAVE A THREE-DIMENSIONAL CONFORMATION SIMILAR TO THAT OF     2RLX  34
+REMARK   4 INSULIN.  AN INTERACTIVE GRAPHICS SYSTEM HAS BEEN USED TO    2RLX  35
+REMARK   4 SUPERIMPOSE THE MAIN-CHAIN OF RELAXIN ONTO THE MAIN-CHAIN    2RLX  36
+REMARK   4 OF INSULIN.  THEN SIDE-CHAIN INTERACTIONS WERE STUDIED.      2RLX  37
+REMARK   4 PARTICULAR ATTENTION HAS BEEN PAID TO THE HYDROPHOBIC CORE   2RLX  38
+REMARK   4 OF BOTH MOLECULES.  IT WAS FOUND THAT A BULKY TRYPTOPHAN     2RLX  39
+REMARK   4 CAN BE ACCOMODATED IN THIS CLEFT IN EITHER OF TWO POSSIBLE   2RLX  40
+REMARK   4 ORIENTATIONS.                                                2RLX  41
+REMARK   5                                                              2RLX  42
+REMARK   5 THIS ENTRY CORRESPONDS TO THE UNREFINED COORDINATE SET OF    2RLX  43
+REMARK   5 CONFORMATION 2, WHICH IS DISPLAYED IN FIGURE 2C OF THE       2RLX  44
+REMARK   5 JRNL CITATION ABOVE.  THIS SET IS DESIGNATED AERELTP2 BY     2RLX  45
+REMARK   5 THE DEPOSITORS.                                              2RLX  46
+REMARK   6                                                              2RLX  47
+REMARK   6 THREE OTHER COORDINATE SETS FOR RELAXIN ARE CONTAINED IN     2RLX  48
+REMARK   6 THE PROTEIN DATA BANK.                                       2RLX  49
+REMARK   7                                                              2RLXA  1
+REMARK   7 CORRECTION. STANDARDIZE NOMENCLATURE TO FOLLOW IUPAC-IUB     2RLXA  2
+REMARK   7  RECOMMENDATIONS.  INTERCHANGE CD1 AND CD2 FOR LEUCINES      2RLXA  3
+REMARK   7  A 2, A 19, B 11, B 14.  INTERCHANGE CG1 AND CG2 FOR         2RLXA  4
+REMARK   7  VALINES A 9, B 12, B 16, B 22.  07-APR-80.                  2RLXA  5
+REMARK   8                                                              2RLXB  4
+REMARK   8 CORRECTION. INSERT REVDAT RECORDS. 30-SEP-83.                2RLXB  5
+SEQRES   1 A   22  ARG MET THR LEU SER GLU LYS CYS CYS GLN VAL GLY CYS  2RLX  50
+SEQRES   2 A   22  ILE ARG LYS ASP ILE ALA ARG LEU CYS                  2RLX  51
+SEQRES   1 B   30  PCA SER THR ASN ASP PHE ILE LYS ALA CYS GLY ARG GLU  2RLX  52
+SEQRES   2 B   30  LEU VAL ARG LEU TRP VAL GLU ILE CYS GLY SER VAL SER  2RLX  53
+SEQRES   3 B   30  THR TRP GLY ARG                                      2RLX  54
+FTNOTE   1                                                              2RLX  55
+FTNOTE   1 RESIDUE TRYPTOPHAN B 15 CAN BE ACCOMODATED IN TWO WAYS IN    2RLX  56
+FTNOTE   1 THE HYDROPHOBIC CLEFT.  THE RESIDUES LISTED BELOW ARE USED   2RLX  57
+FTNOTE   1 IN THE JRNL CITATION ABOVE TO ILLUSTRATE THE LOCAL           2RLX  58
+FTNOTE   1 CONFORMATION OF THIS REGION.                                 2RLX  59
+FTNOTE   1              LEU A   2                ALA B   6              2RLX  60
+FTNOTE   1              CYS A   8                LEU B  11              2RLX  61
+FTNOTE   1              CYS A  13                VAL B  12              2RLX  62
+FTNOTE   1              ILE A  14                ARG B  13              2RLX  63
+FTNOTE   1              ARG A  15                LEU B  14              2RLX  64
+FTNOTE   1              ILE A  18                TRP B  15              2RLX  65
+FTNOTE   1              ALA A  19                ILE B  18              2RLX  66
+FTNOTE   1              ARG A  20                CYS B  19              2RLX  67
+FTNOTE   1              LEU A  21                                       2RLX  68
+FTNOTE   1              CYS A  22                                       2RLX  69
+HELIX    1  H1 THR A    1  CYS A    7  1 DISTORTED                      2RLX  70
+HELIX    2  H2 ARG A   13  LEU A   19  5 DISTORTED                      2RLX  71
+HELIX    3  H3 ARG B    9  CYS B   19  1                                2RLX  72
+SSBOND   1 CYS A    6    CYS A   11                                     2RLX  73
+SSBOND   2 CYS A    7    CYS B    7                                     2RLX  74
+SSBOND   3 CYS A   20    CYS B   19                                     2RLX  75
+CRYST1    1.000    1.000    1.000  90.00  90.00  90.00               1  2RLX  76
+ORIGX1      1.000000  0.000000  0.000000       0.000000                 2RLX  77
+ORIGX2      0.000000  1.000000  0.000000       0.000000                 2RLX  78
+ORIGX3      0.000000  0.000000  1.000000       0.000000                 2RLX  79
+SCALE1      1.000000  0.000000  0.000000       0.000000                 2RLX  80
+SCALE2      0.000000  1.000000  0.000000       0.000000                 2RLX  81
+SCALE3      0.000000  0.000000  1.000000       0.000000                 2RLX  82
+ATOM      1  N   ARG A  -1      13.920   1.740  -8.700  1.00 13.70      2RLX  83
+ATOM      2  CA  ARG A  -1      13.920   1.740  -6.960  1.00 13.70      2RLX  84
+ATOM      3  C   ARG A  -1      13.920   1.740  -5.220  1.00 13.70      2RLX  85
+ATOM      4  O   ARG A  -1      13.920   1.740  -3.480  1.00 13.70      2RLX  86
+ATOM      5  CB  ARG A  -1      13.920   1.740  -1.740  1.00 13.70      2RLX  87
+ATOM      6  CG  ARG A  -1      13.920   1.740   0.000  1.00 13.70      2RLX  88
+ATOM      7  CD  ARG A  -1      13.920   1.740   1.740  1.00 13.70      2RLX  89
+ATOM      8  NE  ARG A  -1      13.920   1.740   3.480  1.00 13.70      2RLX  90
+ATOM      9  CZ  ARG A  -1      13.920   1.740   5.220  1.00 13.70      2RLX  91
+ATOM     10  NH1 ARG A  -1      12.180   1.740   5.220  1.00 13.70      2RLX  92
+ATOM     11  NH2 ARG A  -1      10.440   1.740   5.220  1.00 13.70      2RLX  93
+ATOM     12  N   MET A   0       8.700   1.740   5.220  1.00 13.70      2RLX  94
+ATOM     13  CA  MET A   0       6.960   1.740   5.220  1.00 13.70      2RLX  95
+ATOM     14  C   MET A   0       5.220   1.740   5.220  1.00 13.70      2RLX  96
+ATOM     15  O   MET A   0       3.480   1.740   5.220  1.00 13.70      2RLX  97
+ATOM     16  CB  MET A   0       3.480   1.740   3.480  1.00 13.70      2RLX  98
+ATOM     17  CG  MET A   0       3.480   1.740   1.740  1.00 13.70      2RLX  99
+ATOM     18  SD  MET A   0       3.480   1.740   0.000  1.00 13.70      2RLX 100
+ATOM     19  CE  MET A   0       3.480   1.740  -1.740  1.00 13.70      2RLX 101
+ATOM     20  N   THR A   1       3.480   1.740  -3.480  1.00 13.70      2RLX 102
+ATOM     21  CA  THR A   1       3.480   1.740  -5.220  1.00 13.70      2RLX 103
+ATOM     22  C   THR A   1       3.480   1.740  -6.960  1.00 13.70      2RLX 104
+ATOM     23  O   THR A   1       3.480   1.740  -8.700  1.00 13.70      2RLX 105
+ATOM     24  CB  THR A   1       5.220   1.740  -8.700  1.00 13.70      2RLX 106
+ATOM     25  OG1 THR A   1       6.960   1.740  -8.700  1.00 13.70      2RLX 107
+ATOM     26  CG2 THR A   1       8.700   1.740  -8.700  1.00 13.70      2RLX 108
+ATOM     27  N   LEU A   2      10.440   1.740  -8.700  1.00 13.70      2RLX 109
+ATOM     28  CA  LEU A   2      12.180   1.740  -8.700  1.00 13.70      2RLX 110
+ATOM     29  C   LEU A   2      12.180   1.740  -6.960  1.00 13.70      2RLX 111
+ATOM     30  O   LEU A   2      12.180   1.740  -5.220  1.00 13.70      2RLX 112
+ATOM     31  CB  LEU A   2      12.180   1.740  -3.480  1.00 13.70      2RLX 113
+ATOM     32  CG  LEU A   2      12.180   1.740  -1.740  1.00 13.70      2RLX 114
+ATOM     33  CD1 LEU A   2      12.180   1.740   0.000  1.00 13.70      2RLXA  6
+ATOM     34  CD2 LEU A   2      12.180   1.740   1.740  1.00 13.70      2RLXA  7
+ATOM     35  N   SER A   3      12.180   1.740   3.480  1.00 13.70      2RLX 117
+ATOM     36  CA  SER A   3      10.440   1.740   3.480  1.00 13.70      2RLX 118
+ATOM     37  C   SER A   3       8.700   1.740   3.480  1.00 13.70      2RLX 119
+ATOM     38  O   SER A   3       6.960   1.740   3.480  1.00 13.70      2RLX 120
+ATOM     39  CB  SER A   3       5.220   1.740   3.480  1.00 13.70      2RLX 121
+ATOM     40  OG  SER A   3       5.220   1.740   1.740  1.00 13.70      2RLX 122
+ATOM     41  N   GLU A   4       5.220   1.740   0.000  1.00 13.70      2RLX 123
+ATOM     42  CA  GLU A   4       5.220   1.740  -1.740  1.00 13.70      2RLX 124
+ATOM     43  C   GLU A   4       5.220   1.740  -3.480  1.00 13.70      2RLX 125
+ATOM     44  O   GLU A   4       5.220   1.740  -5.220  1.00 13.70      2RLX 126
+ATOM     45  CB  GLU A   4       5.220   1.740  -6.960  1.00 13.70      2RLX 127
+ATOM     46  CG  GLU A   4       6.960   1.740  -6.960  1.00 13.70      2RLX 128
+ATOM     47  CD  GLU A   4       8.700   1.740  -6.960  1.00 13.70      2RLX 129
+ATOM     48  OE1 GLU A   4      10.440   1.740  -6.960  1.00 13.70      2RLX 130
+ATOM     49  OE2 GLU A   4      10.440   1.740  -5.220  1.00 13.70      2RLX 131
+ATOM     50  N   LYS A   5      10.440   1.740  -3.480  1.00 13.70      2RLX 132
+ATOM     51  CA  LYS A   5      10.440   1.740  -1.740  1.00 13.70      2RLX 133
+ATOM     52  C   LYS A   5      10.440   1.740   0.000  1.00 13.70      2RLX 134
+ATOM     53  O   LYS A   5      10.440   1.740   1.740  1.00 13.70      2RLX 135
+ATOM     54  CB  LYS A   5       8.700   1.740   1.740  1.00 13.70      2RLX 136
+ATOM     55  CG  LYS A   5       6.960   1.740   1.740  1.00 13.70      2RLX 137
+ATOM     56  CD  LYS A   5       6.960   1.740   0.000  1.00 13.70      2RLX 138
+ATOM     57  CE  LYS A   5       6.960   1.740  -1.740  1.00 13.70      2RLX 139
+ATOM     58  NZ  LYS A   5       6.960   1.740  -3.480  1.00 13.70      2RLX 140
+ATOM     59  N   CYS A   6       6.960   1.740  -5.220  1.00 13.70      2RLX 141
+ATOM     60  CA  CYS A   6       8.700   1.740  -5.220  1.00 13.70      2RLX 142
+ATOM     61  C   CYS A   6       8.700   1.740  -3.480  1.00 13.70      2RLX 143
+ATOM     62  O   CYS A   6       8.700   1.740  -1.740  1.00 13.70      2RLX 144
+ATOM     63  CB  CYS A   6       8.700   1.740   0.000  1.00 13.70      2RLX 145
+ATOM     64  SG  CYS A   6       3.480   3.480   0.000  1.00 13.70      2RLX 146
+ATOM     65  N   CYS A   7       3.480   3.480  -1.740  1.00 13.70      2RLX 147
+ATOM     66  CA  CYS A   7       3.480   3.480  -3.480  1.00 13.70      2RLX 148
+ATOM     67  C   CYS A   7       3.480   3.480  -5.220  1.00 13.70      2RLX 149
+ATOM     68  O   CYS A   7       3.480   3.480  -6.960  1.00 13.70      2RLX 150
+ATOM     69  CB  CYS A   7       3.480   3.480  -8.700  1.00 13.70      2RLX 151
+ATOM     70  SG  CYS A   7       5.220   3.480  -8.700  1.00 13.70      2RLX 152
+ATOM     71  N   GLN A   8       6.960   3.480  -8.700  1.00 13.70      2RLX 153
+ATOM     72  CA  GLN A   8       8.700   3.480  -8.700  1.00 13.70      2RLX 154
+ATOM     73  C   GLN A   8      10.440   3.480  -8.700  1.00 13.70      2RLX 155
+ATOM     74  O   GLN A   8      12.180   3.480  -8.700  1.00 13.70      2RLX 156
+ATOM     75  CB  GLN A   8      13.920   3.480  -8.700  1.00 13.70      2RLX 157
+ATOM     76  CG  GLN A   8      13.920   3.480  -6.960  1.00 13.70      2RLX 158
+ATOM     77  CD  GLN A   8      13.920   3.480  -5.220  1.00 13.70      2RLX 159
+ATOM     78  AE1 GLN A   8      13.920   3.480  -3.480  1.00 13.70      2RLX 160
+ATOM     79  AE2 GLN A   8      13.920   3.480  -1.740  1.00 13.70      2RLX 161
+ATOM     80  N   VAL A   9      13.920   3.480   0.000  1.00 13.70      2RLX 162
+ATOM     81  CA  VAL A   9      13.920   3.480   1.740  1.00 13.70      2RLX 163
+ATOM     82  C   VAL A   9      13.920   3.480   3.480  1.00 13.70      2RLX 164
+ATOM     83  O   VAL A   9      13.920   3.480   5.220  1.00 13.70      2RLX 165
+ATOM     84  CB  VAL A   9      12.180   3.480   5.220  1.00 13.70      2RLX 166
+ATOM     85  CG1 VAL A   9      10.440   3.480   5.220  1.00 13.70      2RLXA  8
+ATOM     86  CG2 VAL A   9       8.700   3.480   5.220  1.00 13.70      2RLXA  9
+ATOM     87  N   GLY A  10       6.960   3.480   5.220  1.00 13.70      2RLX 169
+ATOM     88  CA  GLY A  10       5.220   3.480   5.220  1.00 13.70      2RLX 170
+ATOM     89  C   GLY A  10       3.480   3.480   5.220  1.00 13.70      2RLX 171
+ATOM     90  O   GLY A  10       3.480   3.480   3.480  1.00 13.70      2RLX 172
+ATOM     91  N   CYS A  11       3.480   3.480   1.740  1.00 13.70      2RLX 173
+ATOM     92  CA  CYS A  11       5.220   3.480   1.740  1.00 13.70      2RLX 174
+ATOM     93  C   CYS A  11       6.960   3.480   1.740  1.00 13.70      2RLX 175
+ATOM     94  O   CYS A  11       8.700   3.480   1.740  1.00 13.70      2RLX 176
+ATOM     95  CB  CYS A  11      10.440   3.480   1.740  1.00 13.70      2RLX 177
+ATOM     96  SG  CYS A  11      12.180   3.480   1.740  1.00 13.70      2RLX 178
+ATOM     97  N   ILE A  12      12.180   3.480   3.480  1.00 13.70      2RLX 179
+ATOM     98  CA  ILE A  12      10.440   3.480   3.480  1.00 13.70      2RLX 180
+ATOM     99  C   ILE A  12       8.700   3.480   3.480  1.00 13.70      2RLX 181
+ATOM    100  O   ILE A  12       6.960   3.480   3.480  1.00 13.70      2RLX 182
+ATOM    101  CB  ILE A  12       5.220   3.480   3.480  1.00 13.70      2RLX 183
+ATOM    102  CG1 ILE A  12       5.220   3.480   0.000  1.00 13.70      2RLX 184
+ATOM    103  CG2 ILE A  12       6.960   3.480   0.000  1.00 13.70      2RLX 185
+ATOM    104  CD1 ILE A  12       8.700   3.480   0.000  1.00 13.70      2RLX 186
+ATOM    105  N   ARG A  13      10.440   3.480   0.000  1.00 13.70      2RLX 187
+ATOM    106  CA  ARG A  13      12.180   3.480   0.000  1.00 13.70      2RLX 188
+ATOM    107  C   ARG A  13      12.180   3.480  -1.740  1.00 13.70      2RLX 189
+ATOM    108  O   ARG A  13      10.440   3.480  -1.740  1.00 13.70      2RLX 190
+ATOM    109  CB  ARG A  13       8.700   3.480  -1.740  1.00 13.70      2RLX 191
+ATOM    110  CG  ARG A  13       6.960   3.480  -1.740  1.00 13.70      2RLX 192
+ATOM    111  CD  ARG A  13       5.220   3.480  -1.740  1.00 13.70      2RLX 193
+ATOM    112  NE  ARG A  13       5.220   3.480  -3.480  1.00 13.70      2RLX 194
+ATOM    113  CZ  ARG A  13       6.960   3.480  -3.480  1.00 13.70      2RLX 195
+ATOM    114  NH1 ARG A  13       8.700   3.480  -3.480  1.00 13.70      2RLX 196
+ATOM    115  NH2 ARG A  13      10.440   3.480  -3.480  1.00 13.70      2RLX 197
+ATOM    116  N   LYS A  14      12.180   3.480  -3.480  1.00 13.70      2RLX 198
+ATOM    117  CA  LYS A  14      12.180   3.480  -5.220  1.00 13.70      2RLX 199
+ATOM    118  C   LYS A  14      10.440   3.480  -5.220  1.00 13.70      2RLX 200
+ATOM    119  O   LYS A  14       8.700   3.480  -5.220  1.00 13.70      2RLX 201
+ATOM    120  CB  LYS A  14       6.960   3.480  -5.220  1.00 13.70      2RLX 202
+ATOM    121  CG  LYS A  14       5.220   3.480  -5.220  1.00 13.70      2RLX 203
+ATOM    122  CD  LYS A  14       5.220   3.480  -6.960  1.00 13.70      2RLX 204
+ATOM    123  CE  LYS A  14       6.960   3.480  -6.960  1.00 13.70      2RLX 205
+ATOM    124  NZ  LYS A  14       8.700   3.480  -6.960  1.00 13.70      2RLX 206
+ATOM    125  N   ASP A  15      10.440   3.480  -6.960  1.00 13.70      2RLX 207
+ATOM    126  CA  ASP A  15      12.180   3.480  -6.960  1.00 13.70      2RLX 208
+ATOM    127  C   ASP A  15      12.180   5.220  -8.700  1.00 13.70      2RLX 209
+ATOM    128  O   ASP A  15      13.920   5.220  -8.700  1.00 13.70      2RLX 210
+ATOM    129  CB  ASP A  15      13.920   5.220  -6.960  1.00 13.70      2RLX 211
+ATOM    130  CG  ASP A  15      13.920   5.220  -5.220  1.00 13.70      2RLX 212
+ATOM    131  OD1 ASP A  15      13.920   5.220  -3.480  1.00 13.70      2RLX 213
+ATOM    132  OD2 ASP A  15      13.920   5.220  -1.740  1.00 13.70      2RLX 214
+ATOM    133  N   ILE A  16      13.920   5.220   0.000  1.00 13.70      2RLX 215
+ATOM    134  CA  ILE A  16      13.920   5.220   1.740  1.00 13.70      2RLX 216
+ATOM    135  C   ILE A  16      13.920   5.220   3.480  1.00 13.70      2RLX 217
+ATOM    136  O   ILE A  16      13.920   5.220   5.220  1.00 13.70      2RLX 218
+ATOM    137  CB  ILE A  16      12.180   5.220   5.220  1.00 13.70      2RLX 219
+ATOM    138  CG1 ILE A  16      10.440   5.220   5.220  1.00 13.70      2RLX 220
+ATOM    139  CG2 ILE A  16       8.700   5.220   5.220  1.00 13.70      2RLX 221
+ATOM    140  CD1 ILE A  16       6.960   5.220   5.220  1.00 13.70      2RLX 222
+ATOM    141  N   ALA A  17       5.220   5.220   5.220  1.00 13.70      2RLX 223
+ATOM    142  CA  ALA A  17       3.480   5.220   5.220  1.00 13.70      2RLX 224
+ATOM    143  C   ALA A  17       3.480   5.220   3.480  1.00 13.70      2RLX 225
+ATOM    144  O   ALA A  17       3.480   5.220   1.740  1.00 13.70      2RLX 226
+ATOM    145  CB  ALA A  17       3.480   5.220   0.000  1.00 13.70      2RLX 227
+ATOM    146  N   ARG A  18       3.480   5.220  -1.740  1.00 13.70      2RLX 228
+ATOM    147  CA  ARG A  18       3.480   5.220  -3.480  1.00 13.70      2RLX 229
+ATOM    148  C   ARG A  18       3.480   5.220  -5.220  1.00 13.70      2RLX 230
+ATOM    149  O   ARG A  18       3.480   5.220  -6.960  1.00 13.70      2RLX 231
+ATOM    150  CB  ARG A  18       3.480   5.220  -8.700  1.00 13.70      2RLX 232
+ATOM    151  CG  ARG A  18       5.220   5.220  -8.700  1.00 13.70      2RLX 233
+ATOM    152  CD  ARG A  18       6.960   5.220  -8.700  1.00 13.70      2RLX 234
+ATOM    153  NE  ARG A  18       8.700   5.220  -8.700  1.00 13.70      2RLX 235
+ATOM    154  CZ  ARG A  18      10.440   5.220  -8.700  1.00 13.70      2RLX 236
+ATOM    155  NH1 ARG A  18      12.180   5.220  -6.960  1.00 13.70      2RLX 237
+ATOM    156  NH2 ARG A  18      12.180   5.220  -5.220  1.00 13.70      2RLX 238
+ATOM    157  N   LEU A  19      12.180   5.220  -3.480  1.00 13.70      2RLX 239
+ATOM    158  CA  LEU A  19      12.180   5.220  -1.740  1.00 13.70      2RLX 240
+ATOM    159  C   LEU A  19      12.180   5.220   0.000  1.00 13.70      2RLX 241
+ATOM    160  O   LEU A  19      12.180   5.220   1.740  1.00 13.70      2RLX 242
+ATOM    161  CB  LEU A  19      12.180   5.220   3.480  1.00 13.70      2RLX 243
+ATOM    162  CG  LEU A  19      10.440   5.220   3.480  1.00 13.70      2RLX 244
+ATOM    163  CD1 LEU A  19       8.700   5.220   3.480  1.00 13.70      2RLXA 10
+ATOM    164  CD2 LEU A  19       6.960   5.220   3.480  1.00 13.70      2RLXA 11
+ATOM    165  N   CYS A  20       5.220   5.220   3.480  1.00 13.70      2RLX 247
+ATOM    166  CA  CYS A  20       5.220   5.220   1.740  1.00 13.70      2RLX 248
+ATOM    167  C   CYS A  20       6.960   5.220   1.740  1.00 13.70      2RLX 249
+ATOM    168  O   CYS A  20       8.700   5.220   1.740  1.00 13.70      2RLX 250
+ATOM    169  CB  CYS A  20      10.440   5.220   1.740  1.00 13.70      2RLX 251
+ATOM    170  SG  CYS A  20      10.440   5.220   0.000  1.00 13.70      2RLX 252
+TER     172      CYS A  20                                              2RLX 253
+ATOM    173  N   PCA B  -2       8.700   5.220   0.000  1.00 13.70      2RLX 254
+ATOM    174  CA  PCA B  -2       6.960   5.220   0.000  1.00 13.70      2RLX 255
+ATOM    175  C   PCA B  -2       5.220   5.220   0.000  1.00 13.70      2RLX 256
+ATOM    176  O   PCA B  -2       5.220   5.220  -1.740  1.00 13.70      2RLX 257
+ATOM    177  CB  PCA B  -2       6.960   5.220  -1.740  1.00 13.70      2RLX 258
+ATOM    178  CG  PCA B  -2       8.700   5.220  -1.740  1.00 13.70      2RLX 259
+ATOM    179  CD  PCA B  -2      10.440   5.220  -1.740  1.00 13.70      2RLX 260
+ATOM    181  N   SER B  -1      10.440   5.220  -3.480  1.00 13.70      2RLX 261
+ATOM    182  CA  SER B  -1       8.700   5.220  -3.480  1.00 13.70      2RLX 262
+ATOM    183  C   SER B  -1       6.960   5.220  -3.480  1.00 13.70      2RLX 263
+ATOM    184  O   SER B  -1       5.220   5.220  -3.480  1.00 13.70      2RLX 264
+ATOM    185  CB  SER B  -1       6.960   5.220  -5.220  1.00 13.70      2RLX 265
+ATOM    186  OG  SER B  -1       5.220   5.220  -5.220  1.00 13.70      2RLX 266
+ATOM    187  N   THR B   0       8.700   5.220  -5.220  1.00 13.70      2RLX 267
+ATOM    188  CA  THR B   0      10.440   5.220  -5.220  1.00 13.70      2RLX 268
+ATOM    189  C   THR B   0      10.440   5.220  -6.960  1.00 13.70      2RLX 269
+ATOM    190  O   THR B   0       8.700   5.220  -6.960  1.00 13.70      2RLX 270
+ATOM    191  CB  THR B   0       6.960   5.220  -6.960  1.00 13.70      2RLX 271
+ATOM    192  OG1 THR B   0       5.220   5.220  -6.960  1.00 13.70      2RLX 272
+ATOM    193  CG2 THR B   0       3.480   6.960   0.000  1.00 13.70      2RLX 273
+ATOM    194  N   ASN B   1       3.480   6.960  -1.740  1.00 13.70      2RLX 274
+ATOM    195  CA  ASN B   1       3.480   6.960  -3.480  1.00 13.70      2RLX 275
+ATOM    196  C   ASN B   1       3.480   6.960  -5.220  1.00 13.70      2RLX 276
+ATOM    197  O   ASN B   1       3.480   6.960  -6.960  1.00 13.70      2RLX 277
+ATOM    198  CB  ASN B   1       3.480   6.960  -8.700  1.00 13.70      2RLX 278
+ATOM    199  CG  ASN B   1       5.220   6.960  -8.700  1.00 13.70      2RLX 279
+ATOM    200  AD1 ASN B   1       6.960   6.960  -8.700  1.00 13.70      2RLX 280
+ATOM    201  AD2 ASN B   1       8.700   6.960  -8.700  1.00 13.70      2RLX 281
+ATOM    202  N   ASP B   2      10.440   6.960  -8.700  1.00 13.70      2RLX 282
+ATOM    203  CA  ASP B   2      12.180   6.960  -8.700  1.00 13.70      2RLX 283
+ATOM    204  C   ASP B   2      13.920   6.960  -8.700  1.00 13.70      2RLX 284
+ATOM    205  O   ASP B   2      13.920   6.960  -6.960  1.00 13.70      2RLX 285
+ATOM    206  CB  ASP B   2      13.920   6.960  -5.220  1.00 13.70      2RLX 286
+ATOM    207  CG  ASP B   2      13.920   6.960  -3.480  1.00 13.70      2RLX 287
+ATOM    208  OD1 ASP B   2      13.920   6.960  -1.740  1.00 13.70      2RLX 288
+ATOM    209  OD2 ASP B   2      13.920   6.960   0.000  1.00 13.70      2RLX 289
+ATOM    210  N   PHE B   3      13.920   6.960   1.740  1.00 13.70      2RLX 290
+ATOM    211  CA  PHE B   3      13.920   6.960   3.480  1.00 13.70      2RLX 291
+ATOM    212  C   PHE B   3      13.920   6.960   5.220  1.00 13.70      2RLX 292
+ATOM    213  O   PHE B   3      12.180   6.960   5.220  1.00 13.70      2RLX 293
+ATOM    214  CB  PHE B   3      10.440   6.960   5.220  1.00 13.70      2RLX 294
+ATOM    215  CG  PHE B   3       8.700   6.960   5.220  1.00 13.70      2RLX 295
+ATOM    216  CD1 PHE B   3       6.960   6.960   5.220  1.00 13.70      2RLX 296
+ATOM    217  CD2 PHE B   3       5.220   6.960   5.220  1.00 13.70      2RLX 297
+ATOM    218  CE1 PHE B   3       3.480   6.960   5.220  1.00 13.70      2RLX 298
+ATOM    219  CE2 PHE B   3       3.480   6.960   3.480  1.00 13.70      2RLX 299
+ATOM    220  CZ  PHE B   3       3.480   6.960   1.740  1.00 13.70      2RLX 300
+ATOM    221  N   ILE B   4       5.220   6.960   1.740  1.00 13.70      2RLX 301
+ATOM    222  CA  ILE B   4       6.960   6.960   1.740  1.00 13.70      2RLX 302
+ATOM    223  C   ILE B   4       8.700   6.960   1.740  1.00 13.70      2RLX 303
+ATOM    224  O   ILE B   4      10.440   6.960   1.740  1.00 13.70      2RLX 304
+ATOM    225  CB  ILE B   4      12.180   6.960   1.740  1.00 13.70      2RLX 305
+ATOM    226  CG1 ILE B   4      12.180   6.960   3.480  1.00 13.70      2RLX 306
+ATOM    227  CG2 ILE B   4      10.440   6.960   3.480  1.00 13.70      2RLX 307
+ATOM    228  CD1 ILE B   4       8.700   6.960   3.480  1.00 13.70      2RLX 308
+ATOM    229  N   LYS B   5       6.960   6.960   3.480  1.00 13.70      2RLX 309
+ATOM    230  CA  LYS B   5       5.220   6.960   3.480  1.00 13.70      2RLX 310
+ATOM    231  C   LYS B   5       5.220   6.960   0.000  1.00 13.70      2RLX 311
+ATOM    232  O   LYS B   5       5.220   6.960  -1.740  1.00 13.70      2RLX 312
+ATOM    233  CB  LYS B   5       5.220   6.960  -3.480  1.00 13.70      2RLX 313
+ATOM    234  CG  LYS B   5       5.220   6.960  -5.220  1.00 13.70      2RLX 314
+ATOM    235  CD  LYS B   5       5.220   6.960  -6.960  1.00 13.70      2RLX 315
+ATOM    236  CE  LYS B   5       6.960   6.960  -6.960  1.00 13.70      2RLX 316
+ATOM    237  NZ  LYS B   5       8.700   6.960  -6.960  1.00 13.70      2RLX 317
+ATOM    238  N   ALA B   6      10.440   6.960  -6.960  1.00 13.70      2RLX 318
+ATOM    239  CA  ALA B   6      12.180   6.960  -6.960  1.00 13.70      2RLX 319
+ATOM    240  C   ALA B   6       6.960   6.960  -5.220  1.00 13.70      2RLX 320
+ATOM    241  O   ALA B   6       8.700   6.960  -5.220  1.00 13.70      2RLX 321
+ATOM    242  CB  ALA B   6      10.440   6.960  -5.220  1.00 13.70      2RLX 322
+ATOM    243  N   CYS B   7      12.180   6.960  -5.220  1.00 13.70      2RLX 323
+ATOM    244  CA  CYS B   7      12.180   6.960  -3.480  1.00 13.70      2RLX 324
+ATOM    245  C   CYS B   7      10.440   6.960  -3.480  1.00 13.70      2RLX 325
+ATOM    246  O   CYS B   7       8.700   6.960  -3.480  1.00 13.70      2RLX 326
+ATOM    247  CB  CYS B   7       6.960   6.960  -3.480  1.00 13.70      2RLX 327
+ATOM    248  SG  CYS B   7       6.960   6.960  -1.740  1.00 13.70      2RLX 328
+ATOM    249  N   GLY B   8       8.700   6.960  -1.740  1.00 13.70      2RLX 329
+ATOM    250  CA  GLY B   8      10.440   6.960  -1.740  1.00 13.70      2RLX 330
+ATOM    251  C   GLY B   8      12.180   6.960  -1.740  1.00 13.70      2RLX 331
+ATOM    252  O   GLY B   8      12.180   6.960   0.000  1.00 13.70      2RLX 332
+ATOM    253  N   ARG B   9      10.440   6.960   0.000  1.00 13.70      2RLX 333
+ATOM    254  CA  ARG B   9       8.700   6.960   0.000  1.00 13.70      2RLX 334
+ATOM    255  C   ARG B   9       6.960   6.960   0.000  1.00 13.70      2RLX 335
+ATOM    256  O   ARG B   9       6.960   8.700   0.000  1.00 13.70      2RLX 336
+ATOM    257  CB  ARG B   9       5.220   8.700   0.000  1.00 13.70      2RLX 337
+ATOM    258  CG  ARG B   9       3.480   8.700   0.000  1.00 13.70      2RLX 338
+ATOM    259  CD  ARG B   9       1.740   8.700   0.000  1.00 13.70      2RLX 339
+ATOM    260  NE  ARG B   9       0.000   8.700   0.000  1.00 13.70      2RLX 340
+ATOM    261  CZ  ARG B   9       0.000   8.700   1.740  1.00 13.70      2RLX 341
+ATOM    262  NH1 ARG B   9       0.000   8.700   3.480  1.00 13.70      2RLX 342
+ATOM    263  NH2 ARG B   9       0.000   8.700   5.220  1.00 13.70      2RLX 343
+ATOM    264  N   GLU B  10       0.000   8.700   6.960  1.00 13.70      2RLX 344
+ATOM    265  CA  GLU B  10       0.000   8.700   8.700  1.00 13.70      2RLX 345
+ATOM    266  C   GLU B  10       1.740   8.700   8.700  1.00 13.70      2RLX 346
+ATOM    267  O   GLU B  10       3.480   8.700   8.700  1.00 13.70      2RLX 347
+ATOM    268  CB  GLU B  10       5.220   8.700   8.700  1.00 13.70      2RLX 348
+ATOM    269  CG  GLU B  10       6.960   8.700   8.700  1.00 13.70      2RLX 349
+ATOM    270  CD  GLU B  10       8.700   8.700   8.700  1.00 13.70      2RLX 350
+ATOM    271  OE1 GLU B  10      10.440   8.700   8.700  1.00 13.70      2RLX 351
+ATOM    272  OE2 GLU B  10      12.180   8.700   8.700  1.00 13.70      2RLX 352
+ATOM    273  N   LEU B  11      13.920   8.700   8.700  1.00 13.70      2RLX 353
+ATOM    274  CA  LEU B  11      15.660   8.700   8.700  1.00 13.70      2RLX 354
+ATOM    275  C   LEU B  11      17.400   8.700   8.700  1.00 13.70      2RLX 355
+ATOM    276  O   LEU B  11      17.400   8.700   6.960  1.00 13.70      2RLX 356
+ATOM    277  CB  LEU B  11      17.400   8.700   5.220  1.00 13.70      2RLX 357
+ATOM    278  CG  LEU B  11      17.400   8.700   3.480  1.00 13.70      2RLX 358
+ATOM    279  CD1 LEU B  11      17.400   8.700   1.740  1.00 13.70      2RLXA 12
+ATOM    280  CD2 LEU B  11      17.400   8.700   0.000  1.00 13.70      2RLXA 13
+ATOM    281  N   VAL B  12      17.400   8.700  -1.740  1.00 13.70      2RLX 361
+ATOM    282  CA  VAL B  12      17.400   8.700  -3.480  1.00 13.70      2RLX 362
+ATOM    283  C   VAL B  12      17.400   8.700  -5.220  1.00 13.70      2RLX 363
+ATOM    284  O   VAL B  12      17.400   8.700  -6.960  1.00 13.70      2RLX 364
+ATOM    285  CB  VAL B  12      17.400   8.700  -8.700  1.00 13.70      2RLX 365
+ATOM    286  CG1 VAL B  12      17.400   8.700 -10.440  1.00 13.70      2RLXA 14
+ATOM    287  CG2 VAL B  12      17.400   8.700 -12.180  1.00 13.70      2RLXA 15
+ATOM    288  N   ARG B  13      15.660   8.700 -12.180  1.00 13.70      2RLX 368
+ATOM    289  CA  ARG B  13      13.920   8.700 -12.180  1.00 13.70      2RLX 369
+ATOM    290  C   ARG B  13      12.180   8.700 -12.180  1.00 13.70      2RLX 370
+ATOM    291  O   ARG B  13      10.440   8.700 -12.180  1.00 13.70      2RLX 371
+ATOM    292  CB  ARG B  13       8.700   8.700 -12.180  1.00 13.70      2RLX 372
+ATOM    293  CG  ARG B  13       6.960   8.700 -12.180  1.00 13.70      2RLX 373
+ATOM    294  CD  ARG B  13       5.220   8.700 -12.180  1.00 13.70      2RLX 374
+ATOM    295  NE  ARG B  13       3.480   8.700 -12.180  1.00 13.70      2RLX 375
+ATOM    296  CZ  ARG B  13       1.740   8.700 -12.180  1.00 13.70      2RLX 376
+ATOM    297  NH1 ARG B  13       0.000   8.700 -12.180  1.00 13.70      2RLX 377
+ATOM    298  NH2 ARG B  13       0.000   8.700 -10.440  1.00 13.70      2RLX 378
+ATOM    299  N   LEU B  14       0.000   8.700  -8.700  1.00 13.70      2RLX 379
+ATOM    300  CA  LEU B  14       0.000   8.700  -6.960  1.00 13.70      2RLX 380
+ATOM    301  C   LEU B  14       0.000   8.700  -5.220  1.00 13.70      2RLX 381
+ATOM    302  O   LEU B  14       0.000   8.700  -3.480  1.00 13.70      2RLX 382
+ATOM    303  CB  LEU B  14       0.000   8.700  -1.740  1.00 13.70      2RLX 383
+ATOM    304  CG  LEU B  14       1.740   8.700  -3.480  1.00 13.70      2RLX 384
+ATOM    305  CD1 LEU B  14       3.480   8.700  -3.480  1.00 13.70      2RLXA 16
+ATOM    306  CD2 LEU B  14       5.220   8.700  -3.480  1.00 13.70      2RLXA 17
+ATOM    307  N   TRP B  15       6.960   8.700  -3.480  1.00 13.70   1  2RLX 387
+ATOM    308  CA  TRP B  15       8.700   8.700  -3.480  1.00 13.70   1  2RLX 388
+ATOM    309  C   TRP B  15      10.440   8.700  -3.480  1.00 13.70   1  2RLX 389
+ATOM    310  O   TRP B  15      12.180   8.700  -3.480  1.00 13.70   1  2RLX 390
+ATOM    311  CB  TRP B  15      13.920   8.700  -3.480  1.00 13.70   1  2RLX 391
+ATOM    312  CG  TRP B  15      15.660   8.700  -3.480  1.00 13.70   1  2RLX 392
+ATOM    313  CD1 TRP B  15      15.660   8.700  -1.740  1.00 13.70   1  2RLX 393
+ATOM    314  CD2 TRP B  15      13.920   8.700  -1.740  1.00 13.70   1  2RLX 394
+ATOM    315  NE1 TRP B  15      12.180   8.700  -1.740  1.00 13.70   1  2RLX 395
+ATOM    316  CE2 TRP B  15      10.440   8.700  -1.740  1.00 13.70   1  2RLX 396
+ATOM    317  CE3 TRP B  15       8.700   8.700  -1.740  1.00 13.70   1  2RLX 397
+ATOM    318  CZ2 TRP B  15       6.960   8.700  -1.740  1.00 13.70   1  2RLX 398
+ATOM    319  CZ3 TRP B  15       5.220   8.700  -1.740  1.00 13.70   1  2RLX 399
+ATOM    320  CH2 TRP B  15       3.480   8.700  -1.740  1.00 13.70   1  2RLX 400
+ATOM    321  N   VAL B  16       1.740   8.700  -1.740  1.00 13.70      2RLX 401
+ATOM    322  CA  VAL B  16       1.740   8.700   1.740  1.00 13.70      2RLX 402
+ATOM    323  C   VAL B  16       3.480   8.700   1.740  1.00 13.70      2RLX 403
+ATOM    324  O   VAL B  16       5.220   8.700   1.740  1.00 13.70      2RLX 404
+ATOM    325  CB  VAL B  16       6.960   8.700   1.740  1.00 13.70      2RLX 405
+ATOM    326  CG1 VAL B  16       8.700   8.700   1.740  1.00 13.70      2RLXA 18
+ATOM    327  CG2 VAL B  16      10.440   8.700   1.740  1.00 13.70      2RLXA 19
+ATOM    328  N   GLU B  17      12.180   8.700   1.740  1.00 13.70      2RLX 408
+ATOM    329  CA  GLU B  17      13.920   8.700   1.740  1.00 13.70      2RLX 409
+ATOM    330  C   GLU B  17      15.660   8.700   1.740  1.00 13.70      2RLX 410
+ATOM    331  O   GLU B  17      15.660   8.700   0.000  1.00 13.70      2RLX 411
+ATOM    332  CB  GLU B  17      13.920   8.700   0.000  1.00 13.70      2RLX 412
+ATOM    333  CG  GLU B  17      12.180   8.700   0.000  1.00 13.70      2RLX 413
+ATOM    334  CD  GLU B  17      10.440   8.700   0.000  1.00 13.70      2RLX 414
+ATOM    335  OE1 GLU B  17       8.700   8.700   0.000  1.00 13.70      2RLX 415
+ATOM    336  OE2 GLU B  17       6.960   8.700   3.480  1.00 13.70      2RLX 416
+ATOM    337  N   ILE B  18       8.700   8.700   3.480  1.00 13.70      2RLX 417
+ATOM    338  CA  ILE B  18      10.440   8.700   3.480  1.00 13.70      2RLX 418
+ATOM    339  C   ILE B  18      12.180   8.700   3.480  1.00 13.70      2RLX 419
+ATOM    340  O   ILE B  18      13.920   8.700   3.480  1.00 13.70      2RLX 420
+ATOM    341  CB  ILE B  18      15.660   8.700   3.480  1.00 13.70      2RLX 421
+ATOM    342  CG1 ILE B  18      15.660   8.700   5.220  1.00 13.70      2RLX 422
+ATOM    343  CG2 ILE B  18      13.920   8.700   5.220  1.00 13.70      2RLX 423
+ATOM    344  CD1 ILE B  18      10.440   8.700   5.220  1.00 13.70      2RLX 424
+ATOM    345  N   CYS B  19      12.180   8.700   5.220  1.00 13.70      2RLX 425
+ATOM    346  CA  CYS B  19       6.960   8.700   5.220  1.00 13.70      2RLX 426
+ATOM    347  C   CYS B  19       8.700   8.700   5.220  1.00 13.70      2RLX 427
+ATOM    348  O   CYS B  19       5.220   8.700   5.220  1.00 13.70      2RLX 428
+ATOM    349  CB  CYS B  19       3.480   8.700   5.220  1.00 13.70      2RLX 429
+ATOM    350  SG  CYS B  19       1.740   8.700   5.220  1.00 13.70      2RLX 430
+ATOM    351  N   GLY B  20       1.740   8.700   3.480  1.00 13.70      2RLX 431
+ATOM    352  CA  GLY B  20       3.480   8.700   3.480  1.00 13.70      2RLX 432
+ATOM    353  C   GLY B  20       5.220   8.700   3.480  1.00 13.70      2RLX 433
+ATOM    354  O   GLY B  20       1.740   8.700   6.960  1.00 13.70      2RLX 434
+ATOM    355  N   SER B  21       3.480   8.700   6.960  1.00 13.70      2RLX 435
+ATOM    356  CA  SER B  21       5.220   8.700   6.960  1.00 13.70      2RLX 436
+ATOM    357  C   SER B  21       6.960   8.700   6.960  1.00 13.70      2RLX 437
+ATOM    358  O   SER B  21       8.700   8.700   6.960  1.00 13.70      2RLX 438
+ATOM    359  CB  SER B  21      10.440   8.700   6.960  1.00 13.70      2RLX 439
+ATOM    360  OG  SER B  21      12.180   8.700   6.960  1.00 13.70      2RLX 440
+ATOM    361  N   VAL B  22      13.920   8.700   6.960  1.00 13.70      2RLX 441
+ATOM    362  CA  VAL B  22      15.660   8.700   6.960  1.00 13.70      2RLX 442
+ATOM    363  C   VAL B  22      15.660   8.700  -5.220  1.00 13.70      2RLX 443
+ATOM    364  O   VAL B  22      15.660   8.700  -6.960  1.00 13.70      2RLX 444
+ATOM    365  CB  VAL B  22      15.660   8.700  -8.700  1.00 13.70      2RLX 445
+ATOM    366  CG1 VAL B  22      15.660   8.700 -10.440  1.00 13.70      2RLXA 20
+ATOM    367  CG2 VAL B  22      13.920   8.700 -10.440  1.00 13.70      2RLXA 21
+ATOM    368  N   SER B  23      13.920   8.700  -8.700  1.00 13.70      2RLX 448
+ATOM    369  CA  SER B  23      13.920   8.700  -6.960  1.00 13.70      2RLX 449
+ATOM    370  C   SER B  23      13.920   8.700  -5.220  1.00 13.70      2RLX 450
+ATOM    371  O   SER B  23      12.180   8.700  -5.220  1.00 13.70      2RLX 451
+ATOM    372  CB  SER B  23      12.180   8.700  -6.960  1.00 13.70      2RLX 452
+ATOM    373  OG  SER B  23      12.180   8.700  -8.700  1.00 13.70      2RLX 453
+ATOM    374  N   THR B  24      12.180   8.700 -10.440  1.00 13.70      2RLX 454
+ATOM    375  CA  THR B  24      10.440   8.700 -10.440  1.00 13.70      2RLX 455
+ATOM    376  C   THR B  24      10.440   8.700  -8.700  1.00 13.70      2RLX 456
+ATOM    377  O   THR B  24      10.440   8.700  -6.960  1.00 13.70      2RLX 457
+ATOM    378  CB  THR B  24      10.440   8.700  -5.220  1.00 13.70      2RLX 458
+ATOM    379  OG1 THR B  24       8.700   8.700  -5.220  1.00 13.70      2RLX 459
+ATOM    380  CG2 THR B  24       8.700   8.700  -6.960  1.00 13.70      2RLX 460
+ATOM    381  N   TRP B  25       8.700   8.700  -8.700  1.00 13.70      2RLX 461
+ATOM    382  CA  TRP B  25       8.700   8.700 -10.440  1.00 13.70      2RLX 462
+ATOM    383  C   TRP B  25       6.960   8.700 -10.440  1.00 13.70      2RLX 463
+ATOM    384  O   TRP B  25       6.960   8.700  -8.700  1.00 13.70      2RLX 464
+ATOM    385  CB  TRP B  25       6.960   8.700  -6.960  1.00 13.70      2RLX 465
+ATOM    386  CG  TRP B  25       6.960   8.700  -5.220  1.00 13.70      2RLX 466
+ATOM    387  CD1 TRP B  25       5.220   8.700  -5.220  1.00 13.70      2RLX 467
+ATOM    388  CD2 TRP B  25       5.220   8.700  -6.960  1.00 13.70      2RLX 468
+ATOM    389  NE1 TRP B  25       5.220   8.700  -8.700  1.00 13.70      2RLX 469
+ATOM    390  CE2 TRP B  25       5.220   8.700 -10.440  1.00 13.70      2RLX 470
+ATOM    391  CE3 TRP B  25       3.480   8.700 -10.440  1.00 13.70      2RLX 471
+ATOM    392  CZ2 TRP B  25       3.480   8.700  -8.700  1.00 13.70      2RLX 472
+ATOM    393  CZ3 TRP B  25       3.480   8.700  -6.960  1.00 13.70      2RLX 473
+ATOM    394  CH2 TRP B  25       3.480   8.700  -5.220  1.00 13.70      2RLX 474
+ATOM    395  N   GLY B  26       1.740   8.700  -5.220  1.00 13.70      2RLX 475
+ATOM    396  CA  GLY B  26       1.740   8.700  -6.960  1.00 13.70      2RLX 476
+ATOM    397  C   GLY B  26       1.740   8.700  -8.700  1.00 13.70      2RLX 477
+ATOM    398  O   GLY B  26       1.740   8.700 -10.440  1.00 13.70      2RLX 478
+TER     411      ARG B  27                                              2RLX 490
+CONECT   64   63   96                                                   2RLX 491
+CONECT   70   69  248                                                   2RLX 492
+CONECT   96   64   95                                                   2RLX 493
+CONECT  170  169  350                                                   2RLX 494
+CONECT  248   70  247                                                   2RLX 495
+CONECT  350  170  349                                                   2RLX 496
+MASTER       44   15    0    3    0    0    0    6  406    2    6    5  2RLXB  6
+END                                                                     2RLX 498

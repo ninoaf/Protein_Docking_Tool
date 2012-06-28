@@ -1,0 +1,53 @@
+/*
+ * docking_main.cpp
+ *
+ *  Created on: Oct 2, 2009
+ *      Author: ivan
+ */
+
+#include <cstdlib>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include "docking/docking.h"
+#include "configuration/configuration.h"
+
+using namespace std;
+
+int main(int argc, char **argv){
+	Configuration configuration;
+
+	if (argc < 2)
+	{
+		configuration.init("config.txt");
+	}else
+	{
+		configuration.init(argv[1]);
+	}
+
+	Docking justDoIt(configuration);
+
+	vector <pair<double, ScoreConfiguration> > scores;
+	justDoIt.dockingSearch(scores);
+
+	string scoresOutputFile;
+	configuration.getParameter("scores_output_file", scoresOutputFile);
+
+    justDoIt.outputScores(scoresOutputFile, "# header...\n", scores);
+    /*
+    int outputedScore;
+	configuration.getParameter("output_score_to_grid", outputedScore);
+
+    if (outputedScore > 0)
+    {
+        double outputGridSize, outputGridCellSize;
+        configuration.getParameter("output_grid_size", outputGridSize);
+        configuration.getParameter("output_grid_cell_size", outputGridCellSize);
+
+        justDoIt.outputToGrid(scores[outputedScore-1].second, make_pair(string("data/grid/receptor_inner_docked.grid"),
+                    string("data/grid/receptor_outer_docked.grid")), make_pair(string("data/grid/ligand_inner_docked.grid"),
+                    string("data/grid/ligand_outer_docked.grid")), outputGridSize, outputGridCellSize);
+    }
+	*/
+	return 0;
+}
