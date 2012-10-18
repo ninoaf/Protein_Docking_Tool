@@ -933,10 +933,7 @@ void Docking::dockingSearch(vector <pair<double, ScoreConfiguration> >& scores)
 
 int Docking::outputScores(const string& outputFile, const string& header, vector <pair<double, ScoreConfiguration> > scores) const
 {
-	/*PdbFile ligandPDB;
-	PdbFile receptorPDB;*/
 	FILE *fp = fopen(outputFile.c_str(), "wt");
-	//FILE *fpPDB = 0;
 
 	if (fp == 0)
 	{
@@ -944,59 +941,20 @@ int Docking::outputScores(const string& outputFile, const string& header, vector
 		return -1;
 	}
 
-	/*if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
-	{
-		fpPDB = fopen((outputFile + ".pdb").c_str(), "w");
-
-		if (fpPDB == NULL)
-			return -1;
-	}
-
-	if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
-	{
-		ligandPDB.Init((char *) ligandPath_.c_str());
-		if (!ligandPDB.LoadAtmtypenumbers((char *) radiiPath_.c_str()))
-			return -1;
-		ligandPDB.UseUnitedRadius();
-		ligandPDB.Import();
-
-		receptorPDB.Init((char *) receptorPath_.c_str());
-		if (!receptorPDB.LoadAtmtypenumbers((char *) radiiPath_.c_str()))
-			return -1;
-		receptorPDB.UseUnitedRadius();
-		receptorPDB.Import();
-	}*/
-
 	fprintf(fp, "%s", header.c_str());
 
 	dumpParameters(fp);
 	sort(scores.begin(), scores.end(), greater < pair<double, ScoreConfiguration> >());
 
-	//fprintf(fp, "# rank score R beta1 gamma1 alpha2 beta2 gamma2\n");
 	fprintf(fp, "# rank score R Rec_beta1 Rec_gamma1 Lig_alpha2 Lig_beta2 Lig_gamma2\n");
 
 	for (unsigned int i = 0; i < scores.size(); ++i)
 	{
-		//fprintf(fp, "%d %lf %lf %lf %lf %lf %lf %lf\n", i+1, scores[i].first, scores[i].second.R, scores[i].second.beta1, scores[i].second.gamma1, scores[i].second.alpha, scores[i].second.beta2, scores[i].second.gamma2);
-
 		fprintf(fp, "%d %E %lf %lf %lf %lf %lf %lf\n", i+1, scores[i].first, scores[i].second.R, scores[i].second.beta1, scores[i].second.gamma1, scores[i].second.alpha, scores[i].second.beta2, scores[i].second.gamma2 ); 
 		
-
-		/*if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
-		{
-			fprintf (fpPDB, "MODEL %d\n", i);
-			receptorPDB.WriteTransformedAtoms(fpPDB, 'R', scores[i].second.R, 0.0f, scores[i].second.beta1, scores[i].second.gamma1);
-			fprintf (fpPDB, "TER\n");
-			ligandPDB.WriteTransformedAtoms(fpPDB, 'L', 0.0f, scores[i].second.alpha, scores[i].second.beta2, scores[i].second.gamma2);
-			fprintf (fpPDB, "TER\n");
-			fprintf (fpPDB, "ENDMDL\n");
-		}*/
 	}
 
 	fclose(fp);
-
-	/*if (ligandPath_!="" && receptorPath_!="" && radiiPath_!="")
-		fclose(fpPDB);*/
 
 	return 0;
 }
