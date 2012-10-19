@@ -65,6 +65,8 @@ string PdbFile::trimAndLower(string line)
 
 	return ret;
 }
+
+/*
 void PdbFile::PutChargesOnGrid(Grid& grid)
 {
 	for (int i=0; i<numAtoms_; i++)
@@ -76,6 +78,7 @@ void PdbFile::PutChargesOnGrid(Grid& grid)
 	}
 
 }
+*/
 
 bool PdbFile::Import(bool centerAtoms)
 {

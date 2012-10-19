@@ -108,9 +108,9 @@ int PdbWriter::write(string scorePath, string receptorPath, string ligandPath, s
 	for (unsigned int i=startingScore; (i<scoresData.scores.size() && ((i-startingScore)<maxNumScores || maxNumScores<0)); i++)
 	{
 		fprintf (fpPDB, "MODEL %d\n", i);
-		receptorPDB.writeTransformedAtoms(fpPDB, 'R', scoresData.scores[i].radius, 0.0f, scoresData.scores[i].betaReceptor, scoresData.scores[i].gammaReceptor);
+		receptorPDB.WriteTransformedAtoms(fpPDB, 'R', scoresData.scores[i].radius, 0.0f, scoresData.scores[i].betaReceptor, scoresData.scores[i].gammaReceptor);
 		fprintf (fpPDB, "TER\n");
-		ligandPDB.writeTransformedAtoms(fpPDB, 'L', 0.0f, scoresData.scores[i].alphaLigand, scoresData.scores[i].betaLigand, scoresData.scores[i].gammaLigand);
+		ligandPDB.WriteTransformedAtoms(fpPDB, 'L', 0.0f, scoresData.scores[i].alphaLigand, scoresData.scores[i].betaLigand, scoresData.scores[i].gammaLigand);
 		fprintf (fpPDB, "TER\n");
 		fprintf (fpPDB, "ENDMDL\n");
 	}

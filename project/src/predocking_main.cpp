@@ -31,7 +31,5 @@ int main(int argc, char **argv)
 
 	predock.runPredocking(config);
 
-//	printf("ja sam mali pas\n");
-
 	return 0;
 }

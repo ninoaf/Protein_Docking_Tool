@@ -31,7 +31,7 @@ public:
 	void UseUnitedRadius();
 	bool SaveCoords(char *fileName);
 	bool WriteTransformedAtoms(FILE *fpOutput, char chainDesignation, double r, double alpha, double beta, double gamma);
-	void PutChargesOnGrid(Grid& grid);
+//	void PutChargesOnGrid(Grid& grid);
 
 private:
 	std::vector <Atom> atoms_;

@@ -11,6 +11,7 @@
 //#include "../protein/protein.h"
 #include "../pdbparser/pdbparser.h"
 #include "../structures/structures.h"
+
 #include "scoreloader.h"
 
 #include <string>
@@ -27,7 +28,7 @@ public:
 //	void write(string scrPath, string outPdbPath);
 //	void Write(vector <pair<double< ScoreConfiguration> > scores, string outPdbPath);
 //	int write(vector <pair<double, ScoreConfiguration> > scores, string receptorPath, string ligandPath, string radiiPath, string outPdbPath);
-	int write(string scorePath, string receptorPath, string ligandPath, string radiiPath, string outPdbPath, int startingScore, int maxNumScores);
+	int write(std::string scorePath, std::string receptorPath, std::string ligandPath, std::string radiiPath, std::string outPdbPath, int startingScore, int maxNumScores);
 };
 
 #endif /* PDBWRITER_H_ */
