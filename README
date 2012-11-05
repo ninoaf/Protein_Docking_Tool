@@ -2,6 +2,9 @@ Parallel Protein Docking Tool (PPTP) software is performing a shape based proces
 
 The software is still under construction (we are writing a documentation and "cleaning" the code) !
 
+Translational matrix data for order grater than 10 due to the size (around 800 MB) can be downloaded here (http://lis.irb.hr/PDT/) and
+then included in project: Protein_Docking_Tool /project/data/trans.
+
 Developer team:
 Nino Antulov-Fantulin, <nino.naf@gmail.com>
 Igor Canadi, <igor.canadi@gmail.com>
