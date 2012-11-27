@@ -6,6 +6,10 @@
  */
 
 #include "translationmatrix.h"
+#include "translationmatrixmathengine.h"
+#include <cstdio>
+#include <cstdlib>
+#include <cmath>
 
 TranslationMatrix::TranslationMatrix()
 {
@@ -18,7 +22,6 @@ TranslationMatrix::TranslationMatrix(int order, double R)
 	R_ = R;
 }
 
-
 TranslationMatrix::~TranslationMatrix()
 {
 }
@@ -26,6 +29,11 @@ TranslationMatrix::~TranslationMatrix()
 TranslationMatrix::TranslationMatrix(const string& inputFile)
 {
 	importFromFile(inputFile);
+}
+
+int TranslationMatrix::getOrder() const
+{
+	return order_;
 }
 
 int TranslationMatrix::importFromFile(const string& inputFile)
@@ -53,7 +61,7 @@ int TranslationMatrix::importFromFile(const string& inputFile)
 
 	for (unsigned int i = 0; i < matrix_.size(); ++i)
 	{
-		ret += fread (&matrix_[i], sizeof(matrix_[i]), 1, fp);
+		ret += fread(&matrix_[i], sizeof(matrix_[i]), 1, fp);
 	}
 
 	fclose(fp);
@@ -61,9 +69,89 @@ int TranslationMatrix::importFromFile(const string& inputFile)
 	return ret;
 }
 
-int TranslationMatrix::getOrder() const
+int TranslationMatrix::exportToFile(const string& outputFile)
 {
-	return order_;
+	FILE *fp = fopen(outputFile.c_str(), "wb");
+
+	if (fp == 0)
+	{
+		fprintf(stderr, "Ne mogu otvoriti za pisanje translation file %s\n", outputFile.c_str());
+		exit(1);
+	}
+
+	int ret = 0;
+
+	ret += fwrite (&order_, sizeof(order_), 1, fp);
+	ret += fwrite (&R_, sizeof(R_), 1, fp);
+
+/*	for (int _n = 1;    _n <= order_;  _n++)
+	for (int _l = 0;    _l <= _n-1;    _l++)
+	for (int m  = -_l;  m  <= _l;      m ++)
+	for (int n  = 1;    n  <= order_;  n ++)
+	for (int l  = 0;    l  <= n-1;     l ++)*/
+
+	for (unsigned int i = 0; i < matrix_.size(); ++i)
+	{
+		ret += fwrite(&matrix_[i], sizeof(matrix_[i]), 1, fp);
+	}
+
+	fclose(fp);
+
+	return ret;
+}
+
+void TranslationMatrix::dumpToFile(const string& outputFile)
+{
+	FILE *fp = fopen(outputFile.c_str(), "wt");
+
+	if (fp == 0)
+	{
+		fprintf(stderr, "Ne mogu otvoriti za pisanje file %s\n", outputFile.c_str());
+		exit(1);
+	}
+
+	fprintf(fp, "%d, %lf\n", order_, R_);
+
+/*	for (int _n = 1;    _n <= order_;  _n++)
+	for (int _l = 0;    _l <= _n-1;    _l++)
+	for (int m  = -_l;  m  <= _l;      m ++)
+	for (int n  = 1;    n  <= order_;  n ++)
+	for (int l  = 0;    l  <= n-1;     l ++)*/
+
+	for (unsigned int i = 0; i < matrix_.size(); ++i)
+	{
+		fprintf(fp, "%.20lf\n", matrix_[i]);
+	}
+
+	fclose(fp);
+}
+
+void TranslationMatrix::calculateMatrix(int order, double R)
+{
+	TranslationMatrixMathEngine& mathEngine = TranslationMatrixMathEngine::getInstance();
+
+	order_ = order;
+	R_ = R;
+
+	matrix_.resize((order_ * order_ * (order_+1) * (order_+1) * (2*order_+1)) / 12);
+	int iMatrix = 0;
+
+	for (int _n = 1;    _n <= order_;  _n++)
+	{
+		printf("evo me na %d...\n", _n);
+		for (int _l = 0;    _l <= _n-1;    _l++)
+		for (int m  = -_l;  m  <= _l;      m ++)
+		for (int n  = 1;    n  <= order_;  n ++)
+		for (int l  = 0;    l  <= n-1;     l ++) // ovdje je gadni zajeb. l bi trebalo kretati od abs(m). TODO
+		{
+			if (m > l || -m > l)  // privremeno rjesenje
+			{
+				matrix_[iMatrix++] = 0.0;
+				continue;
+			}
+			matrix_[iMatrix++] = mathEngine.matrixElement(R_, _n, _l, n, l, m);
+		}
+	}
 }
 
 

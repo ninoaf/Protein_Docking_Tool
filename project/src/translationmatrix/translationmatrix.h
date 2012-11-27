@@ -11,13 +11,13 @@
 #include <vector>
 #include <string>
 
-#include "../coefficients/coefficients.h"
+//#include "../coefficients/coefficients.h"
 
 using namespace std;
 
 class TranslationMatrix
 {
-	friend class Coefficients;
+	//friend class Coefficients;
 public:
 	TranslationMatrix(); //
 	TranslationMatrix(int order, double R); //
@@ -25,7 +25,11 @@ public:
 	TranslationMatrix(const string& inputFile); //
 
 	int importFromFile(const string& inputFile);//
+	int exportToFile(const string& outputFile);
+	void dumpToFile(const string& outputFile);
 	int getOrder() const;
+
+	void calculateMatrix(int order, double R);
 
 private:
 	int order_;
