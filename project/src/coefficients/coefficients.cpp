@@ -207,10 +207,12 @@ bool Coefficients::calculateFromGrid(const Grid& grid)
 	double sum = 0.0;
 	int iCoef = 0;
 
-	printf("Coefficients calculation started\n");
+	printf("Coefficients calculation started...\n");
 	for (int n = 1; n <= order_; ++n)
 	{
-		printf("%d\n", n);
+		printf("\r\tCurrent order: %d/%d", n, order_);
+		fflush(stdout);
+
 		for (int l = 0; l <= n-1; ++l)
 		{
 
@@ -242,6 +244,7 @@ bool Coefficients::calculateFromGrid(const Grid& grid)
 		}
 	}
 
+//	printf("\r\tCurrent order: %d/%d\n", order_, order_);
 	printf("...OK! (calculateFromGrid finished successfully)\n");
 
 	return true;

@@ -7,7 +7,6 @@ src/rotationmatrix/rotationmatrix.d: \
  ../src/rotationmatrix/../coefficients/../structures/../math/../structures/structures.h \
  ../src/rotationmatrix/../coefficients/../structures/../math/../structures/../math/math_pdt.h \
  ../src/rotationmatrix/../coefficients/../translationmatrix/translationmatrix.h \
- ../src/rotationmatrix/../coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/rotationmatrix/../coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/rotationmatrix/../coefficients/../grid/grid.h \
  ../src/rotationmatrix/../coefficients/../grid/../structures/structures.h \
@@ -41,8 +40,6 @@ src/rotationmatrix/rotationmatrix.d: \
 ../src/rotationmatrix/../coefficients/../structures/../math/../structures/../math/math_pdt.h:
 
 ../src/rotationmatrix/../coefficients/../translationmatrix/translationmatrix.h:
-
-../src/rotationmatrix/../coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/rotationmatrix/../coefficients/../rotationmatrix/rotationmatrix.h:
 

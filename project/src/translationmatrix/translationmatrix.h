@@ -17,7 +17,7 @@ using namespace std;
 
 class TranslationMatrix
 {
-	//friend class Coefficients;
+	friend class Coefficients;
 public:
 	TranslationMatrix(); //
 	TranslationMatrix(int order, double R); //

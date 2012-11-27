@@ -1,4 +1,4 @@
-red_sf_harmonika: 20
+red_sf_harmonika: 15
 stranica_grida: 150
 stranica_celije: 1
 

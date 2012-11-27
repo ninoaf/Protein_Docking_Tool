@@ -17,7 +17,6 @@ src/predocking/predocking.d: ../src/predocking/predocking.cpp \
  ../src/predocking/../grid/../coefficients/../structures/structures.h \
  ../src/predocking/../grid/../coefficients/../structures/../math/math_pdt.h \
  ../src/predocking/../grid/../coefficients/../translationmatrix/translationmatrix.h \
- ../src/predocking/../grid/../coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/predocking/../grid/../coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/predocking/../grid/../coefficients/../rotationmatrix/../coefficients/coefficients.h \
  ../src/predocking/../grid/../coefficients/../rotationmatrix/../structures/structures.h \
@@ -69,8 +68,6 @@ src/predocking/predocking.d: ../src/predocking/predocking.cpp \
 ../src/predocking/../grid/../coefficients/../structures/../math/math_pdt.h:
 
 ../src/predocking/../grid/../coefficients/../translationmatrix/translationmatrix.h:
-
-../src/predocking/../grid/../coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/predocking/../grid/../coefficients/../rotationmatrix/rotationmatrix.h:
 

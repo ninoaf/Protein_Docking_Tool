@@ -203,6 +203,7 @@ void Predocking::runPredocking(Configuration &config)
 ////////////// CALCULATING COEFFICIENTS ///////////////
 ///////////////////////////////////////////////////////
 	config.getParameter("red_sf_harmonika", order);
+	printf ("Order of spherical harmonics: %d\n", order);
 
 	printf ("Calculating coefficients - ligand inner...\n");
 	config.getParameter("ligand_inner_skin_coeffs", ligandInnerSkinCoeffPath);

@@ -5,7 +5,6 @@ src/docking/docking.d: ../src/docking/docking.cpp \
  ../src/docking/../coefficients/../structures/../math/../structures/structures.h \
  ../src/docking/../coefficients/../structures/../math/../structures/../math/math_pdt.h \
  ../src/docking/../coefficients/../translationmatrix/translationmatrix.h \
- ../src/docking/../coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/docking/../coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/docking/../coefficients/../rotationmatrix/../coefficients/coefficients.h \
  ../src/docking/../coefficients/../rotationmatrix/../structures/structures.h \
@@ -51,8 +50,6 @@ src/docking/docking.d: ../src/docking/docking.cpp \
 ../src/docking/../coefficients/../structures/../math/../structures/../math/math_pdt.h:
 
 ../src/docking/../coefficients/../translationmatrix/translationmatrix.h:
-
-../src/docking/../coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/docking/../coefficients/../rotationmatrix/rotationmatrix.h:
 

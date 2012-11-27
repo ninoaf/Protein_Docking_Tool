@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.104286965">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.104286965" moduleId="org.eclipse.cdt.core.settings" name="Predocking">
@@ -58,7 +56,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="src|test|test/math/wigner_test.cpp|test/configuration/configuration_test.cpp|test/log/log_test.cpp|src/coeffs/coeffs.cpp|src/log/log.h|src/log/log.cpp|data/adb/grid|grid" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry excluding="coeff_movement_main.cpp|scr2pdb.cpp|scoreit_main.cpp|docking_MPI_main.cpp|docking_main.cpp|log/log.h|log/log.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="translationmatrix/main.cpp|coeff_movement_main.cpp|scr2pdb.cpp|scoreit_main.cpp|docking_MPI_main.cpp|docking_main.cpp|log/log.h|log/log.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry excluding="translate/translate_test.cpp|coefficients/coefficients_test.cpp|docking/docking_test.cpp|trigonometriccaching/trigonometriccaching_test.cpp|trigonometriccaching_test/trigonometriccaching_test.cpp|grid/grid_test.cpp|math/wigner_test.cpp|log/log_test.cpp|configuration/configuration_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test"/>
 					</sourceEntries>
 				</configuration>
@@ -117,7 +115,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="src|test|test/math/wigner_test.cpp|test/log/log_test.cpp|test/configuration/configuration_test.cpp|src/predocking/predocking.cpp|src/coeffs/coeffs.cpp|src/log/log.h|src/log/log.cpp|data/adb/grid|grid" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry excluding="scoreit_main.cpp|coeff_movement_main.cpp|scr2pdb.cpp|docking_MPI_main.cpp|predocking/predocking.h|predocking_main.cpp|predocking/predocking.cpp|log/log.h|log/log.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="translationmatrix/main.cpp|scoreit_main.cpp|coeff_movement_main.cpp|scr2pdb.cpp|docking_MPI_main.cpp|predocking/predocking.h|predocking_main.cpp|predocking/predocking.cpp|log/log.h|log/log.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry excluding="translate/translate_test.cpp|coefficients/coefficients_test.cpp|docking/docking_test.cpp|trigonometriccaching/trigonometriccaching_test.cpp|trigonometriccaching_test/trigonometriccaching_test.cpp|grid/grid_test.cpp|math/wigner_test.cpp|log/log_test.cpp|configuration/configuration_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test"/>
 					</sourceEntries>
 				</configuration>
@@ -179,7 +177,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="src|test|test/configuration/configuration_test.cpp|src/predocking/predocking.cpp|test/log/log_test.cpp|src/coeffs/coeffs.cpp|src/log/log.h|src/log/log.cpp|data/adb/grid|grid" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry excluding="docking_main.cpp|coeff_movement_main.cpp|scr2pdb.cpp|scoreit_main.cpp|docking_MPI_main.cpp|predocking_main.cpp|log/log.h|log/log.cpp|coefficients|math" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="translationmatrix/main.cpp|docking_main.cpp|coeff_movement_main.cpp|scr2pdb.cpp|scoreit_main.cpp|docking_MPI_main.cpp|predocking_main.cpp|log/log.h|log/log.cpp|coefficients|math" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/coefficients"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src/math"/>
 						<entry excluding="translate/translate_test.cpp|docking/docking_test.cpp|trigonometriccaching/trigonometriccaching_test.cpp|math/wigner_test.cpp|log/log_test.cpp|configuration/configuration_test.cpp|coefficients" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="test"/>

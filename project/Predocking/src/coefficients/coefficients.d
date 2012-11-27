@@ -5,7 +5,6 @@ src/coefficients/coefficients.d: ../src/coefficients/coefficients.cpp \
  ../src/coefficients/../structures/../math/../structures/structures.h \
  ../src/coefficients/../structures/../math/../structures/../math/math_pdt.h \
  ../src/coefficients/../translationmatrix/translationmatrix.h \
- ../src/coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/coefficients/../rotationmatrix/../coefficients/coefficients.h \
  ../src/coefficients/../rotationmatrix/../structures/structures.h \
@@ -38,8 +37,6 @@ src/coefficients/coefficients.d: ../src/coefficients/coefficients.cpp \
 ../src/coefficients/../structures/../math/../structures/../math/math_pdt.h:
 
 ../src/coefficients/../translationmatrix/translationmatrix.h:
-
-../src/coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/coefficients/../rotationmatrix/rotationmatrix.h:
 

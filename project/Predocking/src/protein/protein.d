@@ -7,7 +7,6 @@ src/protein/protein.d: ../src/protein/protein.cpp \
  ../src/protein/../coefficients/../structures/structures.h \
  ../src/protein/../coefficients/../structures/../math/math_pdt.h \
  ../src/protein/../coefficients/../translationmatrix/translationmatrix.h \
- ../src/protein/../coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/protein/../coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/protein/../coefficients/../rotationmatrix/../coefficients/coefficients.h \
  ../src/protein/../coefficients/../rotationmatrix/../structures/structures.h \
@@ -49,8 +48,6 @@ src/protein/protein.d: ../src/protein/protein.cpp \
 ../src/protein/../coefficients/../structures/../math/math_pdt.h:
 
 ../src/protein/../coefficients/../translationmatrix/translationmatrix.h:
-
-../src/protein/../coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/protein/../coefficients/../rotationmatrix/rotationmatrix.h:
 
