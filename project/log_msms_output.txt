@@ -22,7 +22,7 @@ TRIANGULATION...
     Component 0
     component#, vertices,  edges,  faces, genus, density
         0          10105   30309   20206    0     1.167
-        Time Triangulation real: 0.03 user: 0.04 sys: 0.00
+        Time Triangulation real: 0.02 user: 0.02 sys: 0.00
 NUMERICAL VOLUMES AND AREA
     Comp. probe_radius SES_volume SES_area)
        0      1.50    27469.541   8281.559

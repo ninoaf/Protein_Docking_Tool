@@ -1,6 +1,9 @@
-red_sf_harmonika: 20
-stranica_grida: 150
-stranica_celije: 1
+# Order of spherical harmonics
+order_sh: 15
+# Length of one side of the rasterization grid (in angstrems). Grid is cubic (each side is of the same length)
+grid_size: 150
+# Length of one side of a grid's cell (voxel) in angstrems. Cells are cubic (each side is of the same length). Cell size determines how much discretization a grid containts.
+grid_cell_size: 1
 
 ligand: data/pdb/3hfl_ly.pdb
 receptor: data/pdb/3hfl_fv.pdb

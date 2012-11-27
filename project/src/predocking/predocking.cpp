@@ -101,8 +101,8 @@ void Predocking::runPredocking(Configuration &config)
 	MSMSWrapper wrapperLigand, wrapperReceptor;
 	Coefficients coeffLigandInner, coeffLigandOuter, coeffReceptorInner, coeffReceptorOuter;
 
-	config.getParameter("stranica_grida", gridSize);
-	config.getParameter("stranica_celije", gridCellSize);
+	config.getParameter("grid_size", gridSize);
+	config.getParameter("grid_cell_size", gridCellSize);
 
 	Grid skinLigandInner(gridSize, gridCellSize), skinLigandOuter(gridSize, gridCellSize), skinReceptorInner(gridSize, gridCellSize), skinReceptorOuter(gridSize, gridCellSize);
 	Grid inflatedSkinLigandInner(gridSize, gridCellSize), inflatedSkinLigandOuter(gridSize, gridCellSize), inflatedSkinReceptorInner(gridSize, gridCellSize), inflatedSkinReceptorOuter(gridSize, gridCellSize);
@@ -202,7 +202,8 @@ void Predocking::runPredocking(Configuration &config)
 ///////////////////////////////////////////////////////
 ////////////// CALCULATING COEFFICIENTS ///////////////
 ///////////////////////////////////////////////////////
-	config.getParameter("red_sf_harmonika", order);
+//	config.getParameter("red_sf_harmonika", order);
+	config.getParameter("order_sh", order);
 	printf ("Order of spherical harmonics: %d\n", order);
 
 	printf ("Calculating coefficients - ligand inner...\n");
