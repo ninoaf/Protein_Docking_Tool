@@ -1,0 +1,60 @@
+create pdb={data/pdb/3hfl_fv.pdb} name={pdb1} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+% create pdb={data/pdb/umjetni/ligandLvisokiuski.pdb} name={pdb1} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+create mesh={data/models/sphere.dat} type={dat} center={true} autoScale={1.0}
+create mesh={data/models/stick.dat} type={dat} center={true} autoScale={1.0}
+create mesh={data/models/coordinate_system.dat} type={dat} center={true} autoScale={10.0}
+create mesh={data/grid/receptorLvisoki_is.coef_0_0_0_0.grid} name={gridMesh1} type={grid} center={true} autoScale={0.0} value={true 1.0}
+create pdb={data/pdb/amino/ala.pdb} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+
+create variable={nodeMode3hfl} type={ulonglong} value={0x1405}
+create variable={nodeModeCS} type={ulonglong} value={0x0007}
+    printf ("x = %lf\ty = %lf\tz = %lf\n", arithmeticCenter_.x, arithmeticCenter_.y, arithmeticCenter_.z);
+
+% create variable={nodeMode123} type={ulonglong} value={15}
+% create variable={nodeMode124} type={ulonglong} value={16}
+% create variable={nodeMode125} type={ulonglong} value={17}
+
+create variable name={increment} type={double} value={0.1}
+create variable name={rotacija} type={double} value={-90.0}
+% change rotacija value={45.0}
+create variable name={bojaCS1} type={color} value={255 255 0 255}
+create variable name={bojaCS2} type={color} value={0 0 128 100}
+
+create variable name={vecLook1} type={vector3} value={0.0 0.0 -80.0}
+create variable name={vecPoint1} type={vector3} value={0.0 0.0 0.0}
+create variable name={vecUp1} type={vector3} value={0.0 1.0 0.0}
+
+create variable name={rotScriptPath} type={string} value={data/scripts/various/scriptRotation.vsc}
+
+% remove rotacija
+
+create ms name={pdb1} path={data/ms/3hfl_fv.pdb} value={nodeMode3hfl}
+create mesh={data/ms/3hfl_fv.pdb.atc} type={ms} center={true} autoScale={0.0}
+
+create node name={nodeLook1} nodeType={lookat} nodeParams={vecLook1 vecPoint1 vecUp1}
+	create node name={nodeRot1} nodeType={rotationx} nodeParams={rotacija} parent={nodeLook1}
+		create node name={nodeRotScript} nodeType={script} nodeParams={rotScriptPath} parent={nodeRot1}
+			create node name={node1} nodeType={pdb} nodeParams={pdb1 sphere stick nodeMode3hfl} parent={nodeRotScript}
+			create node name={nodeBoja1} nodeType={color} nodeParams={bojaCS1} parent={nodeRotScript}
+				create node name={node2} nodeType={mesh} nodeParams={coordinate_system nodeMode3hfl} parent={nodeBoja1}
+%			create node name={nodeBoja3} nodeType={color} nodeParams={bojaCS2} parent={nodeRotScript}
+%				create node name={nodeGrid1} nodeType={mesh} nodeParams={gridMesh1 nodeMode3hfl} parent={nodeBoja3}
+	create node name={nodeBoja2} nodeType={color} nodeParams={bojaCS2} parent={nodeRot1}
+		create node name={node3} nodeType={mesh} nodeParams={3hfl_fv.pdb nodeMode3hfl} parent={nodeBoja2}
+
+create variable name={testTemplate1} type={string} value={increment}
+create variable name={testTemplate2} type={string} value={asd} % value={\:testTemplate1 jos:testTemplate1 jedan te\:st}
+
+
+
+create view name={view1} nodeParams={nodeLook1}
+% create view name={view2} nodeParams={nodeRot1}
+% create view name={view3} nodeParams={node1} 
+% create view name={view4} nodeParams={node1}
+
+% change bojaCS value={255 0 0 255}
+
+% create node nodeType={pdb} nodeParams={ala sphere stick nodeMode3hfl} name={node2}
+% create node nodeType={mesh} nodeParams={sphere nodeMode3hfl} name{nodeMesh}
+% create node nodeType={mesh} nodeParams={coordinate_system nodeMode3hfl} name{nodeCoordSys}
+

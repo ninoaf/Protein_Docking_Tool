@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath
+END
+numcnvrt.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/numcnvrt.h
+END
+evaluate.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/evaluate.h
+END
+pi.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/pi.h
+END
+snipmath.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/snipmath.h
+END
+sniptype.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/sniptype.h
+END
+rmallws.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/rmallws.c
+END
+round.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/round.h
+END
+strupr.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/strupr.c
+END
+evaluate.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/evaluate.cpp
+END
+extkword.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/extkword.h
+END
+snip_str.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/pdt2/!svn/ver/652/trunk/PDT_v3/src/math/evalmath/snip_str.h
+END

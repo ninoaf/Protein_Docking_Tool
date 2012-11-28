@@ -28,10 +28,15 @@ src/translationmatrix \
 src/structures \
 src/rotationmatrix \
 src/protein \
+src/predocking \
 src/pdbwriter \
 src/pdbparser \
+src/objects \
 src/msmswrapper \
 src/math \
+src/math/evalmath \
+src/materials \
+src/log \
 src/grid \
 src \
 src/docking \

@@ -31,6 +31,11 @@ Grid::Grid(const std::string& inputFile)
 	importFromFile(inputFile);
 }
 
+int Grid::size() const
+{
+	return grid_.size();
+}
+
 
 
 // Exports grid to file. Returns number of written elements.
@@ -114,6 +119,8 @@ int Grid::importFromFile(const std::string& inputFile)
 	ret += fread(&gridSize_, sizeof(gridSize_), 1, fp);
 	ret += fread(&gridCellSize_, sizeof(gridCellSize_), 1, fp);
 	grid_.resize(nGrid);
+
+	gridWidth_ = (unsigned long int) pow(nGrid, 1.0f/3.0f);
 
 	for (unsigned int i = 0; i < nGrid; ++i){
 		ret += fread(&grid_[i].coord.x, sizeof(grid_[i].coord.x), 1, fp);
@@ -367,9 +374,15 @@ int Grid::inflateGrid()
     return 1;
 }
 
-std::vector<GridValue> Grid::getGrid()
+std::vector<GridValue>& Grid::getGrid()
 {
 	return grid_;
+}
+
+void Grid::setGridSize(double gridSize, double gridCellSize)
+{
+	gridSize_ = gridSize;
+	gridCellSize_ = gridCellSize;
 }
 
 double Grid::getGridCellSize()
@@ -380,6 +393,11 @@ double Grid::getGridCellSize()
 double Grid::getGridSize()
 {
 	return gridSize_;
+}
+
+unsigned long int Grid::getGridWidth()
+{
+	return gridWidth_;
 }
 
 void Grid::operator= (Grid& op1)

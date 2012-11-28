@@ -30,7 +30,7 @@ void AtomRadii::init()
 	}
 }
 
-double AtomRadii::findRadius(Atom *atom, bool useUnitedRadius)
+double AtomRadii::findRadius(AtomPdb *atom, bool useUnitedRadius)
 {
 	for (int i=0; i<numPatterns_; i++)
 	{

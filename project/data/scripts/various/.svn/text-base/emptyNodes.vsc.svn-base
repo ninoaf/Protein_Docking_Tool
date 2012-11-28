@@ -1,0 +1,57 @@
+%%%%% UCITAVANJE PDB-ova %%%%%
+create pdb={data/pdb/3hfl_fv.pdb} name={ligand} radiusPath={data/system/atmtypenumbers} radiusType={united} center={false} centerType={qwe}
+create pdb={data/pdb/3hfl_ly.pdb} name={receptor} radiusPath={data/system/atmtypenumbers} radiusType={united} center={false} centerType={qwe}
+create pdb={data/pdb/3hfl.pdb} name={complex} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% UCITAVANJE MESH-eva %%%%%
+create mesh={data/models/sphere.dat} type={dat} center={true} autoScale={1.0}
+create mesh={data/models/stick.dat} type={dat} center={true} autoScale={1.0}
+
+create mesh={data/models/coordinate_system.dat} type={dat} name={coordSystem} center={false} autoScale={100.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VARIJABLI %%%%%
+create variable={nodeMode3hfl_fv} type={ulonglong} value={0x0105}
+create variable={nodeMode3hfl_ly} type={ulonglong} value={0x0105}
+create variable={nodeMode3hfl} type={ulonglong} value={0x0105}
+create variable={nodeModeColorAtoms} type={ulonglong} value={0x0000000000001105}
+
+create variable={nodeModeCoordSystem} type={ulonglong} value={0x0005}
+
+create variable name={increment} type={double} value={0.0}
+create variable name={rotationx} type={double} value={0.0}
+create variable name={rotationy} type={double} value={0.0}
+create variable name={rotationz} type={double} value={0.0}
+create variable name={incrementx} type={double} value={0.0}
+create variable name={incrementy} type={double} value={0.0}
+create variable name={incrementz} type={double} value={0.0}
+
+create variable name={colorLigand} type={color} value={255 0 0 255}
+create variable name={colorReceptor} type={color} value={0 255 0 255}
+create variable name={colorComplex} type={color} value={0 0 255 80}
+create variable name={colorCoordSystem} type={color} value={255 255 0 255}
+
+create variable name={vecLook1} type={vector3} value={0.0 0.0 -180.0}
+create variable name={vecPoint1} type={vector3} value={0.0 0.0 0.0}
+create variable name={vecUp1} type={vector3} value={0.0 1.0 0.0}
+
+create variable name={rotationScriptPath} type={string} value={data/scripts/scoreEvalDebugRotation.vsc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE NODE-ova %%%%%
+create node name={nodeLook1} nodeType={lookat} nodeParams={vecLook1 vecPoint1 vecUp1}
+	create node name={nodeRotX} nodeType={rotationx} nodeParams={rotationx} parent={nodeLook1}
+		create node name={nodeRotY} nodeType={rotationy} nodeParams={rotationy} parent={nodeRotX}
+			create node name={nodeRotZ} nodeType={rotationz} nodeParams={rotationz} parent={nodeRotY}
+				create node name={nodeRotationScript} nodeType={script} nodeParams={rotationScriptPath} parent={nodeRotZ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VIEW-ova %%%%%
+create view name={view1} nodeParams={nodeLook1}
+% create view name={view2} nodeParams={nodeLook1}
+% create view name={view3} nodeParams={nodeLook1} 
+% create view name={view4} nodeParams={node1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

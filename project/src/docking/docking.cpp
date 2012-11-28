@@ -9,7 +9,7 @@
 
 ScoreConfiguration::ScoreConfiguration()
 {
-
+	R = 0.0f; alpha = 0.0f; beta1 = 0.0f; gamma1 = 0.0f; beta2 = 0.0f; gamma2 = 0.0f;
 }
 
 ScoreConfiguration::ScoreConfiguration(double _R, double _alpha, double _beta1, double _gamma1, double _beta2, double _gamma2)
@@ -103,12 +103,80 @@ Docking::Docking(Configuration &config)
 	config.getParameter("radii_path", t);
 	radiiPath_ = t;
 
+
+
+	int loadFromFile = 0;
+	config.getParameter("load_coeffs_from_file", loadFromFile);
+
 	loadParametersFromConfiguration(config);
+
+	ligandPredocking_.loadConfig(config, loadFromFile ? FILE_LIGAND : CALCULATE);
+	receptorPredocking_.loadConfig(config, loadFromFile ? FILE_RECEPTOR : CALCULATE);
+
+	if (!loadFromFile)
+	{
+		ligandPredocking_.calculateSkins(ligandPath_);
+		receptorPredocking_.calculateSkins(receptorPath_);
+	}
+
 	checkOrders();
 	rotatationsCalculated_ = false;
 	trigonometricCalculated_ = false;
 	coeffMappingNLMCalculated_ = false;
 }
+
+Docking::Docking(std::string configPath)
+{
+	Configuration config;
+	string t;
+
+	config.init(configPath);
+
+	config.getParameter("receptor_inner_skin_coeffs", t);
+	receptor_.inner_.importFromFile(t);
+	receptor_.SetInnerSkinName(t); //For protein recognition
+
+	config.getParameter("receptor_outer_skin_coeffs", t);
+	receptor_.outer_.importFromFile(t);
+	receptor_.SetOuterSkinName(t);
+
+	config.getParameter("ligand_inner_skin_coeffs", t);
+	ligand_.inner_.importFromFile(t);
+	ligand_.SetInnerSkinName(t);
+
+	config.getParameter("ligand_outer_skin_coeffs", t);
+	ligand_.outer_.importFromFile(t);
+	ligand_.SetOuterSkinName(t);
+
+	config.getParameter("ligand", t);
+	ligandPath_ = t;
+	config.getParameter("receptor", t);
+	receptorPath_ = t;
+	config.getParameter("radii_path", t);
+	radiiPath_ = t;
+
+
+
+	int loadFromFile = 0;
+	config.getParameter("load_coeffs_from_file", loadFromFile);
+
+	loadParametersFromConfiguration(config);
+
+	ligandPredocking_.loadConfig(config, loadFromFile ? FILE_LIGAND : CALCULATE);
+	receptorPredocking_.loadConfig(config, loadFromFile ? FILE_RECEPTOR : CALCULATE);
+
+	if (!loadFromFile)
+	{
+		ligandPredocking_.calculateSkins(ligandPath_);
+		receptorPredocking_.calculateSkins(receptorPath_);
+	}
+
+	checkOrders();
+	rotatationsCalculated_ = false;
+	trigonometricCalculated_ = false;
+	coeffMappingNLMCalculated_ = false;
+}
+
 Docking::~Docking()
 {
 	//delete [] rotationAngles_;
@@ -170,6 +238,15 @@ double Docking::scoreIt(Protein& receptor, Protein& ligand, double Q)
 
 	return score;
 }
+
+void Docking::calculateProteinCoefficients(int order)
+{
+	fprintf(stderr, "Calculating Ligand coefficients\n");
+	ligandPredocking_.getProtein(order, ligand_);
+	fprintf(stderr, "Calculating Receptor coefficients\n");
+	receptorPredocking_.getProtein(order, receptor_);
+}
+
 void Docking::preDockingCalculateRotations(void)
 {
 	if (rotatationsCalculated_ == false)
@@ -1035,11 +1112,43 @@ void Docking::setConfiguration(const ScoreConfiguration& scoreConfiguration, Pro
 	newLigand.rotate(rotationMatrix);
 }
 
+void Docking::setConfiguration(double R, double betaReceptor, double gammaReceptor, double alphaLigand, double betaLigand, double gammaLigand, Protein &newReceptor, Protein &newLigand) const {
+	// rotate receptor
+	RotationMatrix rotationMatrix;
+	rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, gammaReceptor));
+	receptor_.rotateTo(newReceptor, rotationMatrix);
+    rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(betaReceptor, 0.0));
+	newReceptor.rotate(rotationMatrix);
+
+	// translate
+	char buffer[100];
+	//	sprintf(buffer, "%s/%d/%.6lf.dat", "data/trans", receptor_.getOrder(), scoreConfiguration.R);
+	sprintf(buffer, "%s/%d/%.6lf.dat", translationPath_.c_str(), receptor_.getOrder(), R);
+	TranslationMatrix translationmatrix(buffer);
+	newReceptor.translate(translationmatrix);
+
+	rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, gammaLigand));
+	ligand_.rotateTo(newLigand, rotationMatrix);
+	rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(betaLigand, 0.0));
+	newLigand.rotate(rotationMatrix);
+	rotationMatrix.calculateMatrix(receptor_.getOrder(), RotationAngle(0.0, alphaLigand));
+	newLigand.rotate(rotationMatrix);
+}
+
 double Docking::scoreIt(const ScoreConfiguration& scoreConfiguration)
 {
 	Protein newReceptor, newLigand;
 
 	this->setConfiguration(scoreConfiguration, newReceptor, newLigand);
+
+	return this->scoreIt(newReceptor, newLigand, penalty_);
+}
+
+double Docking::scoreIt(double R, double betaReceptor, double gammaReceptor, double alphaLigand, double betaLigand, double gammaLigand)
+{
+	Protein newReceptor, newLigand;
+
+	this->setConfiguration(R, betaReceptor, gammaReceptor, alphaLigand, betaLigand, gammaLigand, newReceptor, newLigand);
 
 	return this->scoreIt(newReceptor, newLigand, penalty_);
 }

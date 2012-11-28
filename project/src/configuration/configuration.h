@@ -31,6 +31,7 @@ public:
 	int getParameter(const string &parameter, double& retVal);
 	int getParameter(const string &parameter, string& retVal);
 	bool changeParameter(char *configFile, char *parameter, char *newValue);
+	int setParameter(const string& parameter, int& newVal);
 
 	void outputAll();
 

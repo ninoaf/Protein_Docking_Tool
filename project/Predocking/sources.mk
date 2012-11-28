@@ -32,8 +32,12 @@ src \
 src/predocking \
 src/pdbwriter \
 src/pdbparser \
+src/objects \
 src/msmswrapper \
 src/math \
+src/math/evalmath \
+src/materials \
+src/log \
 src/grid \
 src/docking \
 src/configuration \

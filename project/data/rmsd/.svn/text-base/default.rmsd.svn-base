@@ -1,0 +1,7 @@
+# RMSD Evaluation of PDT score results.
+# startingScore: 20
+# maxNumScores: 1
+#
+# Line description:
+# RMSD		# rank score R betaR gammaR alphaL betaL gammaL
+0.976912		 # 20 1778.391000		26.000000	0.000000	0.000000	0.000000	0.000000	0.000000

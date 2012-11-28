@@ -31,6 +31,11 @@ Grid::Grid(const std::string& inputFile)
 	importFromFile(inputFile);
 }
 
+int Grid::size() const
+{
+	return grid_.size();
+}
+
 
 
 // Exports grid to file. Returns number of written elements.
@@ -94,55 +99,6 @@ int Grid::dump(const std::string& outputFile) const
 	return ret;
 }
 
-void Grid::exportToFileXaxis(const std::string& outputFile, int x, int y, const Coefficients& coefficients )
-{
-
-	double q = (gridSize_ - gridCellSize_) / 2.0;
-
-	BaseFunctions* bf = BaseFunctions::instance();
-
-	grid_.clear();
-
-	vector<double> xAxisChargeValue;
-	xAxisChargeValue.resize( gridSize_ );
-
-	int i = x;
-	int j = y;
-	int indeks = 0;
-	for (double k = -q; k < q+1e-7; k += gridCellSize_)
-	{
-		GridValue tmpGrid(i, j, k, 0.0);
-		SphericalCoordinates sc(tmpGrid.coord);
-
-		for (int iCoef = 0; iCoef < (int)coefficients.coefficients_.size(); ++iCoef)
-		{
-			tmpGrid.value += coefficients.coefficients_[iCoef].value * bf->baseFunction(coefficients.coefficients_[iCoef].coeffCoord, sc);
-		}
-
-		xAxisChargeValue.at( indeks ) = tmpGrid.value;
-		indeks++;
-	}
-	
-	printf("Exporting grid to file %s\n", outputFile.c_str());
-
-	FILE *fp;
-	fp = fopen(outputFile.c_str(), "w");
-	if (fp == 0)
-	{
-		printf("Unable to open file %s for writing in function Export_From_File(...)!\n", outputFile.c_str());
-		return;
-	}
-
-	for (int i = 0 ; i < gridSize_; ++i){
-		fprintf( fp, " %lf \n", xAxisChargeValue.at(i));
-
-	}
-
-	fclose(fp);
-
-	printf("Grid exported to Z Axis file: %s \n", outputFile.c_str());
-}
-
 // Imports grid from file. Returns number of read elements.
 int Grid::importFromFile(const std::string& inputFile)
 {
@@ -163,6 +119,8 @@ int Grid::importFromFile(const std::string& inputFile)
 	ret += fread(&gridSize_, sizeof(gridSize_), 1, fp);
 	ret += fread(&gridCellSize_, sizeof(gridCellSize_), 1, fp);
 	grid_.resize(nGrid);
+
+	gridWidth_ = (unsigned long int) pow(nGrid, 1.0f/3.0f);
 
 	for (unsigned int i = 0; i < nGrid; ++i){
 		ret += fread(&grid_[i].coord.x, sizeof(grid_[i].coord.x), 1, fp);
@@ -258,85 +216,6 @@ int Grid::generateFromCoefficients(const Coefficients& coefficients)
 	return 0;
 }
 
-void Grid::exportToFileZaxis(const std::string& outputFile, int x, int y) const
-{
-        printf("Exporting grid to file %s\n", outputFile.c_str());
-
-        FILE *fp;
-        fp = fopen(outputFile.c_str(), "w");
-        if (fp == 0)
-        {
-                printf("Unable to open file %s for writing in function Export_From_File(...)!\n", outputFile.c_str());
-                return;
-        }
-
-        vector<double> xAxisChargeValue;
-        xAxisChargeValue.resize( gridSize_ );
-  	
-	unsigned int nGrid = grid_.size();
-        for (unsigned int i = 0; i < nGrid; ++i){
-                if ( grid_[i].coord.y != x ){
-                        continue;
-                }else{
-                        if (  grid_[i].coord.z != y ){
-                                continue;
-                        }else{
-                                int delta = (gridSize_ - gridCellSize_) / 2.0;
-                                xAxisChargeValue.at( grid_[i].coord.x + delta ) = grid_[i].value;
-                        }
-                }
-        }
-
-        for (int i = 0 ; i < gridSize_; ++i){
-                fprintf( fp, " %lf \n", xAxisChargeValue.at(i));
-
-        }
-
-        fclose(fp);
-
-        printf("Grid exported to X Axis file: %s \n", outputFile.c_str());
-}
-
-
-int Grid::generateFromETOCoefficients(const Coefficients& coefficients)
-{
-	double q = (gridSize_ - gridCellSize_) / 2.0;
-
-	BaseFunctions* bf = BaseFunctions::instance();
-
-	grid_.clear();
-
-	printf("Gridsize %lf \n", gridSize_);
-	printf("GridCelsize %lf \n", gridCellSize_);
-	printf("q size total: %lf \n", q);
-
-	for (double i = -q; i < q+1e-7; i += gridCellSize_)
-	{
-		printf("%lf\n", i);
-		for (double j = -q; j < q+1e-7; j += gridCellSize_)
-		{
-			for (double k = -q; k < q+1e-7; k += gridCellSize_)
-			{
-				GridValue tmpGrid(i, j, k, 0.0);
-				SphericalCoordinates sc(tmpGrid.coord);
-
-				for (int iCoef = 0; iCoef < (int)coefficients.coefficients_.size(); ++iCoef)
-				{
-				tmpGrid.value += coefficients.coefficients_[iCoef].value * 
-					bf->ETOradialFunction( coefficients.coefficients_[iCoef].coeffCoord.n, coefficients.coefficients_[iCoef].coeffCoord.l, sc.radius)*
-					bf->legendrePolynomialSpherical( coefficients.coefficients_[iCoef].coeffCoord.l, abs(coefficients.coefficients_[iCoef].coeffCoord.m), cos(sc.elevation)) * 
-					bf->phi(coefficients.coefficients_[iCoef].coeffCoord.m, sc.azimuth);
-				}
-
-				grid_.push_back(tmpGrid);
-			}
-		}
-	}
-
-//	Log_Append(pdt_log_file, "...OK! (Coeff_To_Grid finished successfully)");
-
-	return 0;
-}
 
 
 // Creates a test cube for performing system check by generating the test cube grid. Returns -1 on error.
@@ -363,20 +242,15 @@ int Grid::generateTestCube (double cubeSize, double cubeWidth, double offset)
             	{
             		grid_.push_back(GridValue(i, j, k+offset, 1.0));
             	}
-            }
-         }
-     }
+             }
+          }
+      }
 
 //      Log_Append(pdt_log_file, "...OK! (generating test cube finished successfully)");
 
       return 0;
 }
 
-// Creates one test charge + charge
-void Grid::generateTestCharge (double q)
-{
-	grid_.push_back( GridValue(0,0,0, q) );
-}
 bool Grid::generateGridOffsets(vector<GridValue> &offsets, double const microDelta, double const sphereRadius)
 {
 	double l=0.0f, m=0.0f, n=0.0f;
@@ -500,9 +374,15 @@ int Grid::inflateGrid()
     return 1;
 }
 
-std::vector<GridValue> Grid::getGrid()
+std::vector<GridValue>& Grid::getGrid()
 {
 	return grid_;
+}
+
+void Grid::setGridSize(double gridSize, double gridCellSize)
+{
+	gridSize_ = gridSize;
+	gridCellSize_ = gridCellSize;
 }
 
 double Grid::getGridCellSize()
@@ -513,6 +393,11 @@ double Grid::getGridCellSize()
 double Grid::getGridSize()
 {
 	return gridSize_;
+}
+
+unsigned long int Grid::getGridWidth()
+{
+	return gridWidth_;
 }
 
 void Grid::operator= (Grid& op1)

@@ -1,0 +1,12 @@
+math name={increment} value={:increment + 1.1}
+% math name={rotationy} value={:rotationy + :increment}
+math name={rotationy} value={sin(:increment)}
+
+% math name={rotationx} value={:rotationx + :increment}
+% math name={rotationz} value={:rotationy + :increment}
+
+% math name={rotationx} value={:rotationx + :incrementx}
+% math name={rotationy} value={:rotationy + :incrementy}
+% math name={rotationz} value={:rotationz + :incrementz}
+
+% change incrementx value={1.0}

@@ -34,7 +34,7 @@ public:
 
 	void init();
 	void clear();
-	bool load(std::string filePath);
+	bool load(std::string filePath, bool import=true);
 	bool importCoords(std::string filePath);
 	bool importFaces(std::string filePath);
 };

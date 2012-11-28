@@ -1,0 +1,39 @@
+%%%%% UCITAVANJE PDB-ova %%%%%
+create pdb path={data/pdb/3hfl_fv.pdb} name={receptor} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+create pdb path={data/pdb/3hfl_ly.pdb} name={ligand} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% UCITAVANJE MESH-eva %%%%%
+create mesh path={data/models/sphere.dat} name={sphere} type={dat} center={true} autoScale={1.0}
+create mesh path={data/models/stick.dat} name={stick} type={dat} center={true} autoScale={1.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VARIJABLI %%%%%
+create variable={nodeMode3hfl_fv} type={ulonglong} value={0x0001000000014105}
+create variable={nodeMode3hfl_ly} type={ulonglong} value={0x0001000000014105}
+
+create variable name={translationReceptor} type={vector3} value={25.0 0.0 0.0}
+create variable name={rotationReceptor} type={eulervector3} value={0.0 0.0 0.0}
+create variable name={translationLigand} type={vector3} value={-20.0 0.0 0.0}
+create variable name={rotationLigand} type={eulervector3} value={0.0 0.0 0.0}
+
+create variable name={vecLook1} type={vector3} value={0.0 0.0 -180.0}
+create variable name={vecPoint1} type={vector3} value={0.0 0.0 0.0}
+create variable name={vecUp1} type={vector3} value={0.0 1.0 0.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE NODE-ova %%%%%
+create node name={nodeLook1} nodeType={lookat} nodeParams={vecLook1 vecPoint1 vecUp1}
+	create node name={nodeTranslateReceptor} nodeType={translation} nodeParams={translationReceptor} parent={nodeLook1}
+		create node name={nodeRotReceptor} nodeType={rotationeuler} nodeParams={rotationReceptor} parent={nodeTranslateReceptor}
+			create node name={nodeReceptor} nodeType={pdb} nodeParams={receptor sphere stick nodeMode3hfl_fv} parent={nodeRotReceptor}
+
+	create node name={nodeTranslateLigand} nodeType={translation} nodeParams={translationLigand} parent={nodeLook1}
+		create node name={nodeRotLigand} nodeType={rotationeuler} nodeParams={rotationLigand} parent={nodeTranslateLigand}
+				create node name={nodeLigand} nodeType={pdb} nodeParams={ligand sphere stick nodeMode3hfl_ly} parent={nodeRotLigand}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VIEW-ova %%%%%
+create view name={view1} nodeParams={nodeLook1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

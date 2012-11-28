@@ -1,29 +1,53 @@
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/pdbparser
+/pdt2/!svn/ver/651/trunk/PDT_v3/src/pdbparser
+END
+moleculecolors.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/pdt2/!svn/ver/592/trunk/PDT_v3/src/pdbparser/moleculecolors.h
 END
 pdbparser.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/pdbparser/pdbparser.cpp
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/pdbparser/pdbparser.cpp
+END
+models.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/pdt2/!svn/ver/629/trunk/PDT_v3/src/pdbparser/models.h
 END
 pdbparser.h
 K 25
 svn:wc:ra_dav:version-url
 V 57
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/pdbparser/pdbparser.h
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/pdbparser/pdbparser.h
 END
 atomradius.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/pdt2/!svn/ver/338/trunk/PDT_v3/src/pdbparser/atomradius.cpp
+/pdt2/!svn/ver/592/trunk/PDT_v3/src/pdbparser/atomradius.cpp
+END
+moleculecolors.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/pdt2/!svn/ver/618/trunk/PDT_v3/src/pdbparser/moleculecolors.cpp
 END
 atomradius.h
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/pdt2/!svn/ver/338/trunk/PDT_v3/src/pdbparser/atomradius.h
+/pdt2/!svn/ver/592/trunk/PDT_v3/src/pdbparser/atomradius.h
+END
+models.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/pdt2/!svn/ver/629/trunk/PDT_v3/src/pdbparser/models.cpp
 END

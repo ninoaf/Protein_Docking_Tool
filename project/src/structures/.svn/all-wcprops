@@ -1,17 +1,35 @@
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/structures
+/pdt2/!svn/ver/651/trunk/PDT_v3/src/structures
+END
+vmolstructures_list.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/pdt2/!svn/ver/592/trunk/PDT_v3/src/structures/vmolstructures_list.h
 END
 structures.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/structures/structures.cpp
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/structures/structures.cpp
+END
+vmolstructures.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/pdt2/!svn/ver/618/trunk/PDT_v3/src/structures/vmolstructures.cpp
 END
 structures.h
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/pdt2/!svn/ver/502/trunk/PDT_v3/src/structures/structures.h
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/structures/structures.h
+END
+vmolstructures.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/pdt2/!svn/ver/618/trunk/PDT_v3/src/structures/vmolstructures.h
 END

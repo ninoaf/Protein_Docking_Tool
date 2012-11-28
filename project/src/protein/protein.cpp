@@ -36,6 +36,12 @@ Protein::~Protein()
 
 }
 
+void Protein::exportToFile(const string& innerOutputFile, const string& outerOutpurFile) const
+{
+	inner_.exportToFile(innerOutputFile);
+	outer_.exportToFile(outerOutpurFile);
+}
+
 void Protein::SetInnerSkinName(string str)
 {
 	  innerSkinName_ = str;
@@ -152,7 +158,14 @@ void Protein::calculateTranslationIndexes( vector<int>& translationIndexes ) con
 {
 	inner_.calulateTranslationIndexes( translationIndexes );
 }
+
 int Protein::getOrder() const
 {
 	return inner_.getOrder();
+}
+
+void Protein::setOrder(int _order)
+{
+	inner_.setOrder(_order);
+	outer_.setOrder(_order);
 }

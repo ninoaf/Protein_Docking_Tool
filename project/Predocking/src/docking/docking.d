@@ -35,7 +35,18 @@ src/docking/docking.d: ../src/docking/docking.cpp \
  ../src/docking/../protein/../rotationmatrix/rotationmatrix.h \
  ../src/docking/../protein/../grid/grid.h \
  ../src/docking/../math/math_pdt.h \
- ../src/docking/../configuration/configuration.h
+ ../src/docking/../configuration/configuration.h \
+ ../src/docking/../predocking/predocking.h \
+ ../src/docking/../predocking/../pdbparser/pdbparser.h \
+ ../src/docking/../predocking/../pdbparser/../structures/structures.h \
+ ../src/docking/../predocking/../pdbparser/../structures/../math/math_pdt.h \
+ ../src/docking/../predocking/../pdbparser/moleculecolors.h \
+ ../src/docking/../predocking/../pdbparser/atomradius.h \
+ ../src/docking/../predocking/../pdbparser/models.h \
+ ../src/docking/../predocking/../msmswrapper/msmswrapper.h \
+ ../src/docking/../predocking/../configuration/configuration.h \
+ ../src/docking/../predocking/../grid/grid.h \
+ ../src/docking/../predocking/../protein/protein.h
 
 ../src/docking/docking.h:
 
@@ -112,3 +123,25 @@ src/docking/docking.d: ../src/docking/docking.cpp \
 ../src/docking/../math/math_pdt.h:
 
 ../src/docking/../configuration/configuration.h:
+
+../src/docking/../predocking/predocking.h:
+
+../src/docking/../predocking/../pdbparser/pdbparser.h:
+
+../src/docking/../predocking/../pdbparser/../structures/structures.h:
+
+../src/docking/../predocking/../pdbparser/../structures/../math/math_pdt.h:
+
+../src/docking/../predocking/../pdbparser/moleculecolors.h:
+
+../src/docking/../predocking/../pdbparser/atomradius.h:
+
+../src/docking/../predocking/../pdbparser/models.h:
+
+../src/docking/../predocking/../msmswrapper/msmswrapper.h:
+
+../src/docking/../predocking/../configuration/configuration.h:
+
+../src/docking/../predocking/../grid/grid.h:
+
+../src/docking/../predocking/../protein/protein.h:

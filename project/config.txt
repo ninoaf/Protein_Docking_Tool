@@ -1,3 +1,9 @@
+# 'Process' parameter is used only with the 'pdt' executable. 'pdt' unifies all protein docking subprocesses into a single executable file, allowing to run predocking, docking and conversion of coefs to a rasterized 3D grid (for visualization and debugging purposes). 'Process' can be equal to: predocking, docking and coef2grid . If predocking or docking are run as standalone executables, this parameter will be overlooked.
+process: predocking
+
+##################################################################
+### predocking parameters
+##################################################################
 # Order of spherical harmonics.
 order_sh: 15
 # Length of one side of the rasterization grid (in angstrems). Grid is cubic (each side is of the same length).
@@ -5,48 +11,40 @@ grid_size: 150
 # Length of one side of a grid's cell (voxel) in angstrems. Cells are cubic (each side is of the same length). Cell size determines how much discretization a grid containts.
 grid_cell_size: 1
 
-# Path to the ligand PDB file.
+# Paths to the ligand and the receptor PDB files.
 ligand: data/pdb/3hfl_ly.pdb
 receptor: data/pdb/3hfl_fv.pdb
-ligand_inner_skin: data/skin/3hfl_ly_is.grid
-ligand_outer_skin: data/skin/3hfl_ly_os.grid
-receptor_inner_skin: data/skin/3hfl_fv_is.grid
-receptor_outer_skin: data/skin/3hfl_fv_os.grid
-ligand_inflated_inner_skin: data/skin/3hfl_ly_is.igrid
-ligand_inflated_outer_skin: data/skin/3hfl_ly_os.igrid
-receptor_inflated_inner_skin: data/skin/3hfl_fv_is.igrid
-receptor_inflated_outer_skin: data/skin/3hfl_fv_os.igrid
 
-k_alfa: 0
-k_beta: 0
-k_stranica_kocke: 0
-k_stranica_celije: 0
-k_debljina_skina: 0
-k_red_sf_harmonika: 0
-k_stranica_grida: 0
-steric_penalty_factor: 100.0
-coord_file: 1
-grid_const: 1
-mali_grid_const: 12
-radius_kugle_unutarnji_skin: 2
-radius_kugle_vanjski_skin: 2
-test: 4
-profile: 5
-
-# predocking parameters
-parsed_ligand: data/adb/3hfl_ly.adb
-parsed_receptor: data/adb/3hfl_fv.adb
 microdelta: 0.2
 delta: 1
+
+# Radii for calculation of the inner and outer skins of a protein molecule
 inner_radius: -1.6
 outer_radius: 1.4
+
+# Radii of atoms (and small molecular complexes) are stored in the atmtypenumbers, obtained from MSMS.
 radii_path: data/atmtypenumbers
 
-# docking parameters
-ligand_inner_skin_coeffs: data/coef/aligned_1ay7/1ay7_receptor_inner.coef
-ligand_outer_skin_coeffs: data/coef/aligned_1ay7/1ay7_receptor_outer.coef
-receptor_inner_skin_coeffs: data/coef/aligned_1ay7/1ay7_ligand_inner.coef
-receptor_outer_skin_coeffs: data/coef/aligned_1ay7/1ay7_ligand_outer.coef
+# if center==0, then proteins won't be centered; if center==1 proteins will be centered by mass; if center==2 proteins will be centered arithmetically; if center==3
+# proteins will be aligned to the global Z-axis and centered by mass
+center: 1
+
+# These are also used in the docking process as coef input paths.
+ligand_inner_skin_coeffs: data/coef/3hfl_ligand_inner.coef
+ligand_outer_skin_coeffs: data/coef/3hfl_ligand_outer.coef
+receptor_inner_skin_coeffs: data/coef/3hfl_receptor_inner.coef
+receptor_outer_skin_coeffs: data/coef/3hfl_receptor_outer.coef
+
+##################################################################
+### docking parameters
+##################################################################
+load_coeffs_from_file: 0
+
+# ligand_inner_skin_coeffs is needed, but is already defined a few lines up.
+# ligand_outer_skin_coeffs is needed, but is already  defined a few lines up.
+# receptor_inner_skin_coeffs is needed, but is already  defined a few lines up.
+# receptor_outer_skin_coeffs is needed, but is already  defined a few lines up.
+
 translation_matrices_path: data/trans
 tessellation_order: 2
 alpha_angles: 36
@@ -54,8 +52,31 @@ penetration_penalty: 5.0
 scores_size: 200
 radius_search_start: 0.0
 radius_search_end: 50.1
-scores_output_file: outputMPI.scr
+scores_output_file: data/scr/outputMPI_3hfl.scr
 output_score_to_grid: 1
 output_grid_size: 150
 output_grid_cell_size: 1
+
+##################################################################
+### predocking parameters
+##################################################################
+# 'Correct' crystallographic structure that is needed for RMSD calculation.
+complex: data/pdb/3hfl.pdb
+
+# Output paths.
+rmsd_output: data/rmsd/3hfl-eval.rmsd
+rmsd_output_pdb: data/rmsd/3hfl-eval.pdb
+rmsd_output_complex: data/rmsd/3hfl-eval-complex.pdb
+
+# Scores file contains many scored protein conformations. 'starting_score' defines the index of the first score to start rmsd evaluation from. Indices start from zero.
+starting_score: 0
+# Number of scores to be evaluated starting with 'starting_score', and ending with 'starting_score + num_scores - 1'
+num_scores: 30
+
+# ligand path is needed, but is already defined a few lines up.
+# receptor path is needed, but is already defined a few lines up.
+# scores_output_file path is needed, but is already defined a few lines up.
+# radii_path is needed, but is already defined a few lines up.
+# center parameter is needed, but is already defined a few lines up.
+
 

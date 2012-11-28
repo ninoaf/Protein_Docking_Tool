@@ -127,6 +127,21 @@ int Configuration::getParameter(const string& parameter, int& retVal)
 }
 
 // Returns -1 in case of an error
+int Configuration::setParameter(const string& parameter, int& newVal)
+{
+	map<string, string>::iterator itr = values_.find(parameter);
+	if (itr != values_.end())
+	{
+		char valueString[100];
+		sprintf (valueString, "%d", newVal);
+		itr->second = valueString;
+		return 0;
+	}
+
+	return -1;
+}
+
+// Returns -1 in case of an error
 int Configuration::getParameter(const string& parameter, double& retVal)
 {
 	map<string, string>::iterator itr = values_.find(parameter);

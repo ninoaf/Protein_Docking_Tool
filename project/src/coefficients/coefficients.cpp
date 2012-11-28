@@ -34,6 +34,16 @@ void Coefficients::init(int order)
 	}
 }
 
+void Coefficients::setOrder(int order)
+{
+	order_ = order;
+	if (order_ != -1)
+	{
+		coeffSize_ = getNumberOfCoefficients();
+		coefficients_.resize(coeffSize_); // zasto !!!! treba reserve
+	}
+}
+
 Coefficients::Coefficients(const string& fname)
 {
 	importFromFile(fname);

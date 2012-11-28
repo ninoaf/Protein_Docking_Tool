@@ -1,0 +1,18 @@
+# MPI worker...
+# ligand inner skin name: data/coef/3hfl_ly_inner.coef
+# ligand outer skin name: data/coef/3hfl_ly_outer.coef
+# receptor inner skin name: data/coef/3hfl_fv_inner.coef
+# receptor outer skin name: data/coef/3hfl_fv_outer.coef
+# orderOfCoefficients: 20
+# translationPath: data/trans
+# tessellationOrder: 2
+# alphaSize: 18
+# penalty: 15.000000
+# scoresSize: 100
+# radiusStart: 0.000000
+# radiusEnd: 50.100000
+# rank score R Rec_beta2 Rec_gamma2 Lig_alpha1 Lig_beta1 Lig_gamma1
+# 1 1635.023719 31.500000 0 0 0 0 0
+1 1635.023719 0.0 0 0 0 0 0
+2 1635.023719 30.500000 0 0 0 0 0
+3 1635.023719 29.500000 2.219089 5.521052 2.792527 2.634373 5.138709

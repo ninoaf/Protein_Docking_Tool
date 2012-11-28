@@ -1,18 +1,18 @@
-10
+9
 
 dir
-505
+666
 https://svn.lss.hr/pdt2/trunk/PDT_v3/src/pdbparser
 https://svn.lss.hr/pdt2
 
 
 
-2010-03-03T08:42:11.470278Z
-502
+2010-06-21T08:15:39.206078Z
+651
 isovic
 
 
-
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -26,84 +26,16 @@ isovic
 
 51dffeac-0357-0410-b848-b9ed437a94d8
 
-pdbparser.cpp
-file
-
-
-
-
-2010-03-04T11:04:09.000000Z
-d4611bc596dd39721b809b477df84224
-2010-03-03T08:42:11.470278Z
-502
-isovic
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4442
-
-pdbparser.h
-file
-
-
-
-
-2010-03-04T11:04:09.000000Z
-d6dc2bccc888c4a37128612db2cbe748
-2010-03-03T08:42:11.470278Z
-502
-isovic
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-959
-
 atomradius.cpp
 file
 
 
 
 
-2009-11-13T11:35:24.000000Z
-c786f2e14e475a974453b5dd4aab25bb
-2009-11-05T01:38:19.988477Z
-338
+2010-04-05T15:33:23.000000Z
+7ebba8bb3654e535f382d0ec247f6c8e
+2010-04-15T23:34:54.377780Z
+592
 isovic
 has-props
 
@@ -126,7 +58,7 @@ has-props
 
 
 
-4606
+4609
 
 atomradius.h
 file
@@ -134,10 +66,10 @@ file
 
 
 
-2009-11-13T11:35:24.000000Z
-d0c4ef1bb98683e4165ee0459b102cfb
-2009-11-05T01:38:19.988477Z
-338
+2010-04-05T15:33:21.000000Z
+51d052e7d1094e1eed8f7173f31a7061
+2010-04-15T23:34:54.377780Z
+592
 isovic
 has-props
 
@@ -160,5 +92,209 @@ has-props
 
 
 
-794
+797
+
+models.cpp
+file
+
+
+
+
+2010-06-05T18:48:49.000000Z
+787913cbbf6f381966830904574e3fc1
+2010-06-07T23:27:03.548943Z
+629
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5131
+
+models.h
+file
+
+
+
+
+2010-06-05T18:46:59.000000Z
+4de35fef6b68b1e24da7de91e577e252
+2010-06-07T23:27:03.548943Z
+629
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1324
+
+moleculecolors.cpp
+file
+
+
+
+
+2010-05-21T09:16:44.000000Z
+2ce26c43e88456ecc9af3bc227faf0b6
+2010-05-23T08:52:44.848406Z
+618
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+13895
+
+moleculecolors.h
+file
+
+
+
+
+2010-04-12T19:33:00.000000Z
+84524765bd9fe26f9ef0571cc13a9be4
+2010-04-15T23:34:54.377780Z
+592
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1412
+
+pdbparser.cpp
+file
+667
+
+
+
+2010-07-03T21:40:53.000000Z
+18c23e28050d8c7204522e718b5a54d8
+2010-07-03T23:01:56.239695Z
+667
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31712
+
+pdbparser.h
+file
+667
+
+
+
+2010-07-03T21:41:25.000000Z
+237bd2945b887c510a964ba709bd0d16
+2010-07-03T23:01:56.239695Z
+667
+isovic
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2685
 

@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 7 && argc != 8)
 	{
-		printf("usage: scoreit R beta1 gamma1 alpha2 beta2 gamma2 [configuration]\n");
+		printf("\tUsage: scoreit R beta1 gamma1 alpha2 beta2 gamma2 [config_file, def. config.txt]\n\n");
 		exit(1);
 	}
 

@@ -33,6 +33,8 @@ public:
   Protein(const string& fnameInner, const string& fnameOuter);
   ~Protein();
 
+  void exportToFile(const string& innerOutputFile, const string& outerOutpurFile) const;
+
   // set functions are probably time consuming! -> mpiskorec
   void setInnerSkin(const Coefficients& coefficients);
   void setOuterSkin(const Coefficients& coefficients);
@@ -55,6 +57,7 @@ public:
   void calculateTranslationIndexes( vector<int>& translationIndexes ) const;
 
   int getOrder() const;
+  void setOrder(int _order);
 
   void SetInnerSkinName(string str);
 

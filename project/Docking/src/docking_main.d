@@ -5,7 +5,6 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
  ../src/docking/../coefficients/../structures/../math/../structures/structures.h \
  ../src/docking/../coefficients/../structures/../math/../structures/../math/math_pdt.h \
  ../src/docking/../coefficients/../translationmatrix/translationmatrix.h \
- ../src/docking/../coefficients/../translationmatrix/../coefficients/coefficients.h \
  ../src/docking/../coefficients/../rotationmatrix/rotationmatrix.h \
  ../src/docking/../coefficients/../rotationmatrix/../coefficients/coefficients.h \
  ../src/docking/../coefficients/../rotationmatrix/../structures/structures.h \
@@ -37,6 +36,17 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
  ../src/docking/../protein/../grid/grid.h \
  ../src/docking/../math/math_pdt.h \
  ../src/docking/../configuration/configuration.h \
+ ../src/docking/../predocking/predocking.h \
+ ../src/docking/../predocking/../pdbparser/pdbparser.h \
+ ../src/docking/../predocking/../pdbparser/../structures/structures.h \
+ ../src/docking/../predocking/../pdbparser/../structures/../math/math_pdt.h \
+ ../src/docking/../predocking/../pdbparser/moleculecolors.h \
+ ../src/docking/../predocking/../pdbparser/atomradius.h \
+ ../src/docking/../predocking/../pdbparser/models.h \
+ ../src/docking/../predocking/../msmswrapper/msmswrapper.h \
+ ../src/docking/../predocking/../configuration/configuration.h \
+ ../src/docking/../predocking/../grid/grid.h \
+ ../src/docking/../predocking/../protein/protein.h \
  ../src/configuration/configuration.h
 
 ../src/docking/docking.h:
@@ -52,8 +62,6 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
 ../src/docking/../coefficients/../structures/../math/../structures/../math/math_pdt.h:
 
 ../src/docking/../coefficients/../translationmatrix/translationmatrix.h:
-
-../src/docking/../coefficients/../translationmatrix/../coefficients/coefficients.h:
 
 ../src/docking/../coefficients/../rotationmatrix/rotationmatrix.h:
 
@@ -116,5 +124,27 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
 ../src/docking/../math/math_pdt.h:
 
 ../src/docking/../configuration/configuration.h:
+
+../src/docking/../predocking/predocking.h:
+
+../src/docking/../predocking/../pdbparser/pdbparser.h:
+
+../src/docking/../predocking/../pdbparser/../structures/structures.h:
+
+../src/docking/../predocking/../pdbparser/../structures/../math/math_pdt.h:
+
+../src/docking/../predocking/../pdbparser/moleculecolors.h:
+
+../src/docking/../predocking/../pdbparser/atomradius.h:
+
+../src/docking/../predocking/../pdbparser/models.h:
+
+../src/docking/../predocking/../msmswrapper/msmswrapper.h:
+
+../src/docking/../predocking/../configuration/configuration.h:
+
+../src/docking/../predocking/../grid/grid.h:
+
+../src/docking/../predocking/../protein/protein.h:
 
 ../src/configuration/configuration.h:

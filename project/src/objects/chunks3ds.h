@@ -1,0 +1,61 @@
+/*
+ * chunks3ds.h
+ *
+ *  Created on: Jun 28, 2010
+ *      Author: ivan
+ */
+
+#ifndef CHUNKS3DS_H_
+#define CHUNKS3DS_H_
+
+
+
+#define VMOL_3DS_PRIMARY					0x4D4D
+
+// Main Chunks
+#define VMOL_3DS_OBJECT_INFO				0x3D3D
+#define VMOL_3DS_VERSION					0x0002
+#define VMOL_3DS_EDIT_KEYFRAME				0xB000
+
+// sub defines of OBJECTINFO
+#define VMOL_3DS_MATERIAL					0xAFFF
+#define VMOL_3DS_OBJECT						0x4000
+
+// sub defines of MATERIAL
+#define VMOL_3DS_MATERIAL_NAME				0xA000
+#define VMOL_3DS_MATERIAL_AMBIENT			0xA010
+#define VMOL_3DS_MATERIAL_DIFFUSE			0xA020
+#define VMOL_3DS_MATERIAL_MATSPECULAR		0xA030
+#define VMOL_3DS_MATERIAL_EMISSIVE			0xA030
+#define VMOL_3DS_MATERIAL_COLOR_FLOAT		0x0010
+#define VMOL_3DS_MATERIAL_COLOR_BYTE		0x0011
+
+#define VMOL_3DS_MATERIAL_SCALE_U			0xA354
+#define VMOL_3DS_MATERIAL_OFFSET_U			0xA358
+#define VMOL_3DS_MATERIAL_OFFSET_V			0xA35A
+#define VMOL_3DS_MATERIAL_SCALE_V			0xA356
+
+#define VMOL_3DS_MATERIAL_TEXTURE_MAP		0xA200
+#define VMOL_3DS_MATERIAL_TEXTURE_MAP_FILE	0xA300
+
+#define VMOL_3DS_OBJECT_MESH				0x4100
+
+// sub defines of VMOL_3DS_OBJECT_MESH
+#define VMOL_3DS_OBJECT_VERTICES			0x4110
+#define VMOL_3DS_OBJECT_FACES				0x4120
+#define VMOL_3DS_OBJECT_VMOL_3DS_MATERIAL	0x4130
+#define VMOL_3DS_OBJECT_UV					0x4140
+
+
+
+class Chunk3ds
+{
+public:
+	unsigned short int chunkId;
+	unsigned int length;
+	unsigned int readBytes;
+};
+
+
+
+#endif /* CHUNKS3DS_H_ */

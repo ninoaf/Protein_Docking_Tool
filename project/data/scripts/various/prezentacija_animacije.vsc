@@ -1,0 +1,66 @@
+%%%%% UCITAVANJE PDB-ova %%%%%
+create pdb path={data/pdb/3hfl_fv.pdb} name={receptor} radiusPath={data/system/atmtypenumbers} radiusType={united} center={false} centerType={mass}
+create pdb path={data/pdb/3hfl_ly.pdb} name={ligand} radiusPath={data/system/atmtypenumbers} radiusType={united} center={false} centerType={mass}
+create pdb path={data/pdb/3hfl.pdb} name={complex} radiusPath={data/system/atmtypenumbers} radiusType={united} center={true} centerType={mass}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% UCITAVANJE MESH-eva %%%%%
+create mesh path={data/models/sphere.dat} name={sphere} type={dat} center={true} autoScale={1.0}
+create mesh path={data/models/stick.dat} name={stick} type={dat} center={true} autoScale={1.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VARIJABLI %%%%%
+create variable={nodeMode3hfl_fv} type={ulonglong} value={0x0001000000004105}
+create variable={nodeMode3hfl_ly} type={ulonglong} value={0x0001000000004105}
+create variable={nodeMode3hfl} type={ulonglong} value={0x0001000000000104}
+
+create variable={nodeModeCoordSystem} type={ulonglong} value={0x0005}
+
+create variable name={translationReceptor} type={vector3} value={0.0 0.0 0.0}
+create variable name={rotationReceptor} type={eulervector3} value={0.0 0.0 0.0}
+create variable name={translationLigand} type={vector3} value={0.0 0.0 0.0}
+create variable name={rotationLigand} type={eulervector3} value={0.0 0.0 0.0}
+
+create variable name={colorLigand} type={color} value={255 0 0 255}
+create variable name={colorReceptor} type={color} value={0 255 0 255}
+create variable name={colorComplex} type={color} value={0 0 255 80}
+create variable name={colorCoordSystem} type={color} value={255 255 0 255}
+
+create variable name={vecLook1} type={vector3} value={-103.0 -47.0 -180.0}
+create variable name={vecPoint1} type={vector3} value={0.0 0.0 0.0}
+create variable name={vecUp1} type={vector3} value={0.0 1.0 0.0}
+
+create variable name={lookTranslation} type={vector3} value={0.0 0.0 -180.0}
+create variable name={lookRotationX} type={double} value={0.0}
+create variable name={lookRotationY} type={double} value={0.0}
+create variable name={lookRotationZ} type={double} value={0.0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE NODE-ova %%%%%
+% create node name={nodeLook1} nodeType={lookat} nodeParams={vecLook1 vecPoint1 vecUp1}
+create node name={nodeLookTranslation} nodeType={translation} nodeParams={lookTranslation}
+	create node name={nodeLookRotationX} nodeType={rotationx} nodeParams={lookRotationX} parent={nodeLookTranslation}
+		create node name={nodeLookRotationY} nodeType={rotationy} nodeParams={lookRotationY} parent={nodeLookRotationX}
+			create node name={nodeLookRotationZ} nodeType={rotationz} nodeParams={lookRotationZ} parent={nodeLookRotationY}
+
+				create node name={nodeTranslateReceptor} nodeType={translation} nodeParams={translationReceptor} parent={nodeLookRotationZ}
+					create node name={nodeRotReceptor} nodeType={rotationeuler} nodeParams={rotationReceptor} parent={nodeTranslateReceptor}
+						create node name={nodeColorReceptor} nodeType={color} nodeParams={colorReceptor} parent={nodeRotReceptor}
+							create node name={nodeReceptor} nodeType={pdb} nodeParams={receptor sphere stick nodeMode3hfl_fv} parent={nodeColorReceptor}
+
+				create node name={nodeTranslateLigand} nodeType={translation} nodeParams={translationLigand} parent={nodeLookRotationZ}
+					create node name={nodeRotLigand} nodeType={rotationeuler} nodeParams={rotationLigand} parent={nodeTranslateLigand}
+						create node name={nodeColorLigand} nodeType={color} nodeParams={colorLigand} parent={nodeRotLigand}
+							create node name={nodeLigand} nodeType={pdb} nodeParams={ligand sphere stick nodeMode3hfl_ly} parent={nodeColorLigand}
+
+				create node name={nodeColorComplex} nodeType={color} nodeParams={colorComplex} parent={nodeLookRotationZ}
+					create node name={nodeComplex} nodeType={pdb} nodeParams={complex sphere stick nodeMode3hfl} parent={nodeColorComplex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% STVARANJE VIEW-ova %%%%%
+create view name={view1} nodeParams={nodeLookTranslation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+change lookRotationY name={lookRotationY} value={90.000000   }
+change lookRotationY name={lookRotationY} value={80.000000   }
+

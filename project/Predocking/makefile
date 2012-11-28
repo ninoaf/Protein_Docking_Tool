@@ -16,8 +16,12 @@ RM := rm -rf
 -include src/predocking/subdir.mk
 -include src/pdbwriter/subdir.mk
 -include src/pdbparser/subdir.mk
+-include src/objects/subdir.mk
 -include src/msmswrapper/subdir.mk
+-include src/math/evalmath/subdir.mk
 -include src/math/subdir.mk
+-include src/materials/subdir.mk
+-include src/log/subdir.mk
 -include src/grid/subdir.mk
 -include src/docking/subdir.mk
 -include src/configuration/subdir.mk

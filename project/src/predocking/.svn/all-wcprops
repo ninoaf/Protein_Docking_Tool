@@ -1,17 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/pdt2/!svn/ver/494/trunk/PDT_v3/src/predocking
+/pdt2/!svn/ver/642/trunk/PDT_v3/src/predocking
 END
 predocking.cpp
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/pdt2/!svn/ver/477/trunk/PDT_v3/src/predocking/predocking.cpp
+/pdt2/!svn/ver/642/trunk/PDT_v3/src/predocking/predocking.cpp
 END
 predocking.h
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/pdt2/!svn/ver/494/trunk/PDT_v3/src/predocking/predocking.h
+/pdt2/!svn/ver/632/trunk/PDT_v3/src/predocking/predocking.h
+END
+predocking_test.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/predocking/predocking_test.cpp
+END
+predocking_test.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/pdt2/!svn/ver/667/trunk/PDT_v3/src/predocking/predocking_test.h
 END

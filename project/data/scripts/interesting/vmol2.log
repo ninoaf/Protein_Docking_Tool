@@ -1,0 +1,39 @@
+[17:49.50] WARRNING #2: Failed to load file data/system/atmtypenumbers!
+[17:49.50] WARRNING #2: Failed to load file data/system/atmtypenumbers!
+[17:49.50] WARRNING #2: Failed to load file data/system/atmtypenumbers!
+[17:49.50] WARRNING #2: Failed to load file data/models/sphere.dat!
+[17:49.50] WARRNING #2: Failed to load file data/models/stick.dat!
+[17:49.50] Created variable, type ulonglong, name: nodeMode3hfl_fv.
+[17:49.50] Created variable, type ulonglong, name: nodeMode3hfl_ly.
+[17:49.50] Created variable, type ulonglong, name: nodeMode3hfl.
+[17:49.50] Created variable, type ulonglong, name: nodeModeCoordSystem.
+[17:49.50] Created variable, type vector3, name: translationReceptor.
+[17:49.50] Created variable, type eulervector3, name: rotationReceptor.
+[17:49.50] Created variable, type vector3, name: translationLigand.
+[17:49.50] Created variable, type eulervector3, name: rotationLigand.
+[17:49.50] Created variable, type color, name: colorLigand.
+[17:49.50] Created variable, type color, name: colorReceptor.
+[17:49.50] Created variable, type color, name: colorComplex.
+[17:49.50] Created variable, type color, name: colorCoordSystem.
+[17:49.50] Created variable, type vector3, name: vecLook1.
+[17:49.50] Created variable, type vector3, name: vecPoint1.
+[17:49.50] Created variable, type vector3, name: vecUp1.
+[17:49.50] Created variable, type vector3, name: lookTranslation.
+[17:49.50] Created variable, type double, name: lookRotationX.
+[17:49.50] Created variable, type double, name: lookRotationY.
+[17:49.50] Created variable, type double, name: lookRotationZ.
+[17:49.50] Created node #1, name: nodeLookTranslation.
+[17:49.50] Created node #2, name: nodeLookRotationX.
+[17:49.50] Created node #3, name: nodeLookRotationY.
+[17:49.50] Created node #4, name: nodeLookRotationZ.
+[17:49.50] Created node #5, name: nodeTranslateReceptor.
+[17:49.50] Created node #6, name: nodeRotReceptor.
+[17:49.50] Created node #7, name: nodeColorReceptor.
+[17:49.50] WARRNING #5: Variable  does not exist, or is of incorrect type!
+[17:49.50] Created node #8, name: nodeTranslateLigand.
+[17:49.50] Created node #9, name: nodeRotLigand.
+[17:49.50] Created node #10, name: nodeColorLigand.
+[17:49.50] WARRNING #5: Variable  does not exist, or is of incorrect type!
+[17:49.50] Created node #11, name: nodeColorComplex.
+[17:49.50] WARRNING #5: Variable Ät« does not exist, or is of incorrect type!
+[17:49.50] Created view #1, name: view1.

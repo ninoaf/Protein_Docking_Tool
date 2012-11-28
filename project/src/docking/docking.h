@@ -14,6 +14,7 @@
 #include "../protein/protein.h"
 #include "../math/math_pdt.h"
 #include "../configuration/configuration.h"
+#include "../predocking/predocking.h"
 //#include "../pdbparser/pdbparser.h"
 #include <math.h>
 #include <string>
@@ -42,10 +43,14 @@ public:
 	Docking(const pair<string, string>& receptorFile, const pair<string, string>& ligandFile);
 	Docking(const Grid& receptorInner, const Grid& receptorOuter, const Grid& ligandInner, const Grid& ligandOuter, int order);
 	Docking(Configuration &config);
+	Docking(std::string configPath);
 	~Docking();
 
 	double scoreIt(Protein& receptor, Protein& ligand, double Q);
+	double scoreIt(double R, double betaReceptor, double gammaReceptor, double alphaLigand, double betaLigand, double gammaLigand);
 	void dockingSearch(vector <pair<double, ScoreConfiguration> >& scores);
+	void calculateProteinCoefficients(int order);
+
 	void preDockingCalculateRotations(void);
 	void preDockingCalculateQRotations(void);
 	void freeMemory(void);
@@ -62,6 +67,7 @@ public:
 	void trigonometricCash();
     double scoreIt(const ScoreConfiguration& scoreConfiguration);
     void setConfiguration(const ScoreConfiguration& scoreConfiguration, Protein &newReceptor, Protein &newLigand) const;
+    void setConfiguration(double R, double betaReceptor, double gammaReceptor, double alphaLigand, double betaLigand, double gammaLigand, Protein &newReceptor, Protein &newLigand) const;
 
 	void calculateCoeffMapping( );
 	void calculateQcoeffPlusPlus(vector<double>& qCoeffPlusPlus, vector<double>& qCoeffPlus, Protein& transReceptor, Protein& qRotLigand );
@@ -74,6 +80,9 @@ private:
 
 	void setDefaultParameters();
 	void loadParametersFromConfiguration(Configuration &config);
+
+	Predocking ligandPredocking_;
+	Predocking receptorPredocking_;
 
 	Protein receptor_;
 	Protein ligand_;

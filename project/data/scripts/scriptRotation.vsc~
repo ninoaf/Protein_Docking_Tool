@@ -1,0 +1,5 @@
+math name={rotacija} value={:rotacija + :increment}
+math name={rotationx} value={:rotationx + :incrementx}
+math name={rotationy} value={:rotationy + :incrementy}
+math name={rotationz} value={:rotationz + :incrementz}
+

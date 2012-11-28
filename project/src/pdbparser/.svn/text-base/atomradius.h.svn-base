@@ -24,7 +24,7 @@ public:
 
 	void init();
 	bool loadRadii(std::string path);
-	double findRadius(Atom *atom, bool useUnitedRadius);
+	double findRadius(AtomPdb *atom, bool useUnitedRadius);
 
 private:
 	std::vector <std::string> residuePatterns_;

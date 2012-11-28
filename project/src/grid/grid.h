@@ -37,18 +37,20 @@ public:
 	int generateFromCoefficients(const Coefficients& coefficients);
 	int generateSurfaceGrid(const MSMSWrapper& surface, double microDelta, double delta, double radius);
 	int inflateGrid();
-	void generateTestCharge (double q);
-	int generateFromETOCoefficients(const Coefficients& coefficients);
-	void exportToFileZaxis(const std::string& outputFile, int x, int y) const;
-	void exportToFileXaxis(const std::string& outputFile, int x, int y, const Coefficients& coefficients );	
-	std::vector <GridValue> getGrid();
+	int size() const;
+
+	void setGridSize(double gridSize, double gridCellSize);
 	double getGridCellSize();
 	double getGridSize();
+	unsigned long int getGridWidth();
+
+	std::vector <GridValue>& getGrid();
 	void operator= (Grid& op1);
 
 private:
 	std::vector <GridValue> grid_;
 	double gridCellSize_, gridSize_;
+	unsigned long int gridWidth_;
 
 	bool generateGridOffsets(std::vector<GridValue> &offsets, double const microDelta, double const sphereRadius);
 };

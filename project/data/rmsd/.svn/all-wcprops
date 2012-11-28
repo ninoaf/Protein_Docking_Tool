@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/pdt2/!svn/ver/664/trunk/PDT_v3/data/rmsd
+END
+outputMPI_aligned1ay7_reverse_105.rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/pdt2/!svn/ver/667/trunk/PDT_v3/data/rmsd/outputMPI_aligned1ay7_reverse_105.rmsd
+END
+default.rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/pdt2/!svn/ver/664/trunk/PDT_v3/data/rmsd/default.rmsd
+END
+outputMPI_aligned_3hfl_revrese_106.rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/pdt2/!svn/ver/667/trunk/PDT_v3/data/rmsd/outputMPI_aligned_3hfl_revrese_106.rmsd
+END
+3hfl_36_alfa_53.rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/pdt2/!svn/ver/655/trunk/PDT_v3/data/rmsd/3hfl_36_alfa_53.rmsd
+END
+testScores1 (copy).rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/pdt2/!svn/ver/655/trunk/PDT_v3/data/rmsd/testScores1%20(copy).rmsd
+END
+testScores1.rmsd
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/pdt2/!svn/ver/655/trunk/PDT_v3/data/rmsd/testScores1.rmsd
+END

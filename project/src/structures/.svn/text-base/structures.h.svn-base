@@ -5,13 +5,18 @@
  */
 
 #include "../math/math_pdt.h"
+#include <string.h>
 #include <string>
 //#include "../coefficients/coefficients.h"
 
 #ifndef STRUCTURES_H_
 #define STRUCTURES_H_
 
+class Coordinates;
 class SphericalCoordinates;
+class Color;
+
+
 
 class Coordinates
 {
@@ -34,7 +39,12 @@ public:
     Coordinates operator* (const double& op1);
     Coordinates operator/ (const double& op1);
     inline bool operator== (const Coordinates& op1);
+    void operator= (const Coordinates &op1);
     bool Normalize();
+    double dotProduct(Coordinates &op1);
+    Coordinates crossProduct(Coordinates &op1);
+    double magnitude();
+    void multiplyMatrix(double *transformMatrix);
 };
 
 class SphericalCoordinates
@@ -167,19 +177,40 @@ public:
 	void operator= (const Sphere& op1);
 };
 
-class Atom
+class AtomPdb
 {
 public:
     double x, y, z;
     double r;
     double covalent_r;
+    double mass;
 
     std::string atomSerial, atomName, altLoc, resName, chainId, resSeq, insertionCode;
     std::string xString, yString, zString, occupancy, tempFactor, segmentId, elementSymbol, charge;
     std::string originalLine;
 
-    Atom TransformCoordinates(double *transformMatrix, char newChainDesignation);
-    Atom& operator= (const Atom &op1);
+    AtomPdb();
+    int parseLine(std::string line);
+    AtomPdb transformCoordinates(double *transformMatrix, char newChainDesignation);
+    AtomPdb& operator= (const AtomPdb &op1);
+    void trim();
+    std::string trimString(std::string line);
+    std::string updateLineCoordinates();
+    Color *atomColorPointer;
+    Color *aminoColorPointer;
+    Color *chainColorPointer;
+};
+
+class Bond
+{
+public:
+	AtomPdb *atom1;
+	AtomPdb *atom2;
+
+    Bond()
+    {
+    	atom1 = atom2 = NULL;
+    }
 };
 
 class MSMSCoord
@@ -229,6 +260,41 @@ public:
 
         return 0;
     }
+};
+
+
+
+class Color
+{
+public:
+	unsigned char r, g, b, a;
+
+	Color()
+	{
+		init();
+	}
+
+	~Color()
+	{
+	}
+
+	void init()
+	{
+		r = g = b = a = 0;
+	}
+
+    void operator= (const Color &op1)
+    {
+    	r = op1.r;	g = op1.g;	b = op1.b;	a = op1.a;
+    }
+};
+
+class PdbModelLocations
+{
+public:
+	unsigned long int startLine;			// starting line of one model in a PDB file ("MODEL" line, example: "MODEL 0");
+	unsigned long int endLine;				// ending line of one model in a PDB file ("ENDMDL" line);
+	FILE *fpModel;							// file pointer to the first line after the model line (example: after "MODEL 0")
 };
 
 #endif /* STRUCTURES_H_ */

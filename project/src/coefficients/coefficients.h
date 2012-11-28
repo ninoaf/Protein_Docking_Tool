@@ -60,6 +60,7 @@ public:
 	bool merge(const Coefficients& with);
 
 	int getOrder() const;
+	void setOrder(int _order);
 	int getIndex(int n, int l, int m) const;
 	void testGetIndex() const;
 	double getValue(int n, int l, int m) const;

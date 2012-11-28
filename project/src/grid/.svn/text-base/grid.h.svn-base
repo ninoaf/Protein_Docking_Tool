@@ -37,15 +37,20 @@ public:
 	int generateFromCoefficients(const Coefficients& coefficients);
 	int generateSurfaceGrid(const MSMSWrapper& surface, double microDelta, double delta, double radius);
 	int inflateGrid();
+	int size() const;
 
-	std::vector <GridValue> getGrid();
+	void setGridSize(double gridSize, double gridCellSize);
 	double getGridCellSize();
 	double getGridSize();
+	unsigned long int getGridWidth();
+
+	std::vector <GridValue>& getGrid();
 	void operator= (Grid& op1);
 
 private:
 	std::vector <GridValue> grid_;
 	double gridCellSize_, gridSize_;
+	unsigned long int gridWidth_;
 
 	bool generateGridOffsets(std::vector<GridValue> &offsets, double const microDelta, double const sphereRadius);
 };

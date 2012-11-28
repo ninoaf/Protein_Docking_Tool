@@ -36,26 +36,39 @@ void MSMSWrapper::clear()
 	faces.clear();
 }
 
-bool MSMSWrapper::load(std::string filePath)
+bool MSMSWrapper::load(std::string filePath, bool import)
 {
 	bool ret1=false, ret2=false, ret3=false;
 	string cmdLine;
 
-	cmdLine = "./data/msms -if ";
+	cmdLine = "./data/system/msms -if ";
 	cmdLine = cmdLine + filePath + " -of ";
 	cmdLine += filePath;
-	cmdLine += " > log_msms_output.txt";
+	cmdLine += " > data/log/log_msms_output.txt 2> /dev/null";
 	ret1 = system(cmdLine.c_str());
 
-	cmdLine = filePath;
-	cmdLine += ".vert";
-	ret2 = importCoords(cmdLine.c_str());
+    if (ret1 != 0)
+    {
+        fprintf(stderr, "Can't find msms executable. Should be in data/msmsx\n");
+        exit(1);
+    }
 
-	cmdLine = filePath;
-	cmdLine += ".face";
-	ret3 = importFaces(cmdLine.c_str());
+    if (import == true)
+    {
+		cmdLine = filePath;
+		cmdLine += ".vert";
+		ret2 = importCoords(cmdLine.c_str());
+		remove(cmdLine.c_str());
 
-	return (ret1 && ret2 && ret3);
+		cmdLine = filePath;
+		cmdLine += ".face";
+		ret3 = importFaces(cmdLine.c_str());
+		remove(cmdLine.c_str());
+
+		return (!ret1 && ret2 && ret3);
+    }
+
+    return !ret1;
 }
 
 bool MSMSWrapper::importCoords(string filePath)

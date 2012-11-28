@@ -5,7 +5,9 @@ src/predocking_main.d: ../src/predocking_main.cpp \
  ../src/predocking/../pdbparser/../structures/../math/math_pdt.h \
  ../src/predocking/../pdbparser/../structures/../math/../structures/structures.h \
  ../src/predocking/../pdbparser/../structures/../math/../structures/../math/math_pdt.h \
+ ../src/predocking/../pdbparser/moleculecolors.h \
  ../src/predocking/../pdbparser/atomradius.h \
+ ../src/predocking/../pdbparser/models.h \
  ../src/predocking/../msmswrapper/msmswrapper.h \
  ../src/predocking/../msmswrapper/../structures/structures.h \
  ../src/predocking/../msmswrapper/../structures/../math/math_pdt.h \
@@ -31,7 +33,18 @@ src/predocking_main.d: ../src/predocking_main.cpp \
  ../src/predocking/../grid/../msmswrapper/msmswrapper.h \
  ../src/predocking/../grid/../basefunctions/basefunctions.h \
  ../src/predocking/../grid/../basefunctions/../structures/structures.h \
- ../src/predocking/../grid/../basefunctions/../structures/../math/math_pdt.h
+ ../src/predocking/../grid/../basefunctions/../structures/../math/math_pdt.h \
+ ../src/predocking/../protein/protein.h \
+ ../src/predocking/../protein/../structures/structures.h \
+ ../src/predocking/../protein/../structures/../math/math_pdt.h \
+ ../src/predocking/../protein/../coefficients/coefficients.h \
+ ../src/predocking/../protein/../translationmatrix/translationmatrix.h \
+ ../src/predocking/../protein/../rotationmatrix/rotationmatrix.h \
+ ../src/predocking/../protein/../grid/grid.h \
+ ../src/predocking/predocking_test.h ../src/predocking/predocking.h \
+ ../src/math/axisalignment.h ../src/math/../pdbparser/pdbparser.h \
+ ../src/math/../structures/structures.h \
+ ../src/math/../structures/../math/math_pdt.h
 
 ../src/predocking/predocking.h:
 
@@ -45,7 +58,11 @@ src/predocking_main.d: ../src/predocking_main.cpp \
 
 ../src/predocking/../pdbparser/../structures/../math/../structures/../math/math_pdt.h:
 
+../src/predocking/../pdbparser/moleculecolors.h:
+
 ../src/predocking/../pdbparser/atomradius.h:
+
+../src/predocking/../pdbparser/models.h:
 
 ../src/predocking/../msmswrapper/msmswrapper.h:
 
@@ -98,3 +115,29 @@ src/predocking_main.d: ../src/predocking_main.cpp \
 ../src/predocking/../grid/../basefunctions/../structures/structures.h:
 
 ../src/predocking/../grid/../basefunctions/../structures/../math/math_pdt.h:
+
+../src/predocking/../protein/protein.h:
+
+../src/predocking/../protein/../structures/structures.h:
+
+../src/predocking/../protein/../structures/../math/math_pdt.h:
+
+../src/predocking/../protein/../coefficients/coefficients.h:
+
+../src/predocking/../protein/../translationmatrix/translationmatrix.h:
+
+../src/predocking/../protein/../rotationmatrix/rotationmatrix.h:
+
+../src/predocking/../protein/../grid/grid.h:
+
+../src/predocking/predocking_test.h:
+
+../src/predocking/predocking.h:
+
+../src/math/axisalignment.h:
+
+../src/math/../pdbparser/pdbparser.h:
+
+../src/math/../structures/structures.h:
+
+../src/math/../structures/../math/math_pdt.h:

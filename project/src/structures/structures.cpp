@@ -100,6 +100,13 @@ Coordinates Coordinates::operator/ (const double& op1)
     return ret;
 }
 
+void Coordinates::operator= (const Coordinates &op1)
+{
+	x = op1.x;
+	y = op1.y;
+	z = op1.z;
+}
+
 bool Coordinates::Normalize()
 {
 	double magnitude=0.0f;
@@ -114,6 +121,46 @@ bool Coordinates::Normalize()
 	z /= magnitude;
 
 	return true;
+}
+
+double Coordinates::dotProduct(Coordinates &op1)
+{
+	return (x*op1.x + y*op1.y + z*op1.z);
+}
+
+Coordinates Coordinates::crossProduct(Coordinates &op1)
+{
+	Coordinates ret;
+
+	ret.x = y*op1.z - z*op1.y;
+	ret.y = z*op1.x - x*op1.z;
+	ret.z = x*op1.y - y*op1.x;
+
+	return ret;
+}
+
+double Coordinates::magnitude()
+{
+	return sqrt(x*x + y*y + z*z);
+}
+
+void Coordinates::multiplyMatrix(double *transformMatrix)
+{
+	double newX=0.0f, newY=0.0f, newZ=0.0f, newH=0.0f;
+
+	newX = x* transformMatrix[0] + y* transformMatrix[4] + z* transformMatrix[8] + 1.0f* transformMatrix[12];
+	newY = x* transformMatrix[1] + y* transformMatrix[5] + z* transformMatrix[9] + 1.0f* transformMatrix[13];
+	newZ = x* transformMatrix[2] + y* transformMatrix[6] + z* transformMatrix[10] + 1.0f* transformMatrix[14];
+	newH = x* transformMatrix[3] + y* transformMatrix[7] + z* transformMatrix[11] + 1.0f* transformMatrix[15];
+
+	newX /= newH;
+	newY /= newH;
+	newZ /= newH;
+	newH /= newH;
+
+	x = newX;
+	y = newY;
+	z = newZ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -447,20 +494,33 @@ bool MSMSFace::operator== (const MSMSFace &op1)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-
-Atom Atom::TransformCoordinates(double *transformMatrix, char newChainDesignation)
+AtomPdb::AtomPdb()
 {
-	Atom ret;
-	char charX[9], charY[9], charZ[9];
+}
+
+AtomPdb AtomPdb::transformCoordinates(double *transformMatrix, char newChainDesignation)
+{
+	AtomPdb ret;
 	double newX=0.0f, newY=0.0f, newZ=0.0f, newH=0.0f;
 	std::string newLine;
 
 	ret = *this;
 
+
+
 	newX = x* transformMatrix[0] + y* transformMatrix[4] + z* transformMatrix[8] + 1.0f* transformMatrix[12];
 	newY = x* transformMatrix[1] + y* transformMatrix[5] + z* transformMatrix[9] + 1.0f* transformMatrix[13];
 	newZ = x* transformMatrix[2] + y* transformMatrix[6] + z* transformMatrix[10] + 1.0f* transformMatrix[14];
 	newH = x* transformMatrix[3] + y* transformMatrix[7] + z* transformMatrix[11] + 1.0f* transformMatrix[15];
+
+/*
+	newX = x* transformMatrix[0] + y* transformMatrix[1] + z* transformMatrix[2] + 1.0f* transformMatrix[3];
+	newY = x* transformMatrix[4] + y* transformMatrix[5] + z* transformMatrix[6] + 1.0f* transformMatrix[7];
+	newZ = x* transformMatrix[8] + y* transformMatrix[9] + z* transformMatrix[10] + 1.0f* transformMatrix[11];
+	newH = x* transformMatrix[12] + y* transformMatrix[13] + z* transformMatrix[14] + 1.0f* transformMatrix[15];
+*/
+
+//	printf ("H = %lf\tx = %lf\ty = %lf\tz = %lf\n", newH, x, y, z);
 
 	newX /= newH;
 	newY /= newH;
@@ -471,24 +531,53 @@ Atom Atom::TransformCoordinates(double *transformMatrix, char newChainDesignatio
 	ret.y = newY;
 	ret.z = newZ;
 
-	sprintf (charX, "%8.3f", ret.x);
-	sprintf (charY, "%8.3f", ret.y);
-	sprintf (charZ, "%8.3f", ret.z);
+/*
+	printf ("%d\t%d\t%d\n", strlen(charX), strlen(charY), strlen(charZ));
+	printf ("|%s|\t|%s|\t|%s|\n", charX, charY, charZ);
+	printf ("%lf\n", z);
+	for (int i=0; i<16; i++)
+	{
+		printf ("%lf\t", transformMatrix[i]);
+		if ((i+1)%4 == 0)
+			printf ("\n");
+	}
 
-	newLine = ret.originalLine.substr(0, 30);
-	newLine += charX;
-	newLine += charY;
-	newLine += charZ;
-	newLine += ret.originalLine.substr(54, 26);
+	char asd;
+	scanf("%c", &asd);
+*/
 
-	newLine[21] = newChainDesignation;
+	newLine = ret.updateLineCoordinates();
+
+	if (newChainDesignation != ' ')
+		newLine[21] = newChainDesignation;
 
 	ret.originalLine = newLine;
 
 	return ret;
 }
 
-Atom& Atom::operator= (const Atom &op1)
+std::string AtomPdb::updateLineCoordinates()
+{
+	char charX[20], charY[20], charZ[20];
+	std::string ret="";
+
+	if (originalLine != "")
+	{
+		sprintf (charX, "%8.3f", x);
+		sprintf (charY, "%8.3f", y);
+		sprintf (charZ, "%8.3f", z);
+
+		ret = originalLine.substr(0, 30);
+		ret += charX;
+		ret += charY;
+		ret += charZ;
+		ret += originalLine.substr(54, 26);
+	}
+
+	return ret;
+}
+
+AtomPdb& AtomPdb::operator= (const AtomPdb &op1)
 {
 	x = op1.x;	y = op1.y;	z = op1.z;	r = op1.r;	covalent_r = op1.covalent_r;
 	atomSerial = op1.atomSerial;	atomName = op1.atomName;	altLoc = op1.altLoc; resName = op1.resName;	chainId = op1.chainId;
@@ -496,6 +585,90 @@ Atom& Atom::operator= (const Atom &op1)
 	occupancy = op1.occupancy;	tempFactor = op1.tempFactor;	segmentId = op1.segmentId;	elementSymbol = op1.elementSymbol;
 	charge = op1.charge;
 	originalLine = op1.originalLine;
+	mass = op1.mass;
+	atomColorPointer = op1.atomColorPointer;
+	aminoColorPointer = op1.aminoColorPointer;
+	chainColorPointer = op1.chainColorPointer;
 
 	return *this;
+}
+
+void AtomPdb::trim()
+{
+	atomSerial = trimString(atomSerial);
+	atomName = trimString(atomName);
+	altLoc = trimString(altLoc);
+	resName = trimString(resName);
+	chainId = trimString(chainId);
+	occupancy = trimString(occupancy);
+	tempFactor = trimString(tempFactor);
+	segmentId = trimString(elementSymbol);
+	elementSymbol = trimString(atomSerial);
+	charge = trimString(charge);
+	originalLine = trimString(originalLine);
+	resSeq = trimString(resSeq);
+	insertionCode = trimString(insertionCode);
+	xString = trimString(xString);
+	yString = trimString(yString);
+	zString = trimString(zString);
+}
+
+std::string AtomPdb::trimString(std::string line)
+{
+	int i=0;
+	int firstChar=0, lastChar=0;
+	std::string ret="";
+
+	for (i=0; i<line.size(); i++)
+	{
+		if (line[i]!=' ' && line[i]!='\t')
+		{
+			firstChar = i;
+			break;
+		}
+	}
+
+	for (i = (line.size()-1); i >= 0; --i)
+	{
+		if (line[i]!=' ' && line[i]!='\t')
+		{
+			lastChar = i;
+			break;
+		}
+	}
+
+	ret = line.substr(firstChar, (lastChar-firstChar+1));
+
+	return ret;
+}
+
+int AtomPdb::parseLine(std::string line)
+{
+	if (line.size() < 80)
+		return 1;
+
+	atomSerial = line.substr(6, 5);
+	atomName = line.substr(12, 4);
+	altLoc = line.substr(16, 1);
+	resName = line.substr(17, 3);
+	chainId = line.substr(21, 1);
+	resSeq = line.substr(22, 4);
+	insertionCode = line.substr(26, 1);
+	xString = line.substr(30, 8);
+	yString = line.substr(38, 8);
+	zString = line.substr(46, 8);
+	occupancy = line.substr(54, 6);
+	tempFactor = line.substr(60, 6);
+	segmentId = line.substr(72, 4);
+	elementSymbol = line.substr(76, 2);
+	charge = line.substr(78, 2);
+
+
+	sscanf(xString.c_str(), "%lf", &(x));
+	sscanf(yString.c_str(), "%lf", &(y));
+	sscanf(zString.c_str(), "%lf", &(z));
+
+	originalLine = line;
+
+	return 0;
 }
