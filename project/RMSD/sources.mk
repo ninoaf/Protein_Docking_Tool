@@ -28,6 +28,7 @@ src/translationmatrix \
 src/structures \
 src/rotationmatrix \
 src \
+src/rmsd \
 src/protein \
 src/predocking \
 src/pdbwriter \

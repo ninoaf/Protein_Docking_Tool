@@ -12,6 +12,7 @@ RM := rm -rf
 -include src/translationmatrix/subdir.mk
 -include src/structures/subdir.mk
 -include src/rotationmatrix/subdir.mk
+-include src/rmsd/subdir.mk
 -include src/protein/subdir.mk
 -include src/predocking/subdir.mk
 -include src/pdbwriter/subdir.mk

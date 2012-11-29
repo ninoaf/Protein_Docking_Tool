@@ -1,46 +1,51 @@
-src/rmsd_main.d: ../src/rmsd_main.cpp ../src/pdbwriter/pdbwriter.h \
- ../src/pdbwriter/../pdbparser/pdbparser.h \
- ../src/pdbwriter/../pdbparser/../structures/structures.h \
- ../src/pdbwriter/../pdbparser/../structures/../math/math_pdt.h \
- ../src/pdbwriter/../pdbparser/../structures/../math/../structures/structures.h \
- ../src/pdbwriter/../pdbparser/../structures/../math/../structures/../math/math_pdt.h \
- ../src/pdbwriter/../pdbparser/moleculecolors.h \
- ../src/pdbwriter/../pdbparser/atomradius.h \
- ../src/pdbwriter/../pdbparser/models.h \
- ../src/pdbwriter/../structures/structures.h \
- ../src/pdbwriter/../structures/../math/math_pdt.h \
- ../src/pdbwriter/scoreloader.h ../src/pdbparser/pdbparser.h \
- ../src/configuration/configuration.h ../src/structures/structures.h \
- ../src/structures/../math/math_pdt.h
+src/rmsd_main.d: ../src/rmsd_main.cpp ../src/rmsd/rmsd_test.h \
+ ../src/rmsd/../configuration/configuration.h \
+ ../src/rmsd/../structures/structures.h \
+ ../src/rmsd/../structures/../math/math_pdt.h \
+ ../src/rmsd/../structures/../math/../structures/structures.h \
+ ../src/rmsd/../structures/../math/../structures/../math/math_pdt.h \
+ ../src/rmsd/../pdbwriter/pdbwriter.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/pdbparser.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/../structures/structures.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/../structures/../math/math_pdt.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/moleculecolors.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/atomradius.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/models.h \
+ ../src/rmsd/../pdbwriter/../structures/structures.h \
+ ../src/rmsd/../pdbwriter/../structures/../math/math_pdt.h \
+ ../src/rmsd/../pdbwriter/scoreloader.h \
+ ../src/rmsd/../pdbparser/pdbparser.h
 
-../src/pdbwriter/pdbwriter.h:
+../src/rmsd/rmsd_test.h:
 
-../src/pdbwriter/../pdbparser/pdbparser.h:
+../src/rmsd/../configuration/configuration.h:
 
-../src/pdbwriter/../pdbparser/../structures/structures.h:
+../src/rmsd/../structures/structures.h:
 
-../src/pdbwriter/../pdbparser/../structures/../math/math_pdt.h:
+../src/rmsd/../structures/../math/math_pdt.h:
 
-../src/pdbwriter/../pdbparser/../structures/../math/../structures/structures.h:
+../src/rmsd/../structures/../math/../structures/structures.h:
 
-../src/pdbwriter/../pdbparser/../structures/../math/../structures/../math/math_pdt.h:
+../src/rmsd/../structures/../math/../structures/../math/math_pdt.h:
 
-../src/pdbwriter/../pdbparser/moleculecolors.h:
+../src/rmsd/../pdbwriter/pdbwriter.h:
 
-../src/pdbwriter/../pdbparser/atomradius.h:
+../src/rmsd/../pdbwriter/../pdbparser/pdbparser.h:
 
-../src/pdbwriter/../pdbparser/models.h:
+../src/rmsd/../pdbwriter/../pdbparser/../structures/structures.h:
 
-../src/pdbwriter/../structures/structures.h:
+../src/rmsd/../pdbwriter/../pdbparser/../structures/../math/math_pdt.h:
 
-../src/pdbwriter/../structures/../math/math_pdt.h:
+../src/rmsd/../pdbwriter/../pdbparser/moleculecolors.h:
 
-../src/pdbwriter/scoreloader.h:
+../src/rmsd/../pdbwriter/../pdbparser/atomradius.h:
 
-../src/pdbparser/pdbparser.h:
+../src/rmsd/../pdbwriter/../pdbparser/models.h:
 
-../src/configuration/configuration.h:
+../src/rmsd/../pdbwriter/../structures/structures.h:
 
-../src/structures/structures.h:
+../src/rmsd/../pdbwriter/../structures/../math/math_pdt.h:
 
-../src/structures/../math/math_pdt.h:
+../src/rmsd/../pdbwriter/scoreloader.h:
+
+../src/rmsd/../pdbparser/pdbparser.h:

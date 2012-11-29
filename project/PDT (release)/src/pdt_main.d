@@ -51,12 +51,17 @@ src/pdt_main.d: ../src/pdt_main.cpp ../src/predocking/predocking_test.h \
  ../src/docking/../rotationmatrix/rotationmatrix.h \
  ../src/docking/../protein/protein.h ../src/docking/../math/math_pdt.h \
  ../src/docking/../configuration/configuration.h \
- ../src/docking/../predocking/predocking.h ../src/docking/docking.h \
- ../src/configuration/configuration.h ../src/pdbwriter/pdbwriter.h \
- ../src/pdbwriter/../pdbparser/pdbparser.h \
- ../src/pdbwriter/../structures/structures.h \
- ../src/pdbwriter/../structures/../math/math_pdt.h \
- ../src/pdbwriter/scoreloader.h
+ ../src/docking/../predocking/predocking.h ../src/rmsd/rmsd_test.h \
+ ../src/rmsd/../configuration/configuration.h \
+ ../src/rmsd/../structures/structures.h \
+ ../src/rmsd/../structures/../math/math_pdt.h \
+ ../src/rmsd/../pdbwriter/pdbwriter.h \
+ ../src/rmsd/../pdbwriter/../pdbparser/pdbparser.h \
+ ../src/rmsd/../pdbwriter/../structures/structures.h \
+ ../src/rmsd/../pdbwriter/../structures/../math/math_pdt.h \
+ ../src/rmsd/../pdbwriter/scoreloader.h \
+ ../src/rmsd/../pdbparser/pdbparser.h ../src/docking/docking.h \
+ ../src/configuration/configuration.h ../src/pdbwriter/pdbwriter.h
 
 ../src/predocking/predocking_test.h:
 
@@ -170,16 +175,28 @@ src/pdt_main.d: ../src/pdt_main.cpp ../src/predocking/predocking_test.h \
 
 ../src/docking/../predocking/predocking.h:
 
+../src/rmsd/rmsd_test.h:
+
+../src/rmsd/../configuration/configuration.h:
+
+../src/rmsd/../structures/structures.h:
+
+../src/rmsd/../structures/../math/math_pdt.h:
+
+../src/rmsd/../pdbwriter/pdbwriter.h:
+
+../src/rmsd/../pdbwriter/../pdbparser/pdbparser.h:
+
+../src/rmsd/../pdbwriter/../structures/structures.h:
+
+../src/rmsd/../pdbwriter/../structures/../math/math_pdt.h:
+
+../src/rmsd/../pdbwriter/scoreloader.h:
+
+../src/rmsd/../pdbparser/pdbparser.h:
+
 ../src/docking/docking.h:
 
 ../src/configuration/configuration.h:
 
 ../src/pdbwriter/pdbwriter.h:
-
-../src/pdbwriter/../pdbparser/pdbparser.h:
-
-../src/pdbwriter/../structures/structures.h:
-
-../src/pdbwriter/../structures/../math/math_pdt.h:
-
-../src/pdbwriter/scoreloader.h:

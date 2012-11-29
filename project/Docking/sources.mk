@@ -27,6 +27,7 @@ src/trigonometriccaching \
 src/translationmatrix \
 src/structures \
 src/rotationmatrix \
+src/rmsd \
 src/protein \
 src/predocking \
 src/pdbwriter \

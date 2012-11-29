@@ -69,6 +69,10 @@ src/gui/guicallbackspdt.d: ../src/gui/guicallbackspdt.cpp \
  ../src/gui/../command/commanddefinitions.h \
  ../src/gui/../predocking/predocking_test.h \
  ../src/gui/../predocking/predocking.h \
+ ../src/gui/../predocking/../math/axisalignment.h \
+ ../src/gui/../predocking/../math/../pdbparser/pdbparser.h \
+ ../src/gui/../predocking/../math/../structures/structures.h \
+ ../src/gui/../predocking/../math/../structures/../math/math_pdt.h \
  ../src/gui/../docking/docking_test.h ../src/gui/../docking/docking.h \
  ../src/gui/../math/evaluatescores.h ../src/gui/../math/../gui/glwindow.h \
  ../src/gui/../math/../gui/vmolgui.h \
@@ -81,8 +85,7 @@ src/gui/guicallbackspdt.d: ../src/gui/guicallbackspdt.cpp \
  ../src/gui/../math/../pdbwriter/../structures/structures.h \
  ../src/gui/../math/../pdbwriter/../structures/../math/math_pdt.h \
  ../src/gui/../math/../pdbwriter/scoreloader.h \
- ../src/gui/../pdbwriter/pdbwriter.h ../src/gui/../math/axisalignment.h \
- ../src/gui/../math/../pdbparser/pdbparser.h
+ ../src/gui/../pdbwriter/pdbwriter.h ../src/gui/../math/axisalignment.h
 
 ../src/gui/vmolgui.h:
 
@@ -236,6 +239,14 @@ src/gui/guicallbackspdt.d: ../src/gui/guicallbackspdt.cpp \
 
 ../src/gui/../predocking/predocking.h:
 
+../src/gui/../predocking/../math/axisalignment.h:
+
+../src/gui/../predocking/../math/../pdbparser/pdbparser.h:
+
+../src/gui/../predocking/../math/../structures/structures.h:
+
+../src/gui/../predocking/../math/../structures/../math/math_pdt.h:
+
 ../src/gui/../docking/docking_test.h:
 
 ../src/gui/../docking/docking.h:
@@ -267,5 +278,3 @@ src/gui/guicallbackspdt.d: ../src/gui/guicallbackspdt.cpp \
 ../src/gui/../pdbwriter/pdbwriter.h:
 
 ../src/gui/../math/axisalignment.h:
-
-../src/gui/../math/../pdbparser/pdbparser.h:

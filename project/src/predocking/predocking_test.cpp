@@ -110,16 +110,24 @@ void PredockingTestDrive::predockingRun(std::string configPath)
 	config.getParameter("receptor_outer_skin_coeffs", receptorOuter);
 	config.getParameter("center", center);
 
-	predockLigand.parsePDB(ligandPDB.c_str(), ".tmpParsedLigand");
-	predockReceptor.parsePDB(receptorPDB.c_str(), ".tmpParsedReceptor");
+	config.getParameter("parsed_ligand", parsedLigand);
+	config.getParameter("parsed_receptor", parsedReceptor);
+
+//	predockLigand.parsePDB(ligandPDB.c_str(), ".tmpParsedLigand");
+//	predockReceptor.parsePDB(receptorPDB.c_str(), ".tmpParsedReceptor");
+	predockLigand.parsePDB(ligandPDB.c_str(), parsedLigand.c_str());
+	predockReceptor.parsePDB(receptorPDB.c_str(), parsedReceptor.c_str());
 
 	if (center == 3)
 	{
 		centerWithAlignment(predockReceptor.getPdbFile(), predockLigand.getPdbFile());
 	}
 
-	predockLigand.calculateSurface(ligandPDB, "data/adb/tmpParsedLigand.adb");
-	predockReceptor.calculateSurface(receptorPDB, "data/adb/tmpParsedReceptor.adb");
+
+//	predockLigand.calculateSurface(ligandPDB, "data/adb/tmpParsedLigand.adb");
+//	predockReceptor.calculateSurface(receptorPDB, "data/adb/tmpParsedReceptor.adb");
+	predockLigand.calculateSurface(ligandPDB, parsedLigand.c_str());
+	predockReceptor.calculateSurface(receptorPDB, parsedReceptor.c_str());
 
 	fprintf(stderr, "Calculating Ligand skins...\n");
 //	predockLigand.calculateSkins(ligandPDB);

@@ -12,6 +12,7 @@
 #include <sstream>
 #include "predocking/predocking_test.h"
 #include "docking/docking_test.h"
+#include "rmsd/rmsd_test.h"
 #include "docking/docking.h"
 #include "configuration/configuration.h"
 #include "pdbwriter/pdbwriter.h"
@@ -78,6 +79,11 @@ int main(int argc, char **argv)
 		{
 			PredockingTestDrive predocking;
 			predocking.coefToGrid(configPath);
+		}
+		else if (splitProcesses[i] == "rmsd")
+		{
+			RMSDTestDrive rmsd;
+			rmsd.rmsdRun(configPath);
 		}
 
 		printf ("...finished process [%ld/%ld]: '%s'!\n\n", (i+1), splitProcesses.size(), splitProcesses[i].c_str());

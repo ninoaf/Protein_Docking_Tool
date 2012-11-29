@@ -1,20 +1,20 @@
-# 'Process' parameter is used only with the 'pdt' executable. 'pdt' unifies all protein docking subprocesses into a single executable file, allowing to run predocking, docking and conversion of coefs to a rasterized 3D grid (for visualization and debugging purposes). 'Process' can be equal to: predocking, docking and coef2grid . If predocking or docking are run as standalone executables, this parameter will be overlooked. Several values can be listed for the 'process' parameter in order to run them in a row, example:
-#process: predocking coef2grid docking
-process: predocking coef2grid
+# 'Process' parameter is used only with the 'pdt' executable. 'pdt' unifies all protein docking subprocesses into a single executable file, allowing to run predocking, docking, rmsd calculation, and conversion of coefs to a rasterized 3D grid (for visualization and debugging purposes). 'Process' can be equal to: predocking, docking, rmsd and coef2grid . If any of these components are run as standalone executables, this parameter will be overlooked. 'Process' can contain a pipeline of processes to be performed subsequently, for example:
+# process: predocking coef2grid docking	# First predocking will run, then coefficients will be mapped to a grid, and then the docking process will proceed.
+process: predocking docking rmsd
 
 ##################################################################
 ### predocking parameters
 ##################################################################
 # Order of spherical harmonics.
-order_sh: 15
+order_sh: 10
 # Length of one side of the rasterization grid (in angstrems). Grid is cubic (each side is of the same length).
 grid_size: 150
 # Length of one side of a grid's cell (voxel) in angstrems. Cells are cubic (each side is of the same length). Cell size determines how much discretization a grid containts.
 grid_cell_size: 1
 
 # Paths to the ligand and the receptor PDB files.
-ligand: data/pdb/3hfl_ly.pdb
-receptor: data/pdb/3hfl_fv.pdb
+ligand: data/pdb/1ay7_ligand.pdb
+receptor: data/pdb/1ay7_receptor.pdb
 
 microdelta: 0.2
 delta: 1
@@ -30,15 +30,20 @@ radii_path: data/atmtypenumbers
 # proteins will be aligned to the global Z-axis and centered by mass
 center: 1
 
+# Path to temporary output files for parsed proteins.
+parsed_ligand: data/adb/1ay7_ligand.adb
+parsed_receptor: data/adb/1ay7_receptor.adb
+
 # These are also used in the docking process as coef input paths.
-ligand_inner_skin_coeffs: data/coef/3hfl_ligand_inner.coef
-ligand_outer_skin_coeffs: data/coef/3hfl_ligand_outer.coef
-receptor_inner_skin_coeffs: data/coef/3hfl_receptor_inner.coef
-receptor_outer_skin_coeffs: data/coef/3hfl_receptor_outer.coef
+ligand_inner_skin_coeffs: data/coef/1ay7_ligand_inner.coef
+ligand_outer_skin_coeffs: data/coef/1ay7_ligand_outer.coef
+receptor_inner_skin_coeffs: data/coef/1ay7_receptor_inner.coef
+receptor_outer_skin_coeffs: data/coef/1ay7_receptor_outer.coef
 
 ##################################################################
 ### docking parameters
 ##################################################################
+# If load_coeffs_from_file==1, then coefficients will be considered as precalculated, and loaded from files. If load_coeffs_from_file==0, then coefficient calculation will be performed (usually done by predocking process).
 load_coeffs_from_file: 1
 
 # ligand_inner_skin_coeffs is needed, but is already defined a few lines up.
@@ -48,12 +53,12 @@ load_coeffs_from_file: 1
 
 translation_matrices_path: data/trans
 tessellation_order: 2
-alpha_angles: 36
+alpha_angles: 18
 penetration_penalty: 5.0
 scores_size: 200
-radius_search_start: 0.0
-radius_search_end: 50.1
-scores_output_file: data/scr/outputMPI_3hfl.scr
+radius_search_start: 24.0
+radius_search_end: 28.1
+scores_output_file: data/scr/output_1ay7.scr
 output_score_to_grid: 1
 output_grid_size: 150
 output_grid_cell_size: 1
@@ -62,17 +67,19 @@ output_grid_cell_size: 1
 ### RMSD parameters
 ##################################################################
 # 'Correct' crystallographic structure that is needed for RMSD calculation.
-complex: data/pdb/3hfl.pdb
+complex: data/pdb/1ay7.pdb
 
 # Output paths.
-rmsd_output: data/rmsd/3hfl-eval.rmsd
-rmsd_output_pdb: data/rmsd/3hfl-eval.pdb
-rmsd_output_complex: data/rmsd/3hfl-eval-complex.pdb
-
+rmsd_output: data/rmsd/1ay7-eval.rmsd
+rmsd_output_pdb: data/rmsd/1ay7-eval.pdb
+rmsd_output_complex: data/rmsd/1ay7-eval-complex.pdb
+output_score_to_grid: 1
+output_grid_size: 150
+output_grid_cell_size: 1
 # Scores file contains many scored protein conformations. 'starting_score' defines the index of the first score to start rmsd evaluation from. Indices start from zero.
 starting_score: 0
-# Number of scores to be evaluated starting with 'starting_score', and ending with 'starting_score + num_scores - 1'
-num_scores: 30
+# Number of scores to be evaluated starting with 'starting_score', and ending with 'starting_score + num_scores - 1'. If num_scores == -1, then all available scores will be used.
+num_scores: -1
 
 # ligand path is needed, but is already defined a few lines up.
 # receptor path is needed, but is already defined a few lines up.
