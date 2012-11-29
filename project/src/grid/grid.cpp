@@ -41,13 +41,13 @@ int Grid::size() const
 // Exports grid to file. Returns number of written elements.
 int Grid::exportToFile(const std::string& outputFile) const
 {
-	printf("Exporting grid to file %s\n", outputFile.c_str());
+	fprintf(stderr, "Exporting grid to file '%s'...\n", outputFile.c_str());
 
 	FILE *fp;
 	fp = fopen(outputFile.c_str(), "wb");
 	if (fp == 0)
 	{
-		printf("Unable to open file %s for writing in function Export_From_File(...)!\n", outputFile.c_str());
+		fprintf(stderr, "Unable to open file '%s' for writing in function Export_From_File(...)!\n", outputFile.c_str());
 		return -1;
 	}
 
@@ -66,7 +66,7 @@ int Grid::exportToFile(const std::string& outputFile) const
 
 	fclose(fp);
 
-	printf("Grid exported to file: %s (%d bytes written)\n", outputFile.c_str(), ret);
+	fprintf(stderr, "...grid exported to file: '%s' (%d bytes written)!\n", outputFile.c_str(), ret);
 
 	return ret;
 }
@@ -102,7 +102,7 @@ int Grid::dump(const std::string& outputFile) const
 // Imports grid from file. Returns number of read elements.
 int Grid::importFromFile(const std::string& inputFile)
 {
-	printf("Importing grid from file %s\n", inputFile.c_str());
+	fprintf(stderr, "Importing grid from file '%s'...\n", inputFile.c_str());
 
 	FILE *fp;
 	fp = fopen(inputFile.c_str(), "rb");
@@ -131,7 +131,7 @@ int Grid::importFromFile(const std::string& inputFile)
 
 	fclose(fp);
 
-	printf("Grid imported from file %s (%d elements read)\n", inputFile.c_str(), ret);
+	fprintf(stderr, "...grid imported from file '%s' (%d elements read)!\n", inputFile.c_str(), ret);
 
 	return ret;
 }

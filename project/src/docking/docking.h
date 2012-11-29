@@ -39,12 +39,15 @@ public:
 class Docking
 {
 public:
+	Docking();
 	//Docking(const pair<string&, string&> receptorFile, const pair<string&, string&> ligandFile);
 	Docking(const pair<string, string>& receptorFile, const pair<string, string>& ligandFile);
 	Docking(const Grid& receptorInner, const Grid& receptorOuter, const Grid& ligandInner, const Grid& ligandOuter, int order);
 	Docking(Configuration &config);
 	Docking(std::string configPath);
 	~Docking();
+
+	void init(std::string configPath);
 
 	double scoreIt(Protein& receptor, Protein& ligand, double Q);
 	double scoreIt(double R, double betaReceptor, double gammaReceptor, double alphaLigand, double betaLigand, double gammaLigand);

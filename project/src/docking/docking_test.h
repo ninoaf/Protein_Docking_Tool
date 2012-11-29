@@ -21,6 +21,7 @@
 class DockingTestDrive : Docking
 {
 public:
+	DockingTestDrive();
 	DockingTestDrive(std::string configPath);
 	DockingTestDrive(Configuration& config);
 

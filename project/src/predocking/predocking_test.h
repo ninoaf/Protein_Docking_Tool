@@ -9,6 +9,7 @@
 #define PREDOCKING_TEST_H_
 
 #include "predocking.h"
+#include "../math/axisalignment.h"
 #include <string>
 
 

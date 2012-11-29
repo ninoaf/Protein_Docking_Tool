@@ -40,7 +40,11 @@ src/predocking/predocking_test.d: ../src/predocking/predocking_test.cpp \
  ../src/predocking/../protein/../coefficients/coefficients.h \
  ../src/predocking/../protein/../translationmatrix/translationmatrix.h \
  ../src/predocking/../protein/../rotationmatrix/rotationmatrix.h \
- ../src/predocking/../protein/../grid/grid.h
+ ../src/predocking/../protein/../grid/grid.h \
+ ../src/predocking/../math/axisalignment.h \
+ ../src/predocking/../math/../pdbparser/pdbparser.h \
+ ../src/predocking/../math/../structures/structures.h \
+ ../src/predocking/../math/../structures/../math/math_pdt.h
 
 ../src/predocking/predocking_test.h:
 
@@ -127,3 +131,11 @@ src/predocking/predocking_test.d: ../src/predocking/predocking_test.cpp \
 ../src/predocking/../protein/../rotationmatrix/rotationmatrix.h:
 
 ../src/predocking/../protein/../grid/grid.h:
+
+../src/predocking/../math/axisalignment.h:
+
+../src/predocking/../math/../pdbparser/pdbparser.h:
+
+../src/predocking/../math/../structures/structures.h:
+
+../src/predocking/../math/../structures/../math/math_pdt.h:

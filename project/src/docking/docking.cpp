@@ -125,7 +125,24 @@ Docking::Docking(Configuration &config)
 	coeffMappingNLMCalculated_ = false;
 }
 
+Docking::Docking()
+{
+
+}
+
 Docking::Docking(std::string configPath)
+{
+	init(configPath);
+}
+
+Docking::~Docking()
+{
+	//delete [] rotationAngles_;
+	//delete [] rotReceptor_;
+	//delete [] rotLigand_;
+}
+
+void Docking::init(std::string configPath)
 {
 	Configuration config;
 	string t;
@@ -177,12 +194,6 @@ Docking::Docking(std::string configPath)
 	coeffMappingNLMCalculated_ = false;
 }
 
-Docking::~Docking()
-{
-	//delete [] rotationAngles_;
-	//delete [] rotReceptor_;
-	//delete [] rotLigand_;
-}
 void Docking::setDefaultParameters()
 {
 	translationPath_ = "data/trans";

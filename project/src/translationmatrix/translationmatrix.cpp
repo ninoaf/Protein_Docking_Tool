@@ -42,7 +42,7 @@ int TranslationMatrix::importFromFile(const string& inputFile)
 
 	if (fp == 0)
 	{
-		fprintf(stderr, "Ne mogu ucitati translation file %s\n", inputFile.c_str());
+		fprintf(stderr, "Cannot access translation file '%s'!\n", inputFile.c_str());
 		exit(1);
 	}
 
@@ -75,7 +75,7 @@ int TranslationMatrix::exportToFile(const string& outputFile)
 
 	if (fp == 0)
 	{
-		fprintf(stderr, "Ne mogu otvoriti za pisanje translation file %s\n", outputFile.c_str());
+		fprintf(stderr, "Cannot open translation file '%s' for writing!\n", outputFile.c_str());
 		exit(1);
 	}
 
@@ -106,7 +106,7 @@ void TranslationMatrix::dumpToFile(const string& outputFile)
 
 	if (fp == 0)
 	{
-		fprintf(stderr, "Ne mogu otvoriti za pisanje file %s\n", outputFile.c_str());
+		fprintf(stderr, "Cannot open file '%s' for writing!\n", outputFile.c_str());
 		exit(1);
 	}
 
@@ -138,7 +138,7 @@ void TranslationMatrix::calculateMatrix(int order, double R)
 
 	for (int _n = 1;    _n <= order_;  _n++)
 	{
-		printf("evo me na %d...\n", _n);
+//		printf("evo me na %d...\n", _n);
 		for (int _l = 0;    _l <= _n-1;    _l++)
 		for (int m  = -_l;  m  <= _l;      m ++)
 		for (int n  = 1;    n  <= order_;  n ++)

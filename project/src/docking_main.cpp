@@ -11,10 +11,28 @@
 #include <algorithm>
 #include "docking/docking.h"
 #include "configuration/configuration.h"
+#include "docking/docking_test.h"
 
 using namespace std;
 
-int main(int argc, char **argv){
+
+
+int main(int argc, char **argv)
+{
+	DockingTestDrive testDrive;
+
+	if (argc < 2)
+	{
+		testDrive.dockingRun("config.txt");
+	}
+	else
+	{
+		testDrive.dockingRun(argv[1]);
+	}
+
+/** This is the current version of the docking process. It has been commented in order to replace it with Docking::runDocking(std::string configPath) function. This function implements the same functionality, and the only reason for such approach is to provide an interface to the docking process for different components of the system.
+ * Commented on 29.11.2012. ivan
+ *
 	Configuration configuration;
 
 	if (argc < 2)
@@ -53,6 +71,7 @@ int main(int argc, char **argv){
 	configuration.getParameter("scores_output_file", scoresOutputFile);
 
     docking.outputScores(scoresOutputFile, "# header...\n", scores);
+*/
 
     return 0;
 }

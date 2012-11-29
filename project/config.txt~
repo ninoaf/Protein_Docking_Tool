@@ -1,5 +1,5 @@
 # 'Process' parameter is used only with the 'pdt' executable. 'pdt' unifies all protein docking subprocesses into a single executable file, allowing to run predocking, docking and conversion of coefs to a rasterized 3D grid (for visualization and debugging purposes). 'Process' can be equal to: predocking, docking and coef2grid . If predocking or docking are run as standalone executables, this parameter will be overlooked.
-process: predocking
+process: predocking coef2grid
 
 ##################################################################
 ### predocking parameters
@@ -38,7 +38,7 @@ receptor_outer_skin_coeffs: data/coef/3hfl_receptor_outer.coef
 ##################################################################
 ### docking parameters
 ##################################################################
-load_coeffs_from_file: 0
+load_coeffs_from_file: 1
 
 # ligand_inner_skin_coeffs is needed, but is already defined a few lines up.
 # ligand_outer_skin_coeffs is needed, but is already  defined a few lines up.
@@ -71,7 +71,7 @@ rmsd_output_complex: data/rmsd/3hfl-eval-complex.pdb
 # Scores file contains many scored protein conformations. 'starting_score' defines the index of the first score to start rmsd evaluation from. Indices start from zero.
 starting_score: 0
 # Number of scores to be evaluated starting with 'starting_score', and ending with 'starting_score + num_scores - 1'
-num_scores: 3
+num_scores: 30
 
 # ligand path is needed, but is already defined a few lines up.
 # receptor path is needed, but is already defined a few lines up.

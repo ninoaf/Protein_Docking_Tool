@@ -54,6 +54,7 @@ void PredockingTestDrive::backToGrid(std::string configPath)
  * */
 void PredockingTestDrive::predockingRun(std::string configPath)
 {
+/*
 	Configuration config(configPath);
 
 	Predocking predockLigand(config, CALCULATE), predockReceptor(config, CALCULATE);
@@ -85,6 +86,57 @@ void PredockingTestDrive::predockingRun(std::string configPath)
 	receptor.getOuterSkin().exportToFile(tmp);
 	config.getParameter("receptor_inner_skin_coeffs", tmp);
 	receptor.getInnerSkin().exportToFile(tmp);
+*/
+
+	Configuration config(configPath);
+
+	Predocking predockLigand(config, CALCULATE), predockReceptor(config, CALCULATE);
+
+	string ligandPDB, receptorPDB;
+	string parsedLigand, parsedReceptor;
+	Protein ligand, receptor;
+	string ligandInner, ligandOuter;
+	string receptorInner, receptorOuter;
+	int order;
+	int center=0;
+
+	config.getParameter("ligand", ligandPDB);
+	config.getParameter("receptor", receptorPDB);
+	config.getParameter("order_sh", order);
+
+	config.getParameter("ligand_inner_skin_coeffs", ligandInner);
+	config.getParameter("ligand_outer_skin_coeffs", ligandOuter);
+	config.getParameter("receptor_inner_skin_coeffs", receptorInner);
+	config.getParameter("receptor_outer_skin_coeffs", receptorOuter);
+	config.getParameter("center", center);
+
+	predockLigand.parsePDB(ligandPDB.c_str(), ".tmpParsedLigand");
+	predockReceptor.parsePDB(receptorPDB.c_str(), ".tmpParsedReceptor");
+
+	if (center == 3)
+	{
+		centerWithAlignment(predockReceptor.getPdbFile(), predockLigand.getPdbFile());
+	}
+
+	predockLigand.calculateSurface(ligandPDB, "data/adb/tmpParsedLigand.adb");
+	predockReceptor.calculateSurface(receptorPDB, "data/adb/tmpParsedReceptor.adb");
+
+	fprintf(stderr, "Calculating Ligand skins...\n");
+//	predockLigand.calculateSkins(ligandPDB);
+	predockLigand.calculateSkinsWithouthParsing();
+	fprintf(stderr, "Calculating Receptor skins...\n");
+//	predockReceptor.calculateSkins(receptorPDB);
+	predockReceptor.calculateSkinsWithouthParsing();
+
+	fprintf(stderr, "Calculating Ligand coefficients...\n");
+	predockLigand.getProtein(order, ligand);
+	fprintf(stderr, "Exporting Ligand coefficients to files: '%s', '%s'...\n", ligandInner.c_str(), ligandOuter.c_str());
+	ligand.exportToFile(ligandInner, ligandOuter);
+
+	fprintf(stderr, "Calculating Receptor coefficients...\n");
+	predockReceptor.getProtein(order, receptor);
+	fprintf(stderr, "Exporting Receptor coefficients to files: '%s', '%s'...\n", receptorInner.c_str(), receptorOuter.c_str());
+	receptor.exportToFile(receptorInner, receptorOuter);
 }
 
 void PredockingTestDrive::predockingToGrid(std::string configPath)
@@ -172,14 +224,21 @@ void PredockingTestDrive::coefToGrid(std::string configPath)
 
 
 
+
+	fprintf(stderr, "Loading ligand and receptor coefficient files...\n");
+
 	string tempPath;
 	config.getParameter("ligand_outer_skin_coeffs", tempPath);
+	fprintf(stderr, "\tligand_outer_skin_coeffs: '%s'\n", tempPath.c_str());
 	ligandOuter.importFromFile(tempPath);
 	config.getParameter("ligand_inner_skin_coeffs", tempPath);
+	fprintf(stderr, "\tligand_inner_skin_coeffs: '%s'\n", tempPath.c_str());
 	ligandInner.importFromFile(tempPath);
 	config.getParameter("receptor_outer_skin_coeffs", tempPath);
+	fprintf(stderr, "\treceptor_outer_skin_coeffs: '%s'\n", tempPath.c_str());
 	receptorOuter.importFromFile(tempPath);
 	config.getParameter("receptor_inner_skin_coeffs", tempPath);
+	fprintf(stderr, "\treceptor_inner_skin_coeffs: '%s'\n", tempPath.c_str());
 	receptorInner.importFromFile(tempPath);
 
 

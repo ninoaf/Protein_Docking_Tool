@@ -220,3 +220,4 @@ PdbFile& Predocking::getPdbFile()
 {
 	return pdbFile_;
 }
+

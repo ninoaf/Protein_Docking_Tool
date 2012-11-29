@@ -5,23 +5,23 @@
  *      Author: ivan
  */
 
-#include "predocking/predocking.h"
+// #include "predocking/predocking.h"
 #include "predocking/predocking_test.h"
-#include "math/axisalignment.h"
+// #include "math/axisalignment.h"
 
 
 
 int main(int argc, char **argv)
 {
-	Configuration config;
+	PredockingTestDrive testDrive;
 
 	if (argc < 2)
 	{
-		config.init("config.txt");
+		testDrive.predockingRun("config.txt");
 	}
 	else
 	{
-		config.init(argv[1]);
+		testDrive.predockingRun(argv[1]);
 	}
 
 /*
@@ -33,6 +33,18 @@ int main(int argc, char **argv)
 */
 
 
+
+/*
+	Configuration config;
+
+	if (argc < 2)
+	{
+		config.init("config.txt");
+	}
+	else
+	{
+		config.init(argv[1]);
+	}
 
 	Predocking predockLigand(config, CALCULATE), predockReceptor(config, CALCULATE);
 
@@ -86,6 +98,7 @@ int main(int argc, char **argv)
 	predockReceptor.getProtein(order, receptor);
 	fprintf(stderr, "Exporting Receptor coefficients to files: '%s', '%s'...\n", receptorInner.c_str(), receptorOuter.c_str());
 	receptor.exportToFile(receptorInner, receptorOuter);
+*/
 
 	return 0;
 }

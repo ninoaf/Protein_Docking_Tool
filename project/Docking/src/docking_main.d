@@ -47,7 +47,8 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
  ../src/docking/../predocking/../configuration/configuration.h \
  ../src/docking/../predocking/../grid/grid.h \
  ../src/docking/../predocking/../protein/protein.h \
- ../src/configuration/configuration.h
+ ../src/configuration/configuration.h ../src/docking/docking_test.h \
+ ../src/docking/docking.h
 
 ../src/docking/docking.h:
 
@@ -148,3 +149,7 @@ src/docking_main.d: ../src/docking_main.cpp ../src/docking/docking.h \
 ../src/docking/../predocking/../protein/protein.h:
 
 ../src/configuration/configuration.h:
+
+../src/docking/docking_test.h:
+
+../src/docking/docking.h:

@@ -1,5 +1,5 @@
 src/predocking_main.d: ../src/predocking_main.cpp \
- ../src/predocking/predocking.h \
+ ../src/predocking/predocking_test.h ../src/predocking/predocking.h \
  ../src/predocking/../pdbparser/pdbparser.h \
  ../src/predocking/../pdbparser/../structures/structures.h \
  ../src/predocking/../pdbparser/../structures/../math/math_pdt.h \
@@ -41,10 +41,12 @@ src/predocking_main.d: ../src/predocking_main.cpp \
  ../src/predocking/../protein/../translationmatrix/translationmatrix.h \
  ../src/predocking/../protein/../rotationmatrix/rotationmatrix.h \
  ../src/predocking/../protein/../grid/grid.h \
- ../src/predocking/predocking_test.h ../src/predocking/predocking.h \
- ../src/math/axisalignment.h ../src/math/../pdbparser/pdbparser.h \
- ../src/math/../structures/structures.h \
- ../src/math/../structures/../math/math_pdt.h
+ ../src/predocking/../math/axisalignment.h \
+ ../src/predocking/../math/../pdbparser/pdbparser.h \
+ ../src/predocking/../math/../structures/structures.h \
+ ../src/predocking/../math/../structures/../math/math_pdt.h
+
+../src/predocking/predocking_test.h:
 
 ../src/predocking/predocking.h:
 
@@ -130,14 +132,10 @@ src/predocking_main.d: ../src/predocking_main.cpp \
 
 ../src/predocking/../protein/../grid/grid.h:
 
-../src/predocking/predocking_test.h:
+../src/predocking/../math/axisalignment.h:
 
-../src/predocking/predocking.h:
+../src/predocking/../math/../pdbparser/pdbparser.h:
 
-../src/math/axisalignment.h:
+../src/predocking/../math/../structures/structures.h:
 
-../src/math/../pdbparser/pdbparser.h:
-
-../src/math/../structures/structures.h:
-
-../src/math/../structures/../math/math_pdt.h:
+../src/predocking/../math/../structures/../math/math_pdt.h:
