@@ -18,14 +18,9 @@ Cite work as:
 Sovic, I., Antulov-Fantulin, N. Canadi, I., Piskorec, M. and Sikic, M., Parallel Protein Docking Tool, MIPRO 2010, Proceedings of the 33rd International Convention on Information and Communication Technology, Electronics and Microelectronics
 
 License:
-GNU General Public License http://www.gnu.org/licenses/
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+(at your option) any later version.See the GNU General Public License 
+for more details: http://www.gnu.org/licenses/.
