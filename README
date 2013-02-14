@@ -1,6 +1,6 @@
 Parallel Protein Docking Tool (PPTP) software is performing a shape based process of protein docking using spherical harmonics. The software is made from the scratch in C++ as a Eclipse CDT project. Input data are two PDB (Protein Data Bank) files and desired docking parameters. The PDB files hold information about coordination of protein atoms in three dimensional space. Protein structures are transformed with spherical functions which allow fast rotation and translation of 3D shapes in space. By translation and rotation (with a given resolution of angles and distance) the surface complementarity is tested for each orientation of two proteins in 3D space. The orientations are then ranked according to the given scores. The output PDB file now holds orientations with best scores ready for visualization. 
 
-This software is still in development and we do **NOT** recommend it for users who are not familiar with spherical harmonics approach in protein docking. It should be considered as a collection of tools rather than integrated solution.
+This software is still in development and we do **NOT** recommend it for users who are not familiar with spherical harmonics approach in protein docking. It should be considered as a library for protein docking with spherical harmonics rather than integrated solution for protein docking.
 
 Translational matrix data for order grater than 10 due to the size (around 800 MB) can be downloaded here (http://lis.irb.hr/PDT/) and
 then included in project: Protein_Docking_Tool /project/data/trans.
